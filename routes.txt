@@ -1,0 +1,53 @@
++--------+-----------+---------------------------------+----------------------+------------------------------------------------------------+------------------------------------------+
+| Domain | Method    | URI                             | Name                 | Action                                                     | Middleware                               |
++--------+-----------+---------------------------------+----------------------+------------------------------------------------------------+------------------------------------------+
+|        | GET|HEAD  | /                               |                      | App\Http\Controllers\HomeController@index                  | web                                      |
+|        | GET|HEAD  | admin                           |                      | App\Http\Controllers\AdminController@index                 | web                                      |
+|        | POST      | admin                           | admin.logincheck     | App\Http\Controllers\AdminController@loginCheck            | web                                      |
+|        | GET|HEAD  | api/user                        |                      | Closure                                                    | api                                      |
+|        |           |                                 |                      |                                                            | App\Http\Middleware\Authenticate:sanctum |
+|        | GET|HEAD  | breeds                          | breeds.index         | App\Http\Controllers\BreedController@index                 | web                                      |
+|        | POST      | breeds                          | breeds.store         | App\Http\Controllers\BreedController@store                 | web                                      |
+|        | GET|HEAD  | breeds/create                   | breeds.create        | App\Http\Controllers\BreedController@create                | web                                      |
+|        | GET|HEAD  | breeds/{breed}                  | breeds.show          | App\Http\Controllers\BreedController@show                  | web                                      |
+|        | PUT|PATCH | breeds/{breed}                  | breeds.update        | App\Http\Controllers\BreedController@update                | web                                      |
+|        | DELETE    | breeds/{breed}                  | breeds.destroy       | App\Http\Controllers\BreedController@destroy               | web                                      |
+|        | GET|HEAD  | breeds/{breed}/edit             | breeds.edit          | App\Http\Controllers\BreedController@edit                  | web                                      |
+|        | GET|HEAD  | carousel                        | carousel.index       | App\Http\Controllers\CarouselController@index              | web                                      |
+|        |           |                                 |                      |                                                            | App\Http\Middleware\Authenticate         |
+|        | POST      | carousel                        | carousel.store       | App\Http\Controllers\CarouselController@store              | web                                      |
+|        |           |                                 |                      |                                                            | App\Http\Middleware\Authenticate         |
+|        | GET|HEAD  | carousel/create                 | carousel.create      | App\Http\Controllers\CarouselController@create             | web                                      |
+|        |           |                                 |                      |                                                            | App\Http\Middleware\Authenticate         |
+|        | GET|HEAD  | carousel/{carousel}             | carousel.show        | App\Http\Controllers\CarouselController@show               | web                                      |
+|        |           |                                 |                      |                                                            | App\Http\Middleware\Authenticate         |
+|        | PUT|PATCH | carousel/{carousel}             | carousel.update      | App\Http\Controllers\CarouselController@update             | web                                      |
+|        |           |                                 |                      |                                                            | App\Http\Middleware\Authenticate         |
+|        | DELETE    | carousel/{carousel}             | carousel.destroy     | App\Http\Controllers\CarouselController@destroy            | web                                      |
+|        |           |                                 |                      |                                                            | App\Http\Middleware\Authenticate         |
+|        | GET|HEAD  | carousel/{carousel}/edit        | carousel.edit        | App\Http\Controllers\CarouselController@edit               | web                                      |
+|        |           |                                 |                      |                                                            | App\Http\Middleware\Authenticate         |
+|        | GET|HEAD  | dashboard                       | dashboard.index      | App\Http\Controllers\DashboardController@index             | web                                      |
+|        | GET|HEAD  | sanctum/csrf-cookie             |                      | Laravel\Sanctum\Http\Controllers\CsrfCookieController@show | web                                      |
+|        | GET|HEAD  | testimonials                    | testimonials.index   | App\Http\Controllers\TestimonialController@index           | web                                      |
+|        | POST      | testimonials                    | testimonials.store   | App\Http\Controllers\TestimonialController@store           | web                                      |
+|        | GET|HEAD  | testimonials/create             | testimonials.create  | App\Http\Controllers\TestimonialController@create          | web                                      |
+|        | GET|HEAD  | testimonials/{testimonial}      | testimonials.show    | App\Http\Controllers\TestimonialController@show            | web                                      |
+|        | PUT|PATCH | testimonials/{testimonial}      | testimonials.update  | App\Http\Controllers\TestimonialController@update          | web                                      |
+|        | DELETE    | testimonials/{testimonial}      | testimonials.destroy | App\Http\Controllers\TestimonialController@destroy         | web                                      |
+|        | GET|HEAD  | testimonials/{testimonial}/edit | testimonials.edit    | App\Http\Controllers\TestimonialController@edit            | web                                      |
+|        | GET|HEAD  | welcome_ones                    | welcome_ones.index   | App\Http\Controllers\WelcomeOneController@index            | web                                      |
+|        | POST      | welcome_ones                    | welcome_ones.store   | App\Http\Controllers\WelcomeOneController@store            | web                                      |
+|        | GET|HEAD  | welcome_ones/create             | welcome_ones.create  | App\Http\Controllers\WelcomeOneController@create           | web                                      |
+|        | GET|HEAD  | welcome_ones/{welcome_one}      | welcome_ones.show    | App\Http\Controllers\WelcomeOneController@show             | web                                      |
+|        | PUT|PATCH | welcome_ones/{welcome_one}      | welcome_ones.update  | App\Http\Controllers\WelcomeOneController@update           | web                                      |
+|        | DELETE    | welcome_ones/{welcome_one}      | welcome_ones.destroy | App\Http\Controllers\WelcomeOneController@destroy          | web                                      |
+|        | GET|HEAD  | welcome_ones/{welcome_one}/edit | welcome_ones.edit    | App\Http\Controllers\WelcomeOneController@edit             | web                                      |
+|        | GET|HEAD  | welcome_twos                    | welcome_twos.index   | App\Http\Controllers\WelcomeTwoController@index            | web                                      |
+|        | POST      | welcome_twos                    | welcome_twos.store   | App\Http\Controllers\WelcomeTwoController@store            | web                                      |
+|        | GET|HEAD  | welcome_twos/create             | welcome_twos.create  | App\Http\Controllers\WelcomeTwoController@create           | web                                      |
+|        | GET|HEAD  | welcome_twos/{welcome_two}      | welcome_twos.show    | App\Http\Controllers\WelcomeTwoController@show             | web                                      |
+|        | PUT|PATCH | welcome_twos/{welcome_two}      | welcome_twos.update  | App\Http\Controllers\WelcomeTwoController@update           | web                                      |
+|        | DELETE    | welcome_twos/{welcome_two}      | welcome_twos.destroy | App\Http\Controllers\WelcomeTwoController@destroy          | web                                      |
+|        | GET|HEAD  | welcome_twos/{welcome_two}/edit | welcome_twos.edit    | App\Http\Controllers\WelcomeTwoController@edit             | web                                      |
++--------+-----------+---------------------------------+----------------------+------------------------------------------------------------+------------------------------------------+
