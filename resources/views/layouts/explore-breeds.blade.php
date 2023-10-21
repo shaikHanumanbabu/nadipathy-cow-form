@@ -10,7 +10,7 @@
                 <div class="col-lg-4 col-md-6 pt-5 wow fadeInUp" data-wow-delay="0.1s">
                     <div class="service-item d-flex h-100">
                         <div class="service-img">
-                            <img class="img-fluid" src="/image/{{ $breed->image }}" alt="">
+                            <img class="img-fluid" src="image/{{ $breed->image }}" alt="">
                         </div>
                         <div class="service-text p-5 pt-0">
                             <div class="service-icon">
