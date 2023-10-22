@@ -100,6 +100,16 @@
             <i class="bi bi-circle"></i><span>Testimonials</span>
           </a>
         </li>
+        <li>
+          <a href="{{ route('marquees.show', ['marquee' => 1]) }}">
+            <i class="bi bi-circle"></i><span>Marquee Text</span>
+          </a>
+        </li>
+        <li>
+          <a href="{{ route('marquees.show', ['marquee' => 1]) }}">
+            <i class="bi bi-circle"></i><span>Appointlments Info</span>
+          </a>
+        </li>
       </ul>
     </li>
   </ul>

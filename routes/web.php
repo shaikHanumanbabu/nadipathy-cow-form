@@ -5,10 +5,13 @@ use App\Http\Controllers\BreedController;
 use App\Http\Controllers\CarouselController;
 use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\HomeController;
+use App\Http\Controllers\MarqueeController;
 use App\Http\Controllers\TestimonialController;
 use App\Http\Controllers\WelcomeOneController;
 use App\Http\Controllers\WelcomeTwoController;
+use App\Mail\MyTestMail;
 use Illuminate\Http\Response;
+use Illuminate\Support\Facades\Mail;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -27,6 +30,18 @@ use Illuminate\Support\Facades\Route;
 
 
 Route::get('/', [HomeController::class, 'index']);
+Route::get('/send-email', function() {
+  $details = [
+    'title' => 'Mail from ItSolutionStuff.com',
+    'body' => 'This is for testing email using smtp'
+];
+
+Mail::to('hanumanbabu@yopmail.com')->send( new MyTestMail($details));
+
+dd("Email is Sent.");
+});
+
+Route::post('/store-appointment', [HomeController::class, 'store_appointment'])->name('store-appointment');
 Route::get('/admin', [AdminController::class, 'index']);
 Route::post('/admin', [AdminController::class, 'loginCheck'])->name('admin.logincheck');
 
@@ -37,6 +52,7 @@ Route::resource('/testimonials', TestimonialController::class);
 Route::resource('/breeds', BreedController::class);
 Route::resource('/welcome_ones', WelcomeOneController::class);
 Route::resource('/welcome_twos', WelcomeTwoController::class);
+Route::resource('/marquees', MarqueeController::class);
 /*
 Route::get('/tasks', function () use($tasks) {
     return view('index', [

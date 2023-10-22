@@ -69,6 +69,18 @@
             </button>
         </div>
     </div>
+
+    <section>
+        <div class="col-md-12 marquee1">
+        <marquee direction="left" onmouseover="stop();" onmouseout="start();">
+        <ul>
+            <li>
+                <div class="spinner-grow" role="status"></div>{{ $marquee->marquee_text }}
+            </li>
+        </ul>
+        </marquee>
+        </div>
+    </section>
     <!-- Carousel End -->
     {{-- {{ dd($welcomeone) }} --}}
     <!-- Features Start -->
