@@ -91,6 +91,16 @@
           </a>
         </li>
         <li>
+          <a href="{{ route('subcategories.index') }}">
+            <i class="bi bi-circle"></i><span>Sub Category Breeds</span>
+          </a>
+        </li>
+        <li>
+          <a href="{{ route('subcategories.index') }}">
+            <i class="bi bi-circle"></i><span>Cows</span>
+          </a>
+        </li>
+        <li>
           <a href="{{ route('welcome_twos.index') }}">
             <i class="bi bi-circle"></i><span>Welcome Text2</span>
           </a>
@@ -106,7 +116,7 @@
           </a>
         </li>
         <li>
-          <a href="{{ route('marquees.show', ['marquee' => 1]) }}">
+          <a href="{{ route('appointments.index') }}">
             <i class="bi bi-circle"></i><span>Appointlments Info</span>
           </a>
         </li>

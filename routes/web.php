@@ -1,15 +1,18 @@
 <?php
 
 use App\Http\Controllers\AdminController;
+use App\Http\Controllers\AppointmentController;
 use App\Http\Controllers\BreedController;
 use App\Http\Controllers\CarouselController;
 use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\MarqueeController;
+use App\Http\Controllers\SubCategoriesController;
 use App\Http\Controllers\TestimonialController;
 use App\Http\Controllers\WelcomeOneController;
 use App\Http\Controllers\WelcomeTwoController;
 use App\Mail\MyTestMail;
+use App\Models\Appointment;
 use Illuminate\Http\Response;
 use Illuminate\Support\Facades\Mail;
 use Illuminate\Support\Facades\Route;
@@ -53,6 +56,8 @@ Route::resource('/breeds', BreedController::class);
 Route::resource('/welcome_ones', WelcomeOneController::class);
 Route::resource('/welcome_twos', WelcomeTwoController::class);
 Route::resource('/marquees', MarqueeController::class);
+Route::resource('/appointments', AppointmentController::class);
+Route::resource('/subcategories', SubCategoriesController::class);
 /*
 Route::get('/tasks', function () use($tasks) {
     return view('index', [
