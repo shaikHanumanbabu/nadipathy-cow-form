@@ -9,21 +9,21 @@
   <meta content="" name="description">
   <meta content="" name="keywords">
 
-  <link href="/assets/img/favicon.png" rel="icon">
+  <link href="{{asset('assets/img/favicon.png')}}" rel="icon">
   <link href="/assets/img/apple-touch-icon.png" rel="apple-touch-icon">
 
   <link href="https://fonts.gstatic.com" rel="preconnect">
   <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Nunito:300,300i,400,400i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i" rel="stylesheet">
 
-  <link href="/assets/bootstrap/css/bootstrap.min.css" rel="stylesheet">
-  <link href="/assets/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
-  <link href="/assets/boxicons/css/boxicons.min.css" rel="stylesheet">
-  <link href="/assets/quill/quill.snow.css" rel="stylesheet">
-  <link href="/assets/quill/quill.bubble.css" rel="stylesheet">
-  <link href="/assets/remixicon/remixicon.css" rel="stylesheet">
-  <link href="/assets/simple-datatables/style.css" rel="stylesheet">
+  <link href="{{ URL::asset('assets/bootstrap/css/bootstrap.min.css') }}" rel="stylesheet">
+  <link href="{{ URL::asset('assets/bootstrap-icons/bootstrap-icons.css') }}" rel="stylesheet">
+  <link href="{{ URL::asset('assets/boxicons/css/boxicons.min.css') }}" rel="stylesheet">
+  <link href="{{ URL::asset('assets/quill/quill.snow.css') }}" rel="stylesheet">
+  <link href="{{ URL::asset('assets/quill/quill.bubble.css') }}" rel="stylesheet">
+  <link href="{{ URL::asset('assets/remixicon/remixicon.css') }}" rel="stylesheet">
+  <link href="{{ URL::asset('assets/simple-datatables/style.css') }}" rel="stylesheet">
 
-  <link href="/assets/css/style.css" rel="stylesheet">
+  <link href="{{ URL::asset('assets/css/style.css') }} " rel="stylesheet">
 
   <script src="https://cdn.tiny.cloud/1/no-api-key/tinymce/6/basic_config.min.js" referrerpolicy="origin"></script>
   {{-- <script src="/tinymce/tinymce/tinymce.min.js"></script> --}}
@@ -36,7 +36,7 @@
 <header id="header" class="header fixed-top d-flex align-items-center">
   <div class="d-flex align-items-center justify-content-between">
     <a href="{{ url('/') }}" class="logo d-flex align-items-center">
-      <img src="/assets/img/logo-white.png" width="252" alt="Nadipathy Goshala">
+      <img src="{{ URL::asset('assets/img/logo-white.png') }}" width="252" alt="Nadipathy Goshala">
     </a>
     <i class="bi bi-list toggle-sidebar-btn"></i>
   </div><!-- End Logo -->
@@ -45,7 +45,7 @@
     <ul class="d-flex align-items-center">
       <li class="nav-item dropdown pe-3">
         <a class="nav-link nav-profile d-flex align-items-center pe-0" href="#" data-bs-toggle="dropdown">
-          <img src="/assets/img/user_icon.png" alt="Profile" class="rounded-circle">
+          <img src="{{ URL::asset('assets/img/user_icon.png') }}" alt="Profile" class="rounded-circle">
           <span class="d-none d-md-block ps-2"> Log Out</span>
         </a>
       </li>
@@ -128,15 +128,15 @@
 
   <a href="#" class="back-to-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
 
-  <script src="/assets/apexcharts/apexcharts.min.js"></script>
-  <script src="/assets/bootstrap/js/bootstrap.bundle.min.js"></script>
-  <script src="/assets/chart.js/chart.min.js"></script>
-  <script src="/assets/echarts/echarts.min.js"></script>
-  <script src="/assets/quill/quill.min.js"></script>
-  <script src="/assets/simple-datatables/simple-datatables.js"></script>
-  <script src="/assets/tinymce/tinymce.min.js"></script>
-  <script src="/assets/php-email-form/validate.js"></script>
-  <script src="/assets/js/main.js"></script>
+  <script src="{{ URL::asset('assets/apexcharts/apexcharts.min.js') }}"></script>
+  <script src="{{ URL::asset('assets/bootstrap/js/bootstrap.bundle.min.js') }}"></script>
+  <script src="{{ URL::asset('assets/chart.js/chart.min.js') }}"></script>
+  <script src="{{ URL::asset('assets/echarts/echarts.min.js') }}"></script>
+  <script src="{{ URL::asset('assets/quill/quill.min.js') }}"></script>
+  <script src="{{ URL::asset('assets/simple-datatables/simple-datatables.js') }}"></script>
+  <script src="{{ URL::asset('assets/tinymce/tinymce.min.js') }}"></script>
+  <script src="{{ URL::asset('assets/php-email-form/validate.js') }}"></script>
+  <script src="{{ URL::asset('assets/js/main.js') }}"></script>
   
   @yield('js-content')
 </body>
