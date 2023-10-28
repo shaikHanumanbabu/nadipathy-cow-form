@@ -203,11 +203,11 @@
 }
 
 
-.marquee1 marquee{width: 90%; height: 40px; line-height: 40px; background-color: #F1F3F4;}
+.marquee1 marquee{width: 100%; height: 40px; line-height: 40px; background-color: #5B8C51;}
 .marquee1 marquee i{color: #333;}
 .marquee1 marquee ul{list-style-type: none; padding: 0; margin: 0;}
-.marquee1 marquee ul li{padding: 0; margin: 0; float: left; margin-right: 30px;}
-.marquee1 marquee ul li .spinner-grow{width: 20px; height: 20px; margin: 10px; float: left; color: #5B8C51;}
+.marquee1 marquee ul li{padding: 0; margin: 0; float: left; margin-right: 30px; color: #fff; letter-spacing: 0.6px;}
+.marquee1 marquee ul li .spinner-grow{width: 20px; height: 20px; margin: 10px; float: left; color: #EDDD5E;}
 
 
 /*** Section Title ***/
@@ -526,7 +526,7 @@
 a.smediafb {
     box-shadow: inset 0 0 0 0 #3b5998;
     color: #54b3d6;
-      padding: 0 .5rem;
+      padding: 0 .4rem;
       margin: 0 .1rem;
     transition: color .3s ease-in-out, box-shadow .3s ease-in-out;
   }
@@ -542,7 +542,7 @@ a.smediafb {
   a.smediayt {
     box-shadow: inset 0 0 0 0 #CD201F;
     color: #54b3d6;
-      padding: 0 .5rem;
+      padding: 0 .2rem;
       margin: 0 .1rem;
     transition: color .3s ease-in-out, box-shadow .3s ease-in-out;
   }
@@ -558,7 +558,7 @@ a.smediafb {
   a.smediains {
     box-shadow: inset 0 0 0 0 #E4405F;
     color: #54b3d6;
-      padding: 0 .5rem;
+      padding: 0 .3rem;
       margin: 0 .1rem;
     transition: color .3s ease-in-out, box-shadow .3s ease-in-out;
   }
@@ -569,6 +569,36 @@ a.smediafb {
   a.smediainsfoot:hover {
     color: #fff;
     box-shadow: inset 200px 0 0 0 #E4405F;
+  }
+
+  a.appoint {
+    background-color: #EDDD5E;
+    box-shadow: inset 0 0 0 0 #fad3da;
+    /* border: 0.5px solid #fff; */
+    color: #333;
+      padding: 0 .5rem;
+      margin: 0 .1rem;
+    transition: color .3s ease-in-out, box-shadow .3s ease-in-out;
+  }
+  a.appoint:hover {
+    color: #fff;
+    background-color: #E4405F;
+    box-shadow: inset 0 0 0 0 #E4405F;
+  }
+
+  a.whatsapp {
+    background-color: #E4405F;
+    box-shadow: inset 0 0 0 0 #fad3da;
+    /* border: 0.5px solid #fff; */
+    color: #fff;
+      padding: 0 .5rem;
+      margin: 0 .1rem;
+    transition: color .3s ease-in-out, box-shadow .3s ease-in-out;
+  }
+  a.whatsapp:hover {
+    color: #333 !important;
+    background-color: #EDDD5E;
+    box-shadow: inset 0 0 0 0 #EDDD5E;
   }
 
 .gallery img{ border: 5px solid #FFFFFF;}

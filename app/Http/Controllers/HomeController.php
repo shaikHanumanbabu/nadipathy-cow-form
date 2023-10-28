@@ -2,8 +2,10 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Appointment;
 use App\Models\Breed;
 use App\Models\Carousel;
+use App\Models\Marquee;
 use App\Models\Testimonial;
 use App\Models\WelcomeOne;
 use App\Models\WelcomeTwo;
@@ -14,13 +16,30 @@ class HomeController extends Controller
     //
     public function index()
     {
+        
         return view('index', [
             'carousel' => Carousel::all(),
             'welcomeone' => WelcomeOne::find(1),
             'welcometwo' => WelcomeTwo::find(1),
             'breeds' => Breed::all(),
             'testimonials' => Testimonial::all(),
+            'marquee' => Marquee::find(1),
             
         ]);
+    }
+
+    public function store_appointment(Request $request)
+    {
+        $validated = $request->validate([
+            'name' => 'required',
+            'phone_number' => 'required',
+            'email' => 'required',
+            'address' => 'required',
+            'visiting_datetime' => 'required',
+        ]);
+
+        $appointment = Appointment::create($validated);
+
+        return redirect()->back()->with('appointment_success', 'Thank you for reaching out! Your message has been successfully received. Our team will get back to you shortly.');
     }
 }
