@@ -4,6 +4,7 @@ use App\Http\Controllers\AdminController;
 use App\Http\Controllers\AppointmentController;
 use App\Http\Controllers\BreedController;
 use App\Http\Controllers\CarouselController;
+use App\Http\Controllers\CowController;
 use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\MarqueeController;
@@ -58,6 +59,7 @@ Route::resource('/welcome_twos', WelcomeTwoController::class);
 Route::resource('/marquees', MarqueeController::class);
 Route::resource('/appointments', AppointmentController::class);
 Route::resource('/subcategories', SubCategoriesController::class);
+Route::resource('/cows', CowController::class);
 /*
 Route::get('/tasks', function () use($tasks) {
     return view('index', [

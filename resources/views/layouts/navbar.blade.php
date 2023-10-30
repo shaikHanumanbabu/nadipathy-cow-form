@@ -9,10 +9,10 @@
     </button>
     <div class="collapse navbar-collapse" id="navbarCollapse">
         <div class="navbar-nav ms-auto p-4 p-lg-0">
-            <a href="index.html" class="nav-item nav-link active">Home</a>
-            <a href="about.html" class="nav-item nav-link">About</a>
+            <a href="index.html" class="nav-item nav-link active">{{__('messages.home')}}</a>
+            <a href="about.html" class="nav-item nav-link">{{__('messages.about')}}</a>
             <div class="nav-item dropdown">
-                <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">Cows & Bulls</a>
+                <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">{{__('messages.cows and bulls')}}</a>
                 <div class="dropdown-menu bg-light m-0">
                     <a href="miniature.html" class="dropdown-item">Miniature Cows</a>
                     <a href="punganur.html" class="dropdown-item">Punganur Cows</a>

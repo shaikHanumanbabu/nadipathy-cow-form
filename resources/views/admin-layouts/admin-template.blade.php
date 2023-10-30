@@ -96,7 +96,7 @@
           </a>
         </li>
         <li>
-          <a href="{{ route('subcategories.index') }}">
+          <a href="{{ route('cows.index') }}">
             <i class="bi bi-circle"></i><span>Cows</span>
           </a>
         </li>

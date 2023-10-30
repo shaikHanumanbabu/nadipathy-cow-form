@@ -10,13 +10,19 @@ use App\Models\Testimonial;
 use App\Models\WelcomeOne;
 use App\Models\WelcomeTwo;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\App;
 
 class HomeController extends Controller
 {
     //
-    public function index()
+    public function index(Request $request)
     {
-        
+        $params = $request->get('lang');
+        App::setLocale($params);
+
+        $locale = App::currentLocale();
+
+        // dd($locale);
         return view('index', [
             'carousel' => Carousel::all(),
             'welcomeone' => WelcomeOne::find(1),
