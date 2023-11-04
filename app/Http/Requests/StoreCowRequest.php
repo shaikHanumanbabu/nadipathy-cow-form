@@ -28,8 +28,6 @@ class StoreCowRequest extends FormRequest
             'breed_id' => 'required',
             'sub_categorie_id' => 'required',
             'name' => 'required',
-            'short_description' => 'required',
-            'long_description' => 'required',
         ];
     }
 }

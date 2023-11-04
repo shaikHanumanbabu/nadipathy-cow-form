@@ -24,7 +24,7 @@
     <div class="card courses_page overflow-auto">
 
       <div class="card-body">
-        <p align="right"><a href="{{ route('breeds.create') }}">Add New Breeds</a></p>
+        {{-- <p align="right"><a href="{{ route('breeds.create') }}">Add New Breeds</a></p> --}}
         <table id="example" class="display" style="width:100%">
           <thead>
               <tr>
@@ -46,11 +46,11 @@
                   <a  class="btn bt-sm" href="{{ route('breeds.edit', ['breed' =>  $breed->id ]) }}">
                     <i class="bi bi-pencil"></i>
                   </a>                  
-                  <form action="{{ route('breeds.destroy', ['breed' => $breed->id]) }}" method="post" onsubmit="return confirm('are you sure you want to delete ?')">
+                  {{-- <form action="{{ route('breeds.destroy', ['breed' => $breed->id]) }}" method="post" onsubmit="return confirm('are you sure you want to delete ?')">
                     @csrf
                     @method('delete')
                     <button type="submit" class="btn bt-sm"><i class="bi bi-trash"></i></button>
-                  </form>
+                  </form> --}}
                 </td>
               </tr>
               @empty

@@ -43,17 +43,31 @@
 
             
         
-            <div class="col-md-12 mb-1">
+            {{-- <div class="col-md-12 mb-1">
                 <textarea type="text" class="form-control" id="short_description" name="short_description" rows="5" cols="10" placeholder="Enter short_description">{{ isset($cow->short_description) ? $cow->short_description :  old('short_description') }}</textarea>
-            </div>
+            </div> --}}
 
-            <div class="col-md-12 mb-1">
+            {{-- <div class="col-md-12 mb-1">
                 <textarea type="text" class="form-control" id="long_description" name="long_description" rows="5" cols="10" placeholder="Enter long_description">{{ isset($cow->long_description) ? $cow->long_description :  old('long_description') }}</textarea>
-            </div>
+            </div> --}}
             
             <div class="col-md-12 mb-1">
                 <label for="image" class="mb-1">Upload Cow Image</label>
-                <input type="file" class="form-control" id="main_image" name="main_image">
+                <input type="file" class="form-control" id="main_image" name="main_image" multiple>
+
+                @if (isset($cow->id))
+                    <img src="/image/{{ $cow->main_image }}" alt="{{ $cow->name }}">
+                @endif
+                <p style="margin-top: 10px; font-size: 14px;"><b>Note:</b> <br>
+                    1. Follow the dimensions to upload the image (1920px / 882px). <br>
+                    2. Only jpg, jpeg, png formats allowed. <br>
+                    3. File size should be below 1 MB.
+                </p>
+            </div>
+
+            <div class="col-md-12 mb-1">
+                <label for="image" class="mb-1">Cow Gallery</label>
+                <input type="file" class="form-control" id="image_name" name="main_image" multiple>
 
                 @if (isset($cow->id))
                     <img src="/image/{{ $cow->main_image }}" alt="{{ $cow->name }}">

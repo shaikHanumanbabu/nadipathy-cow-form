@@ -90,16 +90,7 @@
             <i class="bi bi-circle"></i><span>Breeds</span>
           </a>
         </li>
-        <li>
-          <a href="{{ route('subcategories.index') }}">
-            <i class="bi bi-circle"></i><span>Sub Category Breeds</span>
-          </a>
-        </li>
-        <li>
-          <a href="{{ route('cows.index') }}">
-            <i class="bi bi-circle"></i><span>Cows</span>
-          </a>
-        </li>
+        
         <li>
           <a href="{{ route('welcome_twos.index') }}">
             <i class="bi bi-circle"></i><span>Welcome Text2</span>
@@ -118,6 +109,26 @@
         <li>
           <a href="{{ route('appointments.index') }}">
             <i class="bi bi-circle"></i><span>Appointlments Info</span>
+          </a>
+        </li>
+      </ul>
+    </li>
+
+
+    {{-- another menu --}}
+    <li class="nav-item">
+      <a class="nav-link collapsed" data-bs-target="#cows_bulls" data-bs-toggle="collapse" href="#">
+        <i class="bi bi-file-earmark-text"></i><span>Cows & Bulls</span><i class="bi bi-chevron-down ms-auto"></i>
+      </a>
+      <ul id="cows_bulls" class="nav-content collapse " data-bs-parent="#sidebar-nav">       
+        <li>
+          <a href="{{ route('subcategories.index') }}">
+            <i class="bi bi-circle"></i><span>Sub Categories</span>
+          </a>
+        </li>
+        <li>
+          <a href="{{ route('cows.index') }}">
+            <i class="bi bi-circle"></i><span>Cows</span>
           </a>
         </li>
       </ul>

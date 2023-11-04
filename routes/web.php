@@ -45,6 +45,8 @@ Mail::to('hanumanbabu@yopmail.com')->send( new MyTestMail($details));
 dd("Email is Sent.");
 });
 
+Route::get('/breed', [HomeController::class, 'breedsType']);
+
 Route::post('/store-appointment', [HomeController::class, 'store_appointment'])->name('store-appointment');
 Route::get('/admin', [AdminController::class, 'index']);
 Route::post('/admin', [AdminController::class, 'loginCheck'])->name('admin.logincheck');

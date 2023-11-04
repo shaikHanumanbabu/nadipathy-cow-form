@@ -13,7 +13,7 @@ class UpdateBreedRequest extends FormRequest
      */
     public function authorize()
     {
-        return false;
+        return true;
     }
 
     /**
@@ -24,7 +24,10 @@ class UpdateBreedRequest extends FormRequest
     public function rules()
     {
         return [
-            //
+            'title' => 'required',
+            'short_description' => 'required',
+            'long_description' => 'required',
+            'link' => 'required',
         ];
     }
 }

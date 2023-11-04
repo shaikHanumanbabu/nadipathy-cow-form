@@ -45,6 +45,7 @@ class CowController extends Controller
     {
         $validated = $request->validated();
 
+        // dd($request->file('main_image'));
         if($request->hasFile('main_image')) {
             $fileName = auth()->id() . '_' . time() . '.'. $request->main_image->extension();  
     
@@ -61,7 +62,13 @@ class CowController extends Controller
         }
 
         
-        Cow::create($validated);
+        $cow = Cow::create($validated);
+        foreach ($request->file('image_name') as $imagefile) {
+            $path = $imagefile->move(public_path('image'), $fileName);
+            
+            
+        }
+
         return redirect()->route('cows.index')->with('success', 'Cow added successfully.');
         
     }

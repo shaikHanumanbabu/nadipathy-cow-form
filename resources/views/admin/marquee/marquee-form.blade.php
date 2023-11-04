@@ -17,8 +17,13 @@
                 @method('PATCH')
             @endif
             <h5>Update Marquee</h5>
+            <label for="">english</label>
             <div class="col-md-12 mb-1">
                 <input type="text" class="form-control" id="marquee_text" name="marquee_text" value="{{ isset($marquee->marquee_text) ? $marquee->marquee_text : old('marquee_text') }}" placeholder="Enter customer name">
+            </div>
+            <label for="">telugu</label>
+            <div class="col-md-12 mb-1">
+                <input type="text" class="form-control" id="telugu_marquee_text" name="telugu_marquee_text" value="{{ isset($marquee->telugu_marquee_text) ? $marquee->telugu_marquee_text : old('telugu_marquee_text') }}" placeholder="Enter telugu_marquee_text">
             </div>
             
             

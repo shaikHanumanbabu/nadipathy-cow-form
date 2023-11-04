@@ -16,4 +16,9 @@ class Breed extends Model
         'image',
         'link',
     ];
+
+    public function categories()
+    {
+        return $this->hasMany(SubCategories::class);
+    }
 }

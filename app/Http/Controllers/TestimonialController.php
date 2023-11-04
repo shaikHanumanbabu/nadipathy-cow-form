@@ -92,7 +92,21 @@ class TestimonialController extends Controller
      */
     public function update(UpdateTestimonialRequest $request, Testimonial $testimonial)
     {
-        //
+        $validated = $request->validated();
+
+        if($request->hasFile('image')) {
+            $fileName = auth()->id() . '_' . time() . '.'. $request->image->extension();  
+    
+            $type = $request->image->getClientMimeType();
+            $size = $request->image->getSize();
+            
+            $request->image->move(public_path('image'), $fileName);
+    
+            $validated['image'] = $fileName;
+
+        }
+        $testimonial->update($validated);
+        return redirect()->route('testimonials.index')->with('success', 'Testimonial updated successfully.');
     }
 
     /**

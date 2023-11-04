@@ -18,12 +18,12 @@ class HomeController extends Controller
     public function index(Request $request)
     {
         $params = $request->get('lang');
-        App::setLocale($params);
+        App::setLocale($params ?? 'en');
 
         $locale = App::currentLocale();
 
-        // dd($locale);
-        return view('index', [
+
+        return view('home', [
             'carousel' => Carousel::all(),
             'welcomeone' => WelcomeOne::find(1),
             'welcometwo' => WelcomeTwo::find(1),
@@ -32,6 +32,17 @@ class HomeController extends Controller
             'marquee' => Marquee::find(1),
             
         ]);
+    }
+
+    public function breedsType(Request $request)
+    {
+        $params = $request->get('breedType');
+        $breed = Breed::where('title', $params)->get()->first();
+        return view('breeds', [
+            'breed' => $breed,
+            'breeds' => Breed::all()
+        ]);
+
     }
 
     public function store_appointment(Request $request)

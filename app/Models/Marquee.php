@@ -11,6 +11,7 @@ class Marquee extends Model
 
     protected $fillable = [
         'marquee_text',
+        'telugu_marquee_text',
     ];
 
 }

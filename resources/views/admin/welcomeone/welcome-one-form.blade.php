@@ -47,7 +47,7 @@
 @section('js-content')
 
 <script type="text/javascript">
-    // console.log('hello world');
+    
     tinymce.init({
       selector: 'textarea#description',
     });

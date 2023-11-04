@@ -73,8 +73,10 @@ class MarqueeController extends Controller
     {
         $validated = $request->validate([
             'marquee_text' => "required|max:300",
+            'telugu_marquee_text' => "nullable|max:300",
         ]);
 
+        // dd($validated);
         $marquee->update($validated);
         return redirect()->back()->with('success', 'Marquee update successfully.');
 

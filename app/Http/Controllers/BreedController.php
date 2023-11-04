@@ -74,7 +74,9 @@ class BreedController extends Controller
      */
     public function edit(Breed $breed)
     {
-        //
+        return view('admin.breeds.breed-form', [
+            'breed' => $breed
+        ]);
     }
 
     /**
@@ -86,7 +88,12 @@ class BreedController extends Controller
      */
     public function update(UpdateBreedRequest $request, Breed $breed)
     {
-        //
+        $validated = $request->validated();
+
+        $breed->update($validated);
+
+        return redirect()->route('breeds.index')->with('success', 'Breed Updated successfully.');
+
     }
 
     /**

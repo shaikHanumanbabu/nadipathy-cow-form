@@ -20,9 +20,7 @@
                     placeholder="Enter profession">
             </div>
             <div class="col-md-12 mb-1">
-                <textarea type="text" class="form-control" id="description" name="description" rows="5" cols="10" placeholder="Enter textarea">
-                    {{ isset($testimonial->description) ? $testimonial->description :  old('description') }}
-                </textarea>
+                <textarea type="text" class="form-control" id="description" name="description" rows="5" cols="10" placeholder="Enter textarea">{{ isset($testimonial->description) ? $testimonial->description :  old('description') }}</textarea>
             </div>
             
             <div class="col-md-12 mb-1">
@@ -50,4 +48,15 @@
         </form>
     </div>
 </main>
+@endsection
+
+@section('js-content')
+
+<script type="text/javascript">
+    
+    tinymce.init({
+      selector: 'textarea#description',
+    });
+  </script>
+    
 @endsection

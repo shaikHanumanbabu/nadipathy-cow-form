@@ -11,7 +11,7 @@
             @if (isset($breed))
                 @method('PATCH')
             @endif
-            <h5>Create Breed</h5>
+            <h5>{{isset($breed) ? 'Update' : 'Create'}} Breed</h5>
             <div class="col-md-12 mb-1">
                 <input type="text" class="form-control" id="title" name="title" value="{{ isset($breed->title) ? $breed->title : old('title') }}" placeholder="Enter title">
             </div>

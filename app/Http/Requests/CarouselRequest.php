@@ -27,6 +27,9 @@ class CarouselRequest extends FormRequest
             'title' => 'required',
             'caption' => 'required',
             'btntext' => 'required',
+            'telugu_title' => 'nullable',
+            'telugu_caption' => 'nullable',
+            'telugu_btntext' => 'nullable',
             'link' => 'required',
             'priority' => 'required',
         ];
