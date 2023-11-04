@@ -20,9 +20,9 @@
                         </svg> {{__('messages.language')}}
                     </a>
                     <div class="dropdown-menu bg-light m-0">
-                        <a href="?lang=en" class="dropdown-item">English</a>
-                        <a href="?lang=hin" class="dropdown-item">हिंदी</a>
-                        <a href="?lang=te" class="dropdown-item">తెలుగు</a>
+                        <a href="{{ url("/?lang=en") }}" class="dropdown-item">English</a>
+                        <a href="{{ url("/?lang=hin") }}" class="dropdown-item">हिंदी</a>
+                        <a href="{{ url("?lang=te") }}" class="dropdown-item">తెలుగు</a>
                     </div>
                 </div>
             </div>
