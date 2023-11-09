@@ -111,6 +111,36 @@
             <i class="bi bi-circle"></i><span>Appointlments Info</span>
           </a>
         </li>
+        <li>
+          <a href="{{ route('about.index') }}">
+            <i class="bi bi-circle"></i><span>About</span>
+          </a>
+        </li>
+        <li>
+          <a href="{{ route('p-news.index') }}">
+            <i class="bi bi-circle"></i><span>Press News</span>
+          </a>
+        </li>
+        <li>
+          <a href="{{ route('tv-news.index') }}">
+            <i class="bi bi-circle"></i><span>Tv News</span>
+          </a>
+        </li>
+        <li>
+          <a href="{{ route('social-media.index') }}">
+            <i class="bi bi-circle"></i><span>Social Media</span>
+          </a>
+        </li>
+        <li>
+          <a href="{{ route('awards.index') }}">
+            <i class="bi bi-circle"></i><span>Awards</span>
+          </a>
+        </li>
+        <li>
+          <a href="{{ route('blogs.index') }}">
+            <i class="bi bi-circle"></i><span>Blogs</span>
+          </a>
+        </li>
       </ul>
     </li>
 

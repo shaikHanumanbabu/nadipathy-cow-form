@@ -1,15 +1,21 @@
 <?php
 
+use App\Http\Controllers\AboutController;
 use App\Http\Controllers\AdminController;
 use App\Http\Controllers\AppointmentController;
+use App\Http\Controllers\AwardController;
+use App\Http\Controllers\BlogController;
 use App\Http\Controllers\BreedController;
 use App\Http\Controllers\CarouselController;
 use App\Http\Controllers\CowController;
 use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\MarqueeController;
+use App\Http\Controllers\PressNewController;
+use App\Http\Controllers\SocialMediaController;
 use App\Http\Controllers\SubCategoriesController;
 use App\Http\Controllers\TestimonialController;
+use App\Http\Controllers\TvNewController;
 use App\Http\Controllers\WelcomeOneController;
 use App\Http\Controllers\WelcomeTwoController;
 use App\Mail\MyTestMail;
@@ -62,6 +68,12 @@ Route::resource('/marquees', MarqueeController::class);
 Route::resource('/appointments', AppointmentController::class);
 Route::resource('/subcategories', SubCategoriesController::class);
 Route::resource('/cows', CowController::class);
+Route::resource('/p-news', PressNewController::class);
+Route::resource('/tv-news', TvNewController::class);
+Route::resource('/social-media', SocialMediaController::class);
+Route::resource('/about', AboutController::class);
+Route::resource('/awards', AwardController::class);
+Route::resource('/blogs', BlogController::class);
 /*
 Route::get('/tasks', function () use($tasks) {
     return view('index', [
