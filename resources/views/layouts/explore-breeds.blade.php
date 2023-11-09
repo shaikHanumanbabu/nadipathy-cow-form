@@ -10,11 +10,11 @@
                 <div class="col-lg-4 col-md-6 pt-5 wow fadeInUp" data-wow-delay="0.1s">
                     <div class="service-item d-flex h-100">
                         <div class="service-img">
-                            <img class="img-fluid" src="image/{{ $breed->image }}" alt="">
+                            <img class="img-fluid" src="{{ URL::asset("image/$breed->image") }}" alt="">
                         </div>
                         <div class="service-text p-5 pt-0">
                             <div class="service-icon">
-                                <img class="img-fluid rounded-circle" src="/image/{{ $breed->image }}" alt="">
+                                <img class="img-fluid rounded-circle" src="{{ URL::asset("image/$breed->image") }}" alt="">
                             </div>
                             <h5 class="mb-3">{{ $breed->title }}</h4>
                             <p class="mb-4 justify">
