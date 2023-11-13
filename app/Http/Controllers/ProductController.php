@@ -2,10 +2,10 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\SocialMedia;
+use App\Models\Product;
 use Illuminate\Http\Request;
 
-class SocialMediaController extends Controller
+class ProductController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -14,8 +14,8 @@ class SocialMediaController extends Controller
      */
     public function index()
     {
-        return view('admin.social-media.social-media-list',[
-            'social_medias' => SocialMedia::all()
+        return view('admin.products.products-list', [
+            'products'=> Product::all()
         ]);
     }
 
@@ -26,7 +26,7 @@ class SocialMediaController extends Controller
      */
     public function create()
     {
-        return view('admin.social-media.social-media-form');
+        return view('admin.products.products-form');
     }
 
     /**
@@ -39,8 +39,8 @@ class SocialMediaController extends Controller
     {
         $validated = $request->validate([
             'title' => 'required',
-            'link' => 'required',
-            
+            'original_price' => 'required',
+            'discount_price' => 'required',
         ]);
 
         if($request->hasFile('image')) {
@@ -53,21 +53,23 @@ class SocialMediaController extends Controller
     
             $validated['image'] = $fileName;
 
+        } else {
+            $validated['image'] = 'dummy.png';
+
         }
 
-        SocialMedia::create($validated);
-        return redirect()->route('social-media.index')->with('success', 'Press News added successfully.');
-
-
+        // dd($validated);
+        Product::create($validated);
+        return redirect()->route('products.index')->with('success', 'Product added successfully.');
     }
 
     /**
      * Display the specified resource.
      *
-     * @param  \App\Models\SocialMedia  $socialMedia
+     * @param  \App\Models\Product  $product
      * @return \Illuminate\Http\Response
      */
-    public function show(SocialMedia $socialMedia)
+    public function show(Product $product)
     {
         //
     }
@@ -75,10 +77,10 @@ class SocialMediaController extends Controller
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  \App\Models\SocialMedia  $socialMedia
+     * @param  \App\Models\Product  $product
      * @return \Illuminate\Http\Response
      */
-    public function edit(SocialMedia $socialMedia)
+    public function edit(Product $product)
     {
         //
     }
@@ -87,10 +89,10 @@ class SocialMediaController extends Controller
      * Update the specified resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @param  \App\Models\SocialMedia  $socialMedia
+     * @param  \App\Models\Product  $product
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, SocialMedia $socialMedia)
+    public function update(Request $request, Product $product)
     {
         //
     }
@@ -98,13 +100,14 @@ class SocialMediaController extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @param  \App\Models\SocialMedia  $socialMedia
+     * @param  \App\Models\Product  $product
      * @return \Illuminate\Http\Response
      */
-    public function destroy(SocialMedia $socialMedia)
+    public function destroy(Product $product)
     {
         //
-        $socialMedia->delete();
-        return redirect()->back()->with('success', 'Deleted successfully.');
+         // dd($subcategory);
+         $product->delete();
+         return redirect()->back()->with('success', 'Deleted successfully.');
     }
 }

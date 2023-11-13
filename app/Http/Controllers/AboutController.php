@@ -51,7 +51,7 @@ class AboutController extends Controller
             $type = $request->image_one->getClientMimeType();
             $size = $request->image_one->getSize();
             
-            $request->image_one->move(public_path('image_one'), $fileName);
+            $request->image_one->move(public_path('image'), $fileName);
     
             $validated['image_one'] = $fileName;
 
@@ -65,7 +65,7 @@ class AboutController extends Controller
             $type = $request->image_two->getClientMimeType();
             $size = $request->image_two->getSize();
             
-            $request->image_two->move(public_path('image_two'), $fileName);
+            $request->image_two->move(public_path('image'), $fileName);
     
             $validated['image_two'] = $fileName;
 
@@ -79,7 +79,7 @@ class AboutController extends Controller
             $type = $request->image_three->getClientMimeType();
             $size = $request->image_three->getSize();
             
-            $request->image_three->move(public_path('image_three'), $fileName);
+            $request->image_three->move(public_path('image'), $fileName);
     
             $validated['image_three'] = $fileName;
 
@@ -93,7 +93,7 @@ class AboutController extends Controller
             $type = $request->image_four->getClientMimeType();
             $size = $request->image_four->getSize();
             
-            $request->image_four->move(public_path('image_four'), $fileName);
+            $request->image_four->move(public_path('image'), $fileName);
     
             $validated['image_four'] = $fileName;
 

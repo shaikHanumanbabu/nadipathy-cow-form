@@ -34,15 +34,22 @@
         <div class="spinner-border text-primary" role="status" style="width: 3rem; height: 3rem;"></div>
     </div>
     <!-- Spinner End -->
-
+    <div id="google_translate_element">
     @include('layouts.topheader')
 
-    @include('layouts.navbar')
-
+    @include('layouts.navbar', [
+        'breeds' => $breeds ??  App\Models\Breed::all()
+    ])
+    
     @yield('content')
 
     @include('layouts.footer')
-    
+    </div>
+    <script type="text/javascript">
+        function googleTranslateElementInit() {
+          new google.translate.TranslateElement({pageLanguage: 'en'}, 'google_translate_element');
+        }
+        </script>
     <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.bundle.min.js"></script>
     <script src="{{ URL::asset("/lib/wow/wow.min.js") }} "></script>
@@ -56,7 +63,7 @@
     <script src="{{ URL::asset("/js/main.js") }}"></script>
     <script src="{{ URL::asset("/assets/js/moment-with-locales.min.js") }}"></script>
     <script src="{{ URL::asset("/assets/js/bootstrap-datetimepicker.min.js") }}"></script>
-                            
+    <script type="text/javascript" src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>           
 <script type='text/javascript'>
     (function(I, L, T, i, c, k, s) {if(I.iticks) return;I.iticks = {host:c, settings:s, clientId:k, cdn:L, queue:[]};var h = T.head || T.documentElement;var e = T.createElement(i);var l = I.location;e.async = true;e.src = (L||c)+'/client/inject-v2.min.js';h.insertBefore(e, h.firstChild);I.iticks.call = function(a, b) {I.iticks.queue.push([a, b]);};})(window, 'https://cdn-v1.intelliticks.com/prod/common', document, 'script', 'https://app.intelliticks.com', 'LhTnhMXLENXHkCm2t_c', {});
 </script>

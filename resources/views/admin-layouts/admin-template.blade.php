@@ -116,21 +116,7 @@
             <i class="bi bi-circle"></i><span>About</span>
           </a>
         </li>
-        <li>
-          <a href="{{ route('p-news.index') }}">
-            <i class="bi bi-circle"></i><span>Press News</span>
-          </a>
-        </li>
-        <li>
-          <a href="{{ route('tv-news.index') }}">
-            <i class="bi bi-circle"></i><span>Tv News</span>
-          </a>
-        </li>
-        <li>
-          <a href="{{ route('social-media.index') }}">
-            <i class="bi bi-circle"></i><span>Social Media</span>
-          </a>
-        </li>
+        
         <li>
           <a href="{{ route('awards.index') }}">
             <i class="bi bi-circle"></i><span>Awards</span>
@@ -139,6 +125,11 @@
         <li>
           <a href="{{ route('blogs.index') }}">
             <i class="bi bi-circle"></i><span>Blogs</span>
+          </a>
+        </li>
+        <li>
+          <a href="{{ route('products.index') }}">
+            <i class="bi bi-circle"></i><span>Products</span>
           </a>
         </li>
       </ul>
@@ -159,6 +150,31 @@
         <li>
           <a href="{{ route('cows.index') }}">
             <i class="bi bi-circle"></i><span>Cows</span>
+          </a>
+        </li>
+      </ul>
+    </li>
+
+    {{--  --}}
+
+    <li class="nav-item">
+      <a class="nav-link collapsed" data-bs-target="#media" data-bs-toggle="collapse" href="#">
+        <i class="bi bi-file-earmark-text"></i><span>Media</span><i class="bi bi-chevron-down ms-auto"></i>
+      </a>
+      <ul id="media" class="nav-content collapse " data-bs-parent="#sidebar-nav">       
+        <li>
+          <a href="{{ route('p-news.index') }}">
+            <i class="bi bi-circle"></i><span>Press News</span>
+          </a>
+        </li>
+        <li>
+          <a href="{{ route('tv-news.index') }}">
+            <i class="bi bi-circle"></i><span>Tv News</span>
+          </a>
+        </li>
+        <li>
+          <a href="{{ route('social-media.index') }}">
+            <i class="bi bi-circle"></i><span>Social Media</span>
           </a>
         </li>
       </ul>

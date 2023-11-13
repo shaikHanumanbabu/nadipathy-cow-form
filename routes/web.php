@@ -12,6 +12,7 @@ use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\MarqueeController;
 use App\Http\Controllers\PressNewController;
+use App\Http\Controllers\ProductController;
 use App\Http\Controllers\SocialMediaController;
 use App\Http\Controllers\SubCategoriesController;
 use App\Http\Controllers\TestimonialController;
@@ -52,6 +53,16 @@ dd("Email is Sent.");
 });
 
 Route::get('/breed', [HomeController::class, 'breedsType']);
+Route::get('/about-info', [HomeController::class, 'aboutInfo']);
+Route::get('/press-news-info', [HomeController::class, 'pressNewsInfo']);
+Route::get('/tv-news-info', [HomeController::class, 'tvNewsInfo']);
+Route::get('/social-media-info', [HomeController::class, 'socialMediaInfo']);
+Route::get('/awards-rewards', [HomeController::class, 'awardsRewardsInfo']);
+Route::get('/photo-gallery', [HomeController::class, 'photoGalleryInfo']);
+Route::get('/video-gallery', [HomeController::class, 'videoGalleryInfo']);
+Route::get('/blog', [HomeController::class, 'blogsInfo']);
+Route::get('/contact', [HomeController::class, 'contactInfo']);
+Route::get('/products-info', [HomeController::class, 'productsInfo']);
 
 Route::post('/store-appointment', [HomeController::class, 'store_appointment'])->name('store-appointment');
 Route::get('/admin', [AdminController::class, 'index']);
@@ -74,6 +85,7 @@ Route::resource('/social-media', SocialMediaController::class);
 Route::resource('/about', AboutController::class);
 Route::resource('/awards', AwardController::class);
 Route::resource('/blogs', BlogController::class);
+Route::resource('/products', ProductController::class);
 /*
 Route::get('/tasks', function () use($tasks) {
     return view('index', [
