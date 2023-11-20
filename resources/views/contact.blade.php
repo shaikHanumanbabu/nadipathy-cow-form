@@ -17,6 +17,13 @@
 
 <!-- Contact Start -->
 <div class="container-xxl py-3">
+    @if ($errors->any())
+        <div class="alert alert-danger">
+            @foreach ($errors->all() as $error)
+                <a href="#" class="alert-link">{{$error}}</a><br>
+            @endforeach
+        </div>
+    @endif
     <div class="container">
         <div class="text-center mx-auto wow fadeInUp" data-wow-delay="0.1s" style="max-width: 500px;">
             <p class="section-title bg-white text-center text-primary px-3">Please Contact Us</p>
@@ -24,31 +31,53 @@
         </div>
         <div class="row g-5">
             <div class="col-lg-6 wow fadeInUp" data-wow-delay="0.1s">
-                <form>
+                <form method="POST" action="{{ route('contact.post') }}">
+                    @csrf
+
+                    @if (session('contact_success'))
+                        <div class="alert alert-success">
+                            <strong>{{ session('contact_success') }}</strong>
+                        </div>
+                    @endif
                     <div class="row g-3">
                         <div class="col-md-12">
                             <div class="form-floating">
-                                <input type="text" class="form-control" id="name" placeholder="Your Name">
+                                <input type="text" class="form-control {{ $errors->has('name') ? 'is-invalid' : '' }}" name="name" placeholder="Your Name" value="{{ old('name') }}">
                                 <label for="name">Your Name</label>
                             </div>
+
+
+                            @error('name')
+                                {{ $message }}
+                            @enderror
                         </div>
                         <div class="col-md-6">
                             <div class="form-floating">
-                                <input type="email" class="form-control" id="email" placeholder="Your Email">
+                                <input type="email" class="form-control {{ $errors->has('email') ? 'is-invalid' : '' }}" name="email" placeholder="Your Email">
                                 <label for="email">Your Email</label>
                             </div>
+                            @error('email')
+                                {{ $message }}
+                            @enderror
                         </div>
                         <div class="col-md-6">
                             <div class="form-floating">
-                                <input type="number" class="form-control" id="mobile" placeholder="Your Mobile Number">
-                                <label for="mobile">Your Mobile</label>
+                                <input type="number" class="form-control {{ $errors->has('phone_number') ? 'is-invalid' : '' }}" name="phone_number" placeholder="Your Mobile Number">
+                                <label for="phone_number">Your Mobile</label>
                             </div>
+                            @error('phone_number')
+                                {{ $message }}
+                            @enderror
                         </div>
                         <div class="col-12">
                             <div class="form-floating">
-                                <textarea class="form-control" placeholder="Leave a message here" id="message" style="height: 100px"></textarea>
-                                <label for="message">Message</label>
+                                <textarea class="form-control {{ $errors->has('address') ? 'is-invalid' : '' }}" placeholder="Leave a message here" name="address" style="height: 100px"></textarea>
+                                <label for="address">Message</label>
                             </div>
+                            @error('address')
+                                {{ $message }}
+                            @enderror
+                            
                         </div>
                         <div class="col-12">
                             <button class="btn btn-secondary rounded-pill py-3 px-5" type="submit">Send Message</button>

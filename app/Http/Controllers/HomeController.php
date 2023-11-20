@@ -9,11 +9,13 @@ use App\Models\Blog;
 use App\Models\Breed;
 use App\Models\Carousel;
 use App\Models\Marquee;
+use App\Models\photoGallery;
 use App\Models\PressNew;
 use App\Models\Product;
 use App\Models\SocialMedia;
 use App\Models\Testimonial;
 use App\Models\TvNew;
+use App\Models\VideoGallery;
 use App\Models\WelcomeOne;
 use App\Models\WelcomeTwo;
 use Illuminate\Http\Request;
@@ -108,16 +110,42 @@ class HomeController extends Controller
 
     public function photoGalleryInfo()
     {
-        return view('photo-gallery');
+        return view('photo-gallery', [
+            'photoGalleries' => photoGallery::with('galleryimage')->get()
+        ]);
+    }
+
+    public function photoGalleryDetailedInfo(Request $request)
+    {
+        $photoGalleryInfo = photoGallery::with('galleryimage')->where('title', '=', 'cow-hug-therapy-2020')->get()->first();
+        if(!$request->get('title') || empty($photoGalleryInfo)) {
+            abort(404, 'Page Not Found');
+        }
+        return view('photo-gallery-info', [
+            'photoGalleryInfo' => $photoGalleryInfo
+        ]);
     }
 
     public function videoGalleryInfo()
     {
-        return view('video-gallery');
+        return view('video-gallery', [
+            'videoGalleries' => VideoGallery::all()
+        ]);
     }
 
-    public function contactInfo()
+    public function contactInfo(Request $request)
     {
+        if($request->isMethod('post')) {
+            $validated = $request->validate([
+                'name' => 'required',
+                'phone_number' => 'required',
+                'email' => 'required',
+                'address' => 'required',
+            ]);
+            $validated['from'] = 'contact';
+            Appointment::create($validated);
+            return redirect()->back()->with('contact_success', 'Thank you for reaching out! Your message has been successfully received. Our team will get back to you shortly.');
+        }
         return view('contact');
     }
 

@@ -5,15 +5,17 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class Appointment extends Model
+class PhotoGalleryImages extends Model
 {
     use HasFactory;
+
     protected $fillable = [
-        'name',
-        'phone_number',
-        'email',
-        'from',
-        'address',
-        'visiting_datetime',
+        'photo_gallery_id',
+        'image',
     ];
+
+    public function gallery()
+    {
+        return $this->belongsTo(photoGallery::class);
+    }
 }

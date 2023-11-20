@@ -5,15 +5,13 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class Appointment extends Model
+class VideoGallery extends Model
 {
     use HasFactory;
+
     protected $fillable = [
-        'name',
-        'phone_number',
-        'email',
-        'from',
-        'address',
-        'visiting_datetime',
+        'image',
+        'title',
+        'link',
     ];
 }

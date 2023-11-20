@@ -11,16 +11,19 @@ use App\Http\Controllers\CowController;
 use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\MarqueeController;
+use App\Http\Controllers\PhotoGalleryController;
 use App\Http\Controllers\PressNewController;
 use App\Http\Controllers\ProductController;
 use App\Http\Controllers\SocialMediaController;
 use App\Http\Controllers\SubCategoriesController;
 use App\Http\Controllers\TestimonialController;
 use App\Http\Controllers\TvNewController;
+use App\Http\Controllers\VideoGalleryController;
 use App\Http\Controllers\WelcomeOneController;
 use App\Http\Controllers\WelcomeTwoController;
 use App\Mail\MyTestMail;
 use App\Models\Appointment;
+use App\Models\VideoGallery;
 use Illuminate\Http\Response;
 use Illuminate\Support\Facades\Mail;
 use Illuminate\Support\Facades\Route;
@@ -52,6 +55,15 @@ Mail::to('hanumanbabu@yopmail.com')->send( new MyTestMail($details));
 dd("Email is Sent.");
 });
 
+Route::get('/check-email', function() {
+  $details = [
+    'title' => 'Mail from ItSolutionStuff.com',
+    'body' => 'This is for testing email using smtp'
+];
+
+return view('mail.test', ['details' => $details]);
+});
+
 Route::get('/breed', [HomeController::class, 'breedsType']);
 Route::get('/about-info', [HomeController::class, 'aboutInfo']);
 Route::get('/press-news-info', [HomeController::class, 'pressNewsInfo']);
@@ -59,9 +71,11 @@ Route::get('/tv-news-info', [HomeController::class, 'tvNewsInfo']);
 Route::get('/social-media-info', [HomeController::class, 'socialMediaInfo']);
 Route::get('/awards-rewards', [HomeController::class, 'awardsRewardsInfo']);
 Route::get('/photo-gallery', [HomeController::class, 'photoGalleryInfo']);
+Route::get('/photo-gallery-info', [HomeController::class, 'photoGalleryDetailedInfo']);
 Route::get('/video-gallery', [HomeController::class, 'videoGalleryInfo']);
 Route::get('/blog', [HomeController::class, 'blogsInfo']);
 Route::get('/contact', [HomeController::class, 'contactInfo']);
+Route::post('/contact', [HomeController::class, 'contactInfo'])->name('contact.post');
 Route::get('/products-info', [HomeController::class, 'productsInfo']);
 
 Route::post('/store-appointment', [HomeController::class, 'store_appointment'])->name('store-appointment');
@@ -86,6 +100,8 @@ Route::resource('/about', AboutController::class);
 Route::resource('/awards', AwardController::class);
 Route::resource('/blogs', BlogController::class);
 Route::resource('/products', ProductController::class);
+Route::resource('/videogalleries', VideoGalleryController::class);
+Route::resource('/photogalleries', PhotoGalleryController::class);
 /*
 Route::get('/tasks', function () use($tasks) {
     return view('index', [

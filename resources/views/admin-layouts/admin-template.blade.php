@@ -132,6 +132,11 @@
             <i class="bi bi-circle"></i><span>Products</span>
           </a>
         </li>
+        <li>
+          <a href="{{ route('videogalleries.index') }}">
+            <i class="bi bi-circle"></i><span>Video Gallery</span>
+          </a>
+        </li>
       </ul>
     </li>
 

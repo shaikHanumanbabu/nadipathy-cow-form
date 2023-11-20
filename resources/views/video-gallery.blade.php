@@ -24,36 +24,34 @@
         <h1 class="mb-5">Video Gallery</h1>
     </div>
     <div class="row">
+
+        @forelse ($videoGalleries as $key => $videoGallery)
         <div class="col-md-4">
-        <div class="card">
-            <a href="#" data-bs-toggle="modal" data-bs-target="#videoModal1">
-            <img src="img/tvnews/1.jpg" class="card-img-top" alt="Video 1">
-            </a>
-            <div class="card-body">
-            <p class="card-text">Some description about the video.</p>
+            <div class="card">
+                <a href="#" data-bs-toggle="modal" data-bs-target="#videoModal_{{$key}}">
+                <img src="{{ URL::asset("/image/$videoGallery->image") }}" class="card-img-top" alt="Video 1">
+                </a>
+                <div class="card-body">
+                <p class="card-text">{{ $videoGallery->title }}</p>
+                </div>
             </div>
-        </div>
-        </div>
-        <div class="col-md-4">
-        <div class="card">
-            <a href="#" data-bs-toggle="modal" data-bs-target="#videoModal2">
-            <img src="img/tvnews/2.jpg" class="card-img-top" alt="Video 2">
-            </a>
-            <div class="card-body">
-            <p class="card-text">Some description about the video.</p>
             </div>
-        </div>
-        </div>
-        <div class="col-md-4">
-        <div class="card">
-            <a href="#" data-bs-toggle="modal" data-bs-target="#videoModal3">
-            <img src="img/tvnews/3.jpg" class="card-img-top" alt="Video 3">
-            </a>
-            <div class="card-body">
-            <p class="card-text">Some description about the video.</p>
+            <!-- Video Modals -->
+            <div class="modal fade" id="videoModal_{{$key}}" tabindex="-1" aria-labelledby="videoModal1Label" aria-hidden="true">
+                <div class="modal-dialog modal-dialog-centered modal-lg">
+                <div class="modal-content">
+                    <div class="modal-body">
+                    <div class="embed-responsive embed-responsive-4by3">
+                        <iframe class="embed-responsive-item" src="{{ $videoGallery->link }}"></iframe>
+                    </div>
+                    </div>
+                </div>
+                </div>
             </div>
-        </div>
-        </div>
+        @empty
+            <h1>No Content</h1>
+        @endforelse
+        
     </div>
 </div>
 </section>
