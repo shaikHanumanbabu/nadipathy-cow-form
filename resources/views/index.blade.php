@@ -100,18 +100,18 @@
         h.insertBefore(e, h.lastChild);
     })(window, document);
 
-    $(function() {
-        $('#id_0').datetimepicker({
-                "allowInputToggle": true,
-                "showClose": true,
-                "showClear": true,
-                "showTodayButton": true,
-                "format": "YYYY/MM/DD hh:mm:ss A",
-                "daysOfWeekDisabled": [0, 6],
-                "disabledHours" : [0, 1, 2, 7, 8, 9, 10, 11, 12],
-            });
+    // $(function() {
+    //     $('#id_0').datetimepicker({
+    //             "allowInputToggle": true,
+    //             "showClose": true,
+    //             "showClear": true,
+    //             "showTodayButton": true,
+    //             "format": "YYYY-MM-DD hh:mm:ss",
+    //             "daysOfWeekDisabled": [0, 6],
+    //             "disabledHours" : [0, 1, 2, 7, 8, 9, 10, 11, 12],
+    //         });
 
-    })
+    // })
 </script>
 </body>
 

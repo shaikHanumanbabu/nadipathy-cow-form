@@ -65,7 +65,9 @@ class TvNewController extends Controller
      */
     public function edit(TvNew $tv_news)
     {
-        //
+        return view('admin.tv-news.tv-news-form', [
+            'tv_news' => $tv_news
+        ]);
     }
 
     /**
@@ -77,7 +79,13 @@ class TvNewController extends Controller
      */
     public function update(Request $request, TvNew $tv_news)
     {
-        //
+        $validated = $request->validate([
+            'link' => 'required',
+        ]);        
+
+        $tv_news->update($validated);
+
+        return redirect()->route('tv-news.index')->with('success', 'Tv News updated successfully.');
     }
 
     /**

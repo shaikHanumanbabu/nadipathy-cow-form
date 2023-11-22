@@ -67,7 +67,9 @@ class BlogController extends Controller
      */
     public function edit(Blog $blog)
     {
-        //
+        return view('admin.blogs.blogs-form', [
+            'blog' => $blog
+        ]);
     }
 
     /**
@@ -79,7 +81,17 @@ class BlogController extends Controller
      */
     public function update(Request $request, Blog $blog)
     {
-        //
+        $validated = $request->validate([
+            'title' => 'required',
+            'short_description' => 'nullable|min:5',
+            'btn_title' => 'required',
+            'btn_link' => 'required',
+        ]);
+
+       
+
+        $blog->update($validated);
+        return redirect()->route('blogs.index')->with('success', 'Blog updated successfully.');
     }
 
     /**

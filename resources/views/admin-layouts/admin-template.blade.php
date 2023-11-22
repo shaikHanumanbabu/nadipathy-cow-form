@@ -211,7 +211,7 @@
     
 
     <li class="nav-item">
-      <a class="nav-link collapsed active" href="{{ route('appointments.index') }}">
+      <a class="nav-link collapsed active" href="{{ route('appointments.index') }}?type=contact">
         <i class="bi bi-grid"></i><span>Contacts</span>
       </a>
     </li>

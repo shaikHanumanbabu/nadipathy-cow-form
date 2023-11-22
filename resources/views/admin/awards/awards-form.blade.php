@@ -13,7 +13,7 @@
     @endif
     <div class="container col-12 dashboard">
 
-        <form enctype="multipart/form-data" class="row g-3" method="POST" action="{{ isset($award) ? route('awards.update', ['social_medium' =>  $award->id ]) :  route('awards.store') }}">
+        <form enctype="multipart/form-data" class="row g-3" method="POST" action="{{ isset($award) ? route('awards.update', ['award' =>  $award->id ]) :  route('awards.store') }}">
             @csrf
             @if (isset($award))
                 @method('PATCH')

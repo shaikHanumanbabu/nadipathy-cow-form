@@ -75,7 +75,10 @@ class AwardController extends Controller
      */
     public function edit(Award $award)
     {
-        //
+        return view('admin.awards.awards-form', [
+            'award' => $award
+        ]);
+        
     }
 
     /**
@@ -87,7 +90,22 @@ class AwardController extends Controller
      */
     public function update(Request $request, Award $award)
     {
-        //
+        $validated = $request->validate([
+            'image' => 'nullable',
+        ]);
+        if($request->hasFile('image')) {
+            $fileName = auth()->id() . '_' . time() . '.'. $request->image->extension();  
+    
+            $type = $request->image->getClientMimeType();
+            $size = $request->image->getSize();
+            
+            $request->image->move(public_path('image'), $fileName);
+    
+            $validated['image'] = $fileName;
+        }
+
+        $award->update($validated);
+        return redirect()->route('awards.index')->with('success', 'Awards updated successfully.');
     }
 
     /**

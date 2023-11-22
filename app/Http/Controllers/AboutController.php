@@ -199,7 +199,7 @@ class AboutController extends Controller
 
         $about->update($validated);
 
-        return redirect()->route('about.edit')->with('success', 'About added successfully.');
+        return redirect()->route('about.edit', ['about' => $about->id])->with('success', 'About added successfully.');
     }
 
     /**

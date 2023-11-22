@@ -35,6 +35,8 @@
                 @if (isset($photogallery->id))
                     <img src="/image/{{ $photogallery->image }}" alt="{{ $photogallery->title }}">
                 @endif
+
+               
                 {{-- <p style="margin-top: 10px; font-size: 14px;"><b>Note:</b> <br>
                     1. Follow the dimensions to upload the image (1920px / 882px). <br>
                     2. Only jpg, jpeg, png formats allowed. <br>
@@ -47,7 +49,11 @@
                 <label for="image" class="mb-1">Upload Photo Gallery Images</label>
                 <input type="file" class="form-control" id="image" name="gallery_image[]" multiple>
 
-                
+                @if (isset($photogallery->id))
+                    @foreach ($photogallery->galleryimage as $gallery)
+                        <img src="/image/{{ $gallery->image }}" alt="{{ $photogallery->title }}">
+                    @endforeach
+                @endif
                 <p style="margin-top: 10px; font-size: 14px;"><b>Note:</b> <br>
                     1. Follow the dimensions to upload the image (1920px / 882px). <br>
                     2. Only jpg, jpeg, png formats allowed. <br>

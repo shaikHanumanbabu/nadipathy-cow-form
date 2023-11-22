@@ -104,9 +104,12 @@ class PhotoGalleryController extends Controller
      * @param  \App\Models\photoGallery  $photoGallery
      * @return \Illuminate\Http\Response
      */
-    public function edit(photoGallery $photoGallery)
+    public function edit(photoGallery $photogallery)
     {
-        //
+        return view('admin.photo-gallery.photo-gallery-form', [
+            'photogallery' => $photogallery
+        ]);
+        
     }
 
     /**
@@ -116,9 +119,45 @@ class PhotoGalleryController extends Controller
      * @param  \App\Models\photoGallery  $photoGallery
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, photoGallery $photoGallery)
+    public function update(Request $request, photoGallery $photogallery)
     {
-        //
+        $validated = $request->validate([
+            'title' => 'required',
+        ]);
+
+        $validated['title'] = Str::slug($request->get('title'));
+
+        if($request->hasFile('image')) {
+            $fileName = auth()->id() . '_' . time() . '.'. $request->image->extension();  
+    
+            $type = $request->image->getClientMimeType();
+            $size = $request->image->getSize();
+            
+            $request->image->move(public_path('image'), $fileName);
+    
+            $validated['image'] = $fileName;
+
+        } 
+
+        $photogallery->update($validated);
+
+        if ($request->hasFile('gallery_image')) {
+            $files = $request->file('gallery_image');
+            foreach($files as $key =>  $file)
+            {
+                // dd($file);
+                $extension = $file->getClientOriginalExtension();
+                $filename = time().'-'.$key."-".date('his')."-".".".$extension;
+                $file->move(public_path('image'), $filename);
+                $photogallery->galleryimage()->create([
+                    'image' => $filename
+                ]);
+                
+            }
+
+        }
+
+        return redirect()->route('photogalleries.index')->with('success', 'Photo Gallery updated successfully.');
     }
 
     /**

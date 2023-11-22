@@ -7,7 +7,7 @@
   <div class="pagetitle">
     <div class="row">
       <div class="col-lg-9">
-        <h1>View Appointments</h1>
+        <h1>View {{request()->get('type') != 'contact' ? "Appointments" : "Contacts"}} </h1>
       </div>
     </div>
   </div>
@@ -29,7 +29,12 @@
               <tr>
                 <th>S.No.</th>
                 <th>Cutomer Name</th>
-                <th>Visiting Time</th>
+                <th>Phone Number</th>
+                <th>Email</th>
+                @if (request()->get('type') != 'contact')
+                  <th>Visiting Time</th>
+                    
+                @endif
                 <th>address</th>
               </tr>
           </thead>
@@ -38,7 +43,13 @@
               <tr>
                 <td>{{ $appointment->id }}</td>
                 <td>{{ $appointment->name }}</td>
-                <td>{{ $appointment->visiting_datetime }}</td>
+                <td>{{ $appointment->phone_number }}</td>
+                <td>{{ $appointment->email }}</td>
+                @if (request()->get('type') != 'contact')
+                  <td>{{ $appointment->visiting_datetime }}</td>
+                  
+                    
+                @endif
                 <td>{{ $appointment->address }}</td>
               </tr>
               @empty
