@@ -56,17 +56,38 @@ class CowController extends Controller
     
             $validated['main_image'] = $fileName;
 
-        } else {
-            $validated['main_image'] = 'dummy.png';
+        } 
 
-        }
+        if($request->hasFile('bg_image')) {
+            $fileName = auth()->id() . '_' . time() . '.'. $request->bg_image->extension();  
+    
+            $type = $request->bg_image->getClientMimeType();
+            $size = $request->bg_image->getSize();
+            
+            $request->bg_image->move(public_path('image'), $fileName);
+    
+            $validated['bg_image'] = $fileName;
+
+        } 
 
         
         $cow = Cow::create($validated);
-        foreach ($request->file('image_name') as $imagefile) {
-            $path = $imagefile->move(public_path('image'), $fileName);
-            
-            
+        
+
+        if ($request->hasFile('image_name')) {
+            $files = $request->file('image_name');
+            foreach($files as $key =>  $file)
+            {
+                // dd($file);
+                $extension = $file->getClientOriginalExtension();
+                $filename = time().'-'.$key."-".date('his')."-".".".$extension;
+                $file->move(public_path('image'), $filename);
+                $cow->galleryimage()->create([
+                    'image_name' => $filename
+                ]);
+                
+            }
+
         }
 
         return redirect()->route('cows.index')->with('success', 'Cow added successfully.');
@@ -92,7 +113,12 @@ class CowController extends Controller
      */
     public function edit(Cow $cow)
     {
-        //
+        dd($cow->galleryimage);
+        return view('admin.cows.cow-form',[
+            'breeds' => Breed::all(),
+            'sub_categories' => SubCategories::all(),
+            'cow' => $cow
+        ]);
     }
 
     /**

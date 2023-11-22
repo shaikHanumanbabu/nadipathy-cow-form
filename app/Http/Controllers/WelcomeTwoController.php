@@ -84,7 +84,7 @@ class WelcomeTwoController extends Controller
         // dd($validated);
         $welcomeTwo->update($validated);
 
-        return redirect()->route('welcome_twos.index')->with('success', 'Successfully updated!.');
+        return redirect()->route('welcome_twos.edit', ['welcome_two' => 1])->with('success', 'Successfully updated!.');
     }
 
     /**

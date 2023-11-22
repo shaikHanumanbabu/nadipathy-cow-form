@@ -11,9 +11,15 @@
             @endforeach
         </div>
     @endif
+
+    @if (session('success'))
+    <div class="alert alert-success">
+      {{ session('success') }}
+  </div>
+  @endif
     <div class="container col-12 dashboard">
 
-        <form enctype="multipart/form-data" class="row g-3" method="POST" action="{{ isset($about) ? route('about.update', ['social_medium' =>  $about->id ]) :  route('about.store') }}">
+        <form enctype="multipart/form-data" class="row g-3" method="POST" action="{{ isset($about) ? route('about.update', ['about' =>  $about->id ]) :  route('about.store') }}">
             @csrf
             @if (isset($about))
                 @method('PATCH')

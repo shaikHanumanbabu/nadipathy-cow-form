@@ -75,9 +75,11 @@ class PressNewController extends Controller
      * @param  \App\Models\PressNew  $pressNew
      * @return \Illuminate\Http\Response
      */
-    public function edit(PressNew $pressNew)
+    public function edit(PressNew $p_news)
     {
-        //
+        return view('admin.press-news.press-news-form', [
+            'press_news' => $p_news
+        ]);
     }
 
     /**
@@ -87,9 +89,25 @@ class PressNewController extends Controller
      * @param  \App\Models\PressNew  $pressNew
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, PressNew $pressNew)
+    public function update(Request $request, PressNew $p_news)
     {
-        //
+        $validated = $request->validate([
+            'image' => 'required',
+        ]);
+        if($request->hasFile('image')) {
+            $fileName = auth()->id() . '_' . time() . '.'. $request->image->extension();  
+    
+            $type = $request->image->getClientMimeType();
+            $size = $request->image->getSize();
+            
+            $request->image->move(public_path('press-news'), $fileName);
+    
+            $validated['image'] = $fileName;
+        }
+
+        $p_news->update($validated);
+
+        return redirect()->route('p-news.index')->with('success', 'Press News added successfully.');
     }
 
     /**

@@ -78,9 +78,12 @@ class SocialMediaController extends Controller
      * @param  \App\Models\SocialMedia  $socialMedia
      * @return \Illuminate\Http\Response
      */
-    public function edit(SocialMedia $socialMedia)
+    public function edit(SocialMedia $social_medium)
     {
-        //
+        return view('admin.social-media.social-media-form', [
+            'social_media' => $social_medium
+        ]);
+        
     }
 
     /**
@@ -90,9 +93,28 @@ class SocialMediaController extends Controller
      * @param  \App\Models\SocialMedia  $socialMedia
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, SocialMedia $socialMedia)
+    public function update(Request $request, SocialMedia $social_medium)
     {
-        //
+        $validated = $request->validate([
+            'title' => 'required',
+            'link' => 'required',
+            
+        ]);
+
+        if($request->hasFile('image')) {
+            $fileName = auth()->id() . '_' . time() . '.'. $request->image->extension();  
+    
+            $type = $request->image->getClientMimeType();
+            $size = $request->image->getSize();
+            
+            $request->image->move(public_path('image'), $fileName);
+    
+            $validated['image'] = $fileName;
+
+        }
+
+        $social_medium->update($validated);
+        return redirect()->route('social-media.index')->with('success', 'Press News updated successfully.');
     }
 
     /**

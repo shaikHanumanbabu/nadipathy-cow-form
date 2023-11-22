@@ -16,7 +16,7 @@ class CreateCowImagesTable extends Migration
         Schema::create('cow_images', function (Blueprint $table) {
             $table->id();
             $table->string('image_name');
-            $table->foreignId('cow_id')->constrained();
+            $table->foreignId('cow_id')->references('id')->on('cows')->onDelete('cascade');
             $table->timestamps();
         });
     }

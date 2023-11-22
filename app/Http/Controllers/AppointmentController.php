@@ -12,10 +12,13 @@ class AppointmentController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
+    public function index(Request $request)
     {
+        $appointment = Appointment::where('from', '=', $request->get('type') ?? null)->get();
+
+        // dd($appointment);
         return view('admin.appointments.appointment-list', [
-            'appointments' => Appointment::all()
+            'appointments' => $appointment
         ]);
     }
 

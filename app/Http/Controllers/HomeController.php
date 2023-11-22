@@ -8,6 +8,7 @@ use App\Models\Award;
 use App\Models\Blog;
 use App\Models\Breed;
 use App\Models\Carousel;
+use App\Models\Cow;
 use App\Models\Marquee;
 use App\Models\photoGallery;
 use App\Models\PressNew;
@@ -153,6 +154,33 @@ class HomeController extends Controller
     {
         return view('products-info', [
             'products' => Product::all()
+        ]);
+    }
+    
+
+    public function categoryInfo(Request $request)
+    {
+        $cows = Cow::where('sub_categorie_id', '=', $request->get('subCategoryId'))->get();
+        
+        
+        return view('category-info', [
+            'cows' => $cows,
+            'sub_category' => $cows[0]->sub_category,
+            'breed' => $cows[0]->breed,
+        ]);
+    }
+
+    public function cowDetailsInfo(Request $request)
+    {
+        $cow = Cow::where('id', '=', $request->get('cowid'))->get()->first();
+        
+        
+        
+        
+        return view('cow-details', [
+            'cow' => $cow,
+            'sub_category' => $cow->sub_category,
+            'breed' => $cow->breed,
         ]);
     }
 }

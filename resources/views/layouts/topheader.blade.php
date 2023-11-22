@@ -12,7 +12,7 @@
                 <a class="btn btn-link text-light smediayt" href="https://www.youtube.com/@Miniaturecows" target="_blank"><i class="fab fa-youtube"></i></a>
                 <a class="btn btn-link text-light smediains" href="https://www.instagram.com/punganurucows/?utm_source=qr" target="_blank"><i class="fab fa-instagram"></i></a>
                 
-                <div class="nav-item dropdown" style="z-index: 9999; margin-left: 10px;">
+                {{-- <div class="nav-item dropdown" style="z-index: 9999; margin-left: 10px;">
                     <a href="#" class="nav-link dropdown-toggle bg-primary text-light" data-bs-toggle="dropdown">
                         <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" fill="currentColor" class="bi bi-translate" viewBox="0 0 16 16">
                             <path d="M4.545 6.714 4.11 8H3l1.862-5h1.284L8 8H6.833l-.435-1.286H4.545zm1.634-.736L5.5 3.956h-.049l-.679 2.022H6.18z"></path>
@@ -24,7 +24,7 @@
                         <a href="{{ url("/?lang=hin") }}" class="dropdown-item">हिंदी</a>
                         <a href="{{ url("?lang=te") }}" class="dropdown-item">తెలుగు</a>
                     </div>
-                </div>
+                </div> --}}
             </div>
         </div>
         <div class="col-lg-5 text-end">
@@ -40,9 +40,17 @@
     </div>
 </div>
 
-<div class="modal fade show" id="appointment" tabindex="-1" aria-modal="true" role="dialog" style="display: {{ session('appointment_success') ? 'block' : 'none' }};">
+<div class="modal fade show" id="appointment" tabindex="-1" aria-modal="true" role="dialog" style="display: {{ session('appointment_success') || $errors->any() ? 'block' : 'none' }};">
     <div class="modal-dialog modal-dialog-centered">
         <div class="modal-content" style="padding: 25px;">
+
+            @if ($errors->any())
+            <div class="alert alert-danger">
+                @foreach ($errors->all() as $error)
+                    <a href="#" class="alert-link">{{$error}}</a><br>
+                @endforeach
+            </div>
+        @endif
         <form class="row g-3" method="POST" action="{{ route('store-appointment') }}">
             @csrf
             <h5>Submit Your Details</h5>
@@ -52,22 +60,22 @@
               </div>
             @endif
             <div class="col-md-12 mb-1">
-            <input type="text" class="form-control" id="name" name="name" placeholder="Your Name">
+            <input type="text" class="form-control" id="name" name="name" placeholder="Your Name" value="{{ old('name') }}">
             </div>
             <div class="col-md-12 mb-1">
-            <input type="number" class="form-control" id="phone_number" name="phone_number" placeholder="Your Mobile Number">
+            <input type="number" class="form-control" id="phone_number" name="phone_number" placeholder="Your Mobile Number"  value="{{ old('phone_number') }}">
             </div>
             <div class="col-md-12 mb-1">
-            <input type="email" class="form-control" id="email" name="email" placeholder="Your Email ID">
+            <input type="email" class="form-control" id="email" name="email" placeholder="Your Email ID" value="{{ old('email') }}">
             </div>
             <div class="col-md-12 mb-1">
-            <input type="text" class="form-control" id="address" name="address" placeholder="Your Place">
+            <input type="text" class="form-control" id="address" name="address" placeholder="Your Place" value="{{ old('address') }}">
             </div>
 
-            <div class="form-group">
+            {{-- <div class="form-group">
                 <label for="id_start_datetime">Select your date of visiting</label>
                 <div class="input-group date" id="id_0">
-                    <input type="text" value="05/16/2018 12:31:00 AM" class="form-control" required/>
+                    <input type="text" value="{{ $errors->has('visiting_datetime') ? old('visiting_datetime') :  '05/16/2018 12:31:00 AM'}}" name="visiting_datetime" class="form-control" required/>
                     <div class="input-group-addon input-group-append">
                         <div class="input-group-text">
                             <i class="glyphicon glyphicon-calendar fa fa-calendar"></i>
@@ -77,11 +85,11 @@
                 <p><b>Note:</b> <br>
                     Visiting Days are available on Monday to Thursday and Timings are 3.00 pm to 6.00 pm only 
                     </p>
-            </div>
-            {{-- <div class="col-md-12 mb-1">
-            <label for="">Select your date of visiting</label>
-            <input type="datetime-local" class="form-control" id="datee" name="visiting_datetime" placeholder="Appointment Date">
             </div> --}}
+            <div class="col-md-12 mb-1">
+            <label for="">Select your date of visiting</label>
+            <input type="datetime-local" class="form-control" id="datee" name="visiting_datetime" value="{{ $errors->has('visiting_datetime') ? old('visiting_datetime') :  ''}}" placeholder="Appointment Date">
+            </div>
             
             <div class="col-md-12">
             <button type="submit" class="btn btn-primary">Submit</button>

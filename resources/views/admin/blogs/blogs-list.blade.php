@@ -24,7 +24,7 @@
     <div class="card courses_page overflow-auto">
 
       <div class="card-body">
-        <p align="right"><a href="{{ route('blogs.create') }}">Add Blogs</a></p>
+        <p align="right"><a class="btn btn-primary" href="{{ route('blogs.create') }}">Add Blogs</a></p>
         <table id="example" class="display" style="width:100%">
           <thead>
               <tr>

@@ -77,6 +77,8 @@ Route::get('/blog', [HomeController::class, 'blogsInfo']);
 Route::get('/contact', [HomeController::class, 'contactInfo']);
 Route::post('/contact', [HomeController::class, 'contactInfo'])->name('contact.post');
 Route::get('/products-info', [HomeController::class, 'productsInfo']);
+Route::get('/subcategory', [HomeController::class, 'categoryInfo']);
+Route::get('/cow-details', [HomeController::class, 'cowDetailsInfo']);
 
 Route::post('/store-appointment', [HomeController::class, 'store_appointment'])->name('store-appointment');
 Route::get('/admin', [AdminController::class, 'index']);

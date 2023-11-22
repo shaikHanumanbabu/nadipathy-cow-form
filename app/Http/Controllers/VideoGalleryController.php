@@ -79,9 +79,12 @@ class VideoGalleryController extends Controller
      * @param  \App\Models\VideoGallery  $videoGallery
      * @return \Illuminate\Http\Response
      */
-    public function edit(VideoGallery $videoGallery)
+    public function edit(VideoGallery $videogallery)
     {
-        //
+        return view('admin.video-gallery.video-gallery-form', [
+            'videogallery' => $videogallery
+        ]);
+        
     }
 
     /**
@@ -91,9 +94,27 @@ class VideoGalleryController extends Controller
      * @param  \App\Models\VideoGallery  $videoGallery
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, VideoGallery $videoGallery)
+    public function update(Request $request, VideoGallery $videogallery)
     {
-        //
+        $validated = $request->validate([
+            'title' => 'required',
+            'link' => 'required',
+        ]);
+
+        if($request->hasFile('image')) {
+            $fileName = auth()->id() . '_' . time() . '.'. $request->image->extension();  
+    
+            $type = $request->image->getClientMimeType();
+            $size = $request->image->getSize();
+            
+            $request->image->move(public_path('image'), $fileName);
+    
+            $validated['image'] = $fileName;
+
+        }         
+        $videogallery->update($validated);
+        
+        return redirect()->route('videogalleries.index')->with('success', 'Video Gallery updated successfully.');
     }
 
     /**

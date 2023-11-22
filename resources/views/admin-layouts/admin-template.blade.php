@@ -76,7 +76,7 @@
           </a>
         </li>
         <li>
-          <a href="{{ route('welcome_ones.index') }}">
+          <a href="{{ route('welcome_ones.edit', ['welcome_one' => 1]) }}">
             <i class="bi bi-circle"></i><span>Welcome Text</span>
           </a>
         </li>
@@ -92,7 +92,7 @@
         </li>
         
         <li>
-          <a href="{{ route('welcome_twos.index') }}">
+          <a href="{{ route('welcome_twos.edit', ['welcome_two' => 1]) }}">
             <i class="bi bi-circle"></i><span>Welcome Text2</span>
           </a>
         </li>
@@ -112,31 +112,15 @@
           </a>
         </li>
         <li>
-          <a href="{{ route('about.index') }}">
+          <a href="{{ route('about.edit', ['about' => 1]) }}">
             <i class="bi bi-circle"></i><span>About</span>
           </a>
         </li>
         
-        <li>
-          <a href="{{ route('awards.index') }}">
-            <i class="bi bi-circle"></i><span>Awards</span>
-          </a>
-        </li>
-        <li>
-          <a href="{{ route('blogs.index') }}">
-            <i class="bi bi-circle"></i><span>Blogs</span>
-          </a>
-        </li>
-        <li>
-          <a href="{{ route('products.index') }}">
-            <i class="bi bi-circle"></i><span>Products</span>
-          </a>
-        </li>
-        <li>
-          <a href="{{ route('videogalleries.index') }}">
-            <i class="bi bi-circle"></i><span>Video Gallery</span>
-          </a>
-        </li>
+        
+        
+        
+        
       </ul>
     </li>
 
@@ -163,6 +147,12 @@
     {{--  --}}
 
     <li class="nav-item">
+      <a class="nav-link collapsed active" href="{{ route('products.index') }}">
+        <i class="bi bi-grid"></i><span>Products</span>
+      </a>
+    </li>
+
+    <li class="nav-item">
       <a class="nav-link collapsed" data-bs-target="#media" data-bs-toggle="collapse" href="#">
         <i class="bi bi-file-earmark-text"></i><span>Media</span><i class="bi bi-chevron-down ms-auto"></i>
       </a>
@@ -184,6 +174,50 @@
         </li>
       </ul>
     </li>
+
+    <li class="nav-item">
+      <a class="nav-link collapsed active" href="{{ route('awards.index') }}">
+        <i class="bi bi-grid"></i><span>Awards</span>
+      </a>
+    </li>
+
+    
+    <li class="nav-item">
+      <a class="nav-link collapsed" data-bs-target="#memories" data-bs-toggle="collapse" href="#">
+        <i class="bi bi-file-earmark-text"></i><span>Memories</span><i class="bi bi-chevron-down ms-auto"></i>
+      </a>
+      <ul id="memories" class="nav-content collapse " data-bs-parent="#sidebar-nav">       
+        
+        <li >
+          <a  href="{{ route('photogalleries.index') }}">
+            <i class="bi bi-grid"></i><span>Photo Gallery</span>
+          </a>
+        </li>
+
+        <li >
+          <a  href="{{ route('videogalleries.index') }}">
+            <i class="bi bi-grid"></i><span>Video Gallery</span>
+          </a>
+        </li>
+      </ul>
+    </li>
+
+    <li class="nav-item">
+      <a class="nav-link collapsed active" href="{{ route('blogs.index') }}">
+        <i class="bi bi-grid"></i><span>Blogs</span>
+      </a>
+    </li>
+
+    
+
+    <li class="nav-item">
+      <a class="nav-link collapsed active" href="{{ route('appointments.index') }}?type=contact">
+        <i class="bi bi-grid"></i><span>Contacts</span>
+      </a>
+    </li>
+
+    
+    
   </ul>
 </aside><!-- End Sidebar-->
   @yield('content')

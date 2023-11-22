@@ -16,7 +16,7 @@
     
     <div class="container col-12 dashboard">
 
-        <form enctype="multipart/form-data" class="row g-3" method="POST" action="{{ isset($subcategorie) ? route('subcategories.update', ['subcategorie' => $subcategorie->id ]) :  route('subcategories.store') }}">
+        <form enctype="multipart/form-data" class="row g-3" method="POST" action="{{ isset($subcategorie) ? route('subcategories.update', ['subcategory' => $subcategorie->id ]) :  route('subcategories.store') }}">
             @csrf
             @if (isset($subcategorie))
                 @method('PATCH')
@@ -27,7 +27,7 @@
                     <option>-- Select Breed --</option>
                     @foreach ($breeds as $breed)
                     
-                    <option value="{{$breed->id}}">{{$breed->title}}</option>
+                    <option value="{{$breed->id}}" {{ $subcategorie->breed_id == $breed->id ? "selected" : "" }}>{{$breed->title}}</option>
                     @endforeach
                   </select>
             </div>

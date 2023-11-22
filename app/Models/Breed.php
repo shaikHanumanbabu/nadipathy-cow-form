@@ -21,4 +21,9 @@ class Breed extends Model
     {
         return $this->hasMany(SubCategories::class);
     }
+
+    public function cow()
+    {
+        return $this->hasMany(Cow::class);
+    }
 }

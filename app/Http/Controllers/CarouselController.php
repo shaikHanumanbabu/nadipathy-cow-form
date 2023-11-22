@@ -100,12 +100,6 @@ class CarouselController extends Controller
     {
         $validated = $request->validated();
 
-        
-
-        foreach ($validated as $key => $value) {
-            // dd($key);
-            $carousel->$key = $value;
-        }
         if($request->hasFile('image')) {
             $fileName = auth()->id() . '_' . time() . '.'. $request->image->extension();  
     
@@ -114,11 +108,11 @@ class CarouselController extends Controller
             
             $request->image->move(public_path('image'), $fileName);
     
-            $carousel->image = $fileName;
+            $validated['image'] = $fileName;
 
         }
 
-        $carousel->save();
+        $carousel->update($validated);
 
         return redirect()->route('carousel.index')->with('success', 'Carousel updated successfully.');;
 
