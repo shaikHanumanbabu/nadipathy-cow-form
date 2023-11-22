@@ -3,7 +3,11 @@
 
 @section('content')
 <main id="main" class="main">
-    
+    @if (session('success'))
+    <div class="alert alert-success">
+      {{ session('success') }}
+  </div>
+  @endif
     <div class="container col-12 dashboard">
 
         <form enctype="multipart/form-data" class="row g-3" method="POST" action="{{ isset($welcomeOne) ? route('welcome_ones.update', ['welcome_one' => $welcomeOne->id ]) :  route('welcome_ones.store') }}">

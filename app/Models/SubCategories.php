@@ -13,4 +13,9 @@ class SubCategories extends Model
         'subcategory_image',
         'breed_id',
     ];
+
+    public function cows()
+    {
+        return $this->hasMany(Cow::class);
+    }
 }

@@ -90,6 +90,18 @@ class BreedController extends Controller
     {
         $validated = $request->validated();
 
+        if($request->hasFile('image')) {
+            $fileName = auth()->id() . '_' . time() . '.'. $request->image->extension();  
+    
+            $type = $request->image->getClientMimeType();
+            $size = $request->image->getSize();
+            
+            $request->image->move(public_path('image'), $fileName);
+    
+            $validated['image'] = $fileName;
+
+        }
+
         $breed->update($validated);
 
         return redirect()->route('breeds.index')->with('success', 'Breed Updated successfully.');

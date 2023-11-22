@@ -13,7 +13,7 @@
     @endif
     <div class="container col-12 dashboard">
 
-        <form enctype="multipart/form-data" class="row g-3" method="POST" action="{{ isset($press_news) ? route('p-news.update', ['p_nrews' => $press_news->id ]) :  route('p-news.store') }}">
+        <form enctype="multipart/form-data" class="row g-3" method="POST" action="{{ isset($press_news) ? route('p-news.update', ['p_news' => $press_news->id ]) :  route('p-news.store') }}">
             @csrf
             @if (isset($press_news))
                 @method('PATCH')
@@ -28,7 +28,7 @@
                 <input type="file" class="form-control" id="image" name="image">
 
                 @if (isset($press_news->id))
-                    <img src="/image/{{ $press_news->image }}" alt="{{ $press_news->title }}">
+                    <img src="{{ URL::asset("/press-news/$press_news->image")}}" alt="{{ $press_news->title }}">
                 @endif
                 <p style="margin-top: 10px; font-size: 14px;"><b>Note:</b> <br>
                     1. Follow the dimensions to upload the image (1920px / 882px). <br>

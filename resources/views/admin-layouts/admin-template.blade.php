@@ -76,7 +76,7 @@
           </a>
         </li>
         <li>
-          <a href="{{ route('welcome_ones.index') }}">
+          <a href="{{ route('welcome_ones.edit', ['welcome_one' => 1]) }}">
             <i class="bi bi-circle"></i><span>Welcome Text</span>
           </a>
         </li>
@@ -92,7 +92,7 @@
         </li>
         
         <li>
-          <a href="{{ route('welcome_twos.index') }}">
+          <a href="{{ route('welcome_twos.edit', ['welcome_two' => 1]) }}">
             <i class="bi bi-circle"></i><span>Welcome Text2</span>
           </a>
         </li>
@@ -112,7 +112,7 @@
           </a>
         </li>
         <li>
-          <a href="{{ route('about.index') }}">
+          <a href="{{ route('about.edit', ['about' => 1]) }}">
             <i class="bi bi-circle"></i><span>About</span>
           </a>
         </li>

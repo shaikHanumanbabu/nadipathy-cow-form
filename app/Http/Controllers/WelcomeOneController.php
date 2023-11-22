@@ -82,7 +82,7 @@ class WelcomeOneController extends Controller
         
         $welcomeOne->update($validated);
 
-        return redirect()->route('welcome_ones.index')->with('success', 'Successfully updated!.');
+        return redirect()->route('welcome_ones.edit', ['welcome_one' => 1])->with('success', 'Successfully updated!.');
     }
 
     /**

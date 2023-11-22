@@ -82,7 +82,9 @@ class ProductController extends Controller
      */
     public function edit(Product $product)
     {
-        //
+        return view('admin.products.products-form', [
+            'product' => $product
+        ]);
     }
 
     /**
@@ -94,7 +96,26 @@ class ProductController extends Controller
      */
     public function update(Request $request, Product $product)
     {
-        //
+        $validated = $request->validate([
+            'title' => 'required',
+            'original_price' => 'required',
+            'discount_price' => 'required',
+        ]);
+
+        if($request->hasFile('image')) {
+            $fileName = auth()->id() . '_' . time() . '.'. $request->image->extension();  
+    
+            $type = $request->image->getClientMimeType();
+            $size = $request->image->getSize();
+            
+            $request->image->move(public_path('image'), $fileName);
+    
+            $validated['image'] = $fileName;
+
+        } 
+
+        $product->update($validated);
+        return redirect()->route('products.index')->with('success', 'Product added successfully.');
     }
 
     /**

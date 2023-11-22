@@ -78,9 +78,14 @@ class SubCategoriesController extends Controller
      * @param  \App\Models\SubCategories  $subCategories
      * @return \Illuminate\Http\Response
      */
-    public function edit(SubCategories $subCategories)
+    public function edit(SubCategories $subcategory)
     {
-        //
+        return view('admin.subcategories.subcategories-form', [
+            'subcategorie' => $subcategory,
+            'breeds' => Breed::all()
+
+
+        ]);
     }
 
     /**
@@ -90,9 +95,24 @@ class SubCategoriesController extends Controller
      * @param  \App\Models\SubCategories  $subCategories
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, SubCategories $subCategories)
+    public function update(SubCategoryRequest $request, SubCategories $subcategory)
     {
-        //
+        $validated = $request->validated();
+
+        if($request->hasFile('image')) {
+            $fileName = auth()->id() . '_' . time() . '.'. $request->image->extension();  
+    
+            $type = $request->image->getClientMimeType();
+            $size = $request->image->getSize();
+            
+            $request->image->move(public_path('image'), $fileName);
+    
+            $validated['subcategory_image'] = $fileName;
+
+        }
+
+        $subcategory->update($validated);
+        return redirect()->route('subcategories.index')->with('success', 'SubCategory updated successfully.');
     }
 
     /**

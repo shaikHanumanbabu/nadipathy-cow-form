@@ -127,7 +127,9 @@ class AboutController extends Controller
      */
     public function edit(About $about)
     {
-        //
+        return view('admin.about.about-form', [
+            'about' => $about
+        ]);
     }
 
     /**
@@ -139,7 +141,65 @@ class AboutController extends Controller
      */
     public function update(Request $request, About $about)
     {
-        //
+        // dd($request->all());
+        $validated = $request->validate([
+            'title' => 'required',
+            'description' => 'required',
+            'creator_link' => 'required',
+            'system_link' => 'required',
+        ]);
+
+        if($request->hasFile('image_one')) {
+            $fileName = auth()->id() . '_' . uniqid() . '.'. $request->image_one->extension();  
+    
+            // $type = $request->image_one->getClientMimeType();
+            // $size = $request->image_one->getSize();
+            
+            $request->image_one->move(public_path('image'), $fileName);
+    
+            $validated['image_one'] = $fileName;
+
+        } 
+        if($request->hasFile('image_two')) {
+            $fileName = auth()->id() . '_' . uniqid() . '.'. $request->image_two->extension();  
+    
+            // $type = $request->image_two->getClientMimeType();
+            // $size = $request->image_two->getSize();
+            
+            $request->image_two->move(public_path('image'), $fileName);
+    
+            $validated['image_two'] = $fileName;
+
+        } 
+        if($request->hasFile('image_three')) {
+            $fileName = auth()->id() . '_' . uniqid() . '.'. $request->image_three->extension();  
+    
+            // $type = $request->image_three->getClientMimeType();
+            // $size = $request->image_three->getSize();
+            
+            $request->image_three->move(public_path('image'), $fileName);
+    
+            $validated['image_three'] = $fileName;
+
+        } 
+        if($request->hasFile('image_four')) {
+            $fileName = auth()->id() . '_' . uniqid() . '.'. $request->image_four->extension();  
+    
+            // $type = $request->image_four->getClientMimeType();
+            // $size = $request->image_four->getSize();
+            
+            $request->image_four->move(public_path('image'), $fileName);
+    
+            $validated['image_four'] = $fileName;
+
+        } 
+
+        // dd($validated);
+        // About::create($validated);
+
+        $about->update($validated);
+
+        return redirect()->route('about.edit')->with('success', 'About added successfully.');
     }
 
     /**

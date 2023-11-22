@@ -24,10 +24,10 @@
                 <div class="col-md-6 col-lg-4 col-xl-3 mb-4 wow fadeInUp" data-wow-delay="0.1s" style="visibility: visible; animation-delay: 0.1s; animation-name: fadeInUp;">
                     <div class="product-item">
                         <div class="position-relative">
-                        <a href="miniature-ground-surface.html"> <img class="img-fluid" src="{{ URL::asset("/image/$c->subcategory_image") }}" alt="{{ $c->subcategory_name }}"> </a>
+                        <a href="{{ url("/subcategory?subCategoryId=$c->id") }}"> <img class="img-fluid" src="{{ URL::asset("/image/$c->subcategory_image") }}" alt="{{ $c->subcategory_name }}"> </a>
                         </div>
                         <div class="text-center p-4">
-                            <a class="d-block h5" href="miniature-ground-surface.html">{{ $c->subcategory_name }}</a>
+                            <a class="d-block h5" href="{{ url("/subcategory?subCategoryId=$c->id") }}">{{ $c->subcategory_name }}</a>
                         </div>
                     </div>
                 </div>

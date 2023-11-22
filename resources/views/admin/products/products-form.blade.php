@@ -16,7 +16,7 @@
     
     <div class="container col-12 dashboard">
 
-        <form enctype="multipart/form-data" class="row g-3" method="POST" action="{{ isset($product) ? route('products.update', ['products' => $product->id ]) :  route('products.store') }}">
+        <form enctype="multipart/form-data" class="row g-3" method="POST" action="{{ isset($product) ? route('products.update', ['product' => $product->id ]) :  route('products.store') }}">
             @csrf
             @if (isset($product))
                 @method('PATCH')
