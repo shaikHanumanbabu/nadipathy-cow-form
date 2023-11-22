@@ -117,7 +117,7 @@ class HomeController extends Controller
 
     public function photoGalleryDetailedInfo(Request $request)
     {
-        $photoGalleryInfo = photoGallery::with('galleryimage')->where('title', '=', 'cow-hug-therapy-2020')->get()->first();
+        $photoGalleryInfo = photoGallery::with('galleryimage')->where('title', '=', $request->get('title'))->get()->first();
         if(!$request->get('title') || empty($photoGalleryInfo)) {
             abort(404, 'Page Not Found');
         }
