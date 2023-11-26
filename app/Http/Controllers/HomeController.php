@@ -53,6 +53,19 @@ class HomeController extends Controller
             'breeds' => Breed::all()
         ]);
 
+    } // 
+
+
+    public function breedInfo(Request $request)
+    {
+        $params = $request->get('breedId');
+
+        $breed = Breed::where('id', '=',  $params)->get()->first();
+        // resources/views/breed-info.blade.php
+        return view('breed-info', [
+            'breed' => $breed,
+        ]);
+
     }
 
     public function store_appointment(Request $request)

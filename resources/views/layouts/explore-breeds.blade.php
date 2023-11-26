@@ -20,7 +20,7 @@
                             <p class="mb-4 justify">
                                 {{ $breed->short_description }}
                             </p>
-                            <a class="btn btn-square rounded-circle" href="{{ $breed->link }}"><i class="bi bi-chevron-double-right"></i></a>
+                            <a class="btn btn-square rounded-circle" href="{{ route("breed-info") }}?breedId={{ $breed->id }}"><i class="bi bi-chevron-double-right"></i></a>
                         </div>
                     </div>
                 </div>

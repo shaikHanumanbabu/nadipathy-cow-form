@@ -1,5 +1,5 @@
 
-    <!-- Footer Start -->
+   <!-- Footer Start -->
     <div class="container-fluid bg-dark footer bg-footer mt-2 py-4 wow fadeIn" data-wow-delay="0.1s">
         <div class="container py-5">
             <div class="row g-5">
@@ -22,24 +22,31 @@
                 </div>
                 <div class="col-lg-2 col-md-6">
                     <h5 class="text-white mb-4">Quick Links</h5>
-                    <a class="btn btn-link" href="about.html">About Us</a>
-                    <a class="btn btn-link" href="contactus.html">Contact Us</a>
-                    <a class="btn btn-link" href="blog.html">Blog</a>
-                    <a class="btn btn-link" href="photo-gallery.html">Photo Gallery</a>
-                    <a class="btn btn-link" href="video-gallery.html">Video Gallery</a>
-                    <a class="btn btn-link" href="tv-news.html">TV News</a>
-                    <a class="btn btn-link" href="press-news.html">Press News</a>
-                    <a class="btn btn-link" href="social-media.html">Social Media</a>
+                    <a class="btn btn-link" href="{{ url('about-info') }}">About Us</a>
+                    <a class="btn btn-link" href="{{ url('contact') }}">Contact Us</a>
+                    <a class="btn btn-link" href="{{ url('blog') }}">Blog</a>
+                    <a class="btn btn-link" href="{{ url('photo-gallery') }}">Photo Gallery</a>
+                    <a class="btn btn-link" href="{{ url('video-gallery') }}">Video Gallery</a>
+                    <a class="btn btn-link" href="{{ url('tv-news-info') }}">TV News</a>
+                    <a class="btn btn-link" href="{{ url('press-news-info') }}">Press News</a>
+                    <a class="btn btn-link" href="{{ url('social-media-info') }}">Social Media</a>
                 </div>
                 <div class="col-lg-3 col-md-6">
                     <h5 class="text-white mb-4">Cows</h5>
-                    <a class="btn btn-link" href="miniature.html">Miniature Cows</a>
+
+                    @forelse ($breeds ?? App\Models\Breed::all() as $b)
+                        <a href="{{ url("/breed/?breedType=$b->title") }}" class="btn btn-link">{{ $b->title }}</a>
+                        
+                    @empty
+                        <a href="#" class="dropdown-item">No Breeds</a>
+                    @endforelse
+                    {{-- <a class="btn btn-link" href="miniature.html">Miniature Cows</a>
                     <a class="btn btn-link" href="punganur.html">Punganur Cows</a>
-                    <a class="btn btn-link" href="short-varieties.html">Short Varieties</a>
-                    <a class="btn btn-link" href="products.html">Products</a>
-                    <a class="btn btn-link" href="miniature-breed.html">What is Miniature</a>
-                    <a class="btn btn-link" href="punganur-breed.html">What is Punganur</a>
-                    <a class="btn btn-link" href="short-varieties-breed.html">What is Short Varieties</a>
+                    <a class="btn btn-link" href="short-varieties.html">Short Varieties</a> --}}
+                    <a class="btn btn-link" href="{{ url('products-info') }}">Products</a>
+                    {{-- <a class="btn btn-link" href="miniature-breed.html">What is Miniature</a> --}}
+                    {{-- <a class="btn btn-link" href="punganur-breed.html">What is Punganur</a> --}}
+                    {{-- <a class="btn btn-link" href="short-varieties-breed.html">What is Short Varieties</a> --}}
                 </div>
                 <div class="col-lg-4 col-md-6">
                     <a class="d-block" href="img/Breeding-line.jpg" data-lightbox="gallery">

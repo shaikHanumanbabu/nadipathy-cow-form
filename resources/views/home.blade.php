@@ -84,7 +84,31 @@
             <div class="col-lg-6">
                 <div class="rounded overflow-hidden">
                     <div class="row g-0">
-                        <div class="col-sm-6 wow fadeIn" data-wow-delay="0.1s">
+                        <div class="col-md-6" style="margin-bottom: 5px;">
+                            <div style="margin: 0 3px; padding: 18px; background-color: #5B8C51; border-radius: 10px;" data-aos="flip-right" data-aos-delay="500" class="aos-init aos-animate">
+                              <iframe width="100%" height="150" src="https://www.youtube.com/embed/G0ueso0Zy18?si=fghS9ORHSwUSEKsk" title="YouTube video player" frameborder="0" allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen=""></iframe>
+                              <button class="btn btn-danger" onclick="window.open('https://www.youtube.com/@PunganurCowsGoshala','_blank')"><i class="bi bi-play-btn-fill"></i> Subscribe</button>
+                            </div>
+                        </div>
+                        <div class="col-md-6" style="margin-bottom: 5px;">
+                            <div style="margin: 0 3px; padding: 18px; background-color: #EDDD5E; border-radius: 10px;" data-aos="flip-right" data-aos-delay="500" class="aos-init aos-animate">
+                              <iframe width="100%" height="150" src="https://www.youtube.com/embed/G0ueso0Zy18?si=fghS9ORHSwUSEKsk" title="YouTube video player" frameborder="0" allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen=""></iframe>
+                              <button class="btn btn-danger" onclick="window.open('https://www.youtube.com/@PunganurCowsGoshala','_blank')"><i class="bi bi-play-btn-fill"></i> Subscribe</button>
+                            </div>
+                        </div>
+                        <div class="col-md-6" style="margin-bottom: 5px;">
+                            <div style="margin: 0 3px; padding: 18px; background-color: #EDDD5E; border-radius: 10px;" data-aos="flip-right" data-aos-delay="500" class="aos-init aos-animate">
+                              <iframe width="100%" height="150" src="https://www.youtube.com/embed/G0ueso0Zy18?si=fghS9ORHSwUSEKsk" title="YouTube video player" frameborder="0" allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen=""></iframe>
+                              <button class="btn btn-danger" onclick="window.open('https://www.youtube.com/@PunganurCowsGoshala','_blank')"><i class="bi bi-play-btn-fill"></i> Subscribe</button>
+                            </div>
+                        </div>
+                        <div class="col-md-6" style="margin-bottom: 5px;">
+                            <div style="margin: 0 3px; padding: 18px; background-color: #5B8C51; border-radius: 10px;" data-aos="flip-right" data-aos-delay="500" class="aos-init aos-animate">
+                              <iframe width="100%" height="150" src="https://www.youtube.com/embed/G0ueso0Zy18?si=fghS9ORHSwUSEKsk" title="YouTube video player" frameborder="0" allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen=""></iframe>
+                              <button class="btn btn-danger" onclick="window.open('https://www.youtube.com/@PunganurCowsGoshala','_blank')"><i class="bi bi-play-btn-fill"></i> Subscribe</button>
+                            </div>
+                        </div>
+                        <!-- <div class="col-sm-6 wow fadeIn" data-wow-delay="0.1s">
                             <div class="text-center bg-primary py-5 px-4">
                                 <img class="img-fluid mb-4" src="img/experience.png" alt="">
                                 <h1 class="display-6 text-white" data-toggle="counter-up">16</h1>
@@ -111,7 +135,7 @@
                                 <h1 class="display-6 text-white" data-toggle="counter-up">32</h1>
                                 <span class="fs-5 fw-semi-bold text-secondary">Our Inventions</span>
                             </div>
-                        </div>
+                        </div> -->
                     </div>
                 </div>
             </div>

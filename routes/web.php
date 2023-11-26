@@ -9,6 +9,7 @@ use App\Http\Controllers\BreedController;
 use App\Http\Controllers\CarouselController;
 use App\Http\Controllers\CowController;
 use App\Http\Controllers\DashboardController;
+use App\Http\Controllers\EventController;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\MarqueeController;
 use App\Http\Controllers\PhotoGalleryController;
@@ -65,6 +66,7 @@ return view('mail.test', ['details' => $details]);
 });
 
 Route::get('/breed', [HomeController::class, 'breedsType']);
+Route::get('/breedInfo', [HomeController::class, 'breedInfo'])->name('breed-info');
 Route::get('/about-info', [HomeController::class, 'aboutInfo']);
 Route::get('/press-news-info', [HomeController::class, 'pressNewsInfo']);
 Route::get('/tv-news-info', [HomeController::class, 'tvNewsInfo']);
@@ -104,6 +106,7 @@ Route::resource('/blogs', BlogController::class);
 Route::resource('/products', ProductController::class);
 Route::resource('/videogalleries', VideoGalleryController::class);
 Route::resource('/photogalleries', PhotoGalleryController::class);
+Route::resource('/events', EventController::class);
 /*
 Route::get('/tasks', function () use($tasks) {
     return view('index', [

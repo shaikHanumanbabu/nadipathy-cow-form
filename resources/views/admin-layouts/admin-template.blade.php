@@ -207,6 +207,11 @@
         <i class="bi bi-grid"></i><span>Blogs</span>
       </a>
     </li>
+    <li class="nav-item">
+      <a class="nav-link collapsed active" href="{{ route('events.index') }}">
+        <i class="bi bi-grid"></i><span>Events</span>
+      </a>
+    </li>
 
     
 
