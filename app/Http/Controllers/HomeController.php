@@ -9,6 +9,7 @@ use App\Models\Blog;
 use App\Models\Breed;
 use App\Models\Carousel;
 use App\Models\Cow;
+use App\Models\Event;
 use App\Models\Marquee;
 use App\Models\photoGallery;
 use App\Models\PressNew;
@@ -64,6 +65,31 @@ class HomeController extends Controller
         // resources/views/breed-info.blade.php
         return view('breed-info', [
             'breed' => $breed,
+        ]);
+
+    } // eventsInfo
+
+    public function eventsInfo(Request $request)
+    {
+
+        // resources/views/breed-info.blade.php
+        return view('events-info', [
+            'events' => Event::all(),
+        ]);
+
+    } // eventsInfo
+
+    public function eventsDetails(Request $request)
+    {
+
+        $params = $request->get('eventId');
+
+        $event = Event::where('id', '=',  $params)->get()->first();
+
+        
+        // resources/views/breed-info.blade.php
+        return view('events-details', [
+            'event' => $event,
         ]);
 
     }

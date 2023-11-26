@@ -70,6 +70,8 @@ Route::get('/breedInfo', [HomeController::class, 'breedInfo'])->name('breed-info
 Route::get('/about-info', [HomeController::class, 'aboutInfo']);
 Route::get('/press-news-info', [HomeController::class, 'pressNewsInfo']);
 Route::get('/tv-news-info', [HomeController::class, 'tvNewsInfo']);
+Route::get('/events-info', [HomeController::class, 'eventsInfo'])->name("events-info");
+Route::get('/events-details', [HomeController::class, 'eventsDetails'])->name('events-details');
 Route::get('/social-media-info', [HomeController::class, 'socialMediaInfo']);
 Route::get('/awards-rewards', [HomeController::class, 'awardsRewardsInfo']);
 Route::get('/photo-gallery', [HomeController::class, 'photoGalleryInfo']);
