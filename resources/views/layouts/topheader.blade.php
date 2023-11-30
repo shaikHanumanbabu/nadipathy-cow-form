@@ -5,13 +5,14 @@
                 <!-- <span>Follow Us:</span> -->
                 <a class="btn appoint" href="#" data-bs-toggle="modal" data-bs-target="#appointment">Get an Appointment</a>
                 <a class="btn btn-link text-light whatsapp" href="https://chat.whatsapp.com/ENOG6QfzbLF0xtdnx7GL4q" target="_blank"><i class="fab fa-whatsapp  px-1 py-1"></i> Join our Whatsapp Group</a>
-                <a class="btn btn-link text-light smediafb" href="https://www.facebook.com/Punganurcowsgoshala" target="_blank"><i class="fab fa-facebook-f"></i></a>
-                <a class="btn btn-link text-light smediayt" href="https://www.youtube.com/c/PunganurCowsGoshala" target="_blank"><i class="fab fa-youtube"></i></a>
-                <a class="btn btn-link text-light smediayt" href="https://www.youtube.com/channel/UCtpi28I5BpZV2WQdHNxiv5w" target="_blank"><i class="fab fa-youtube"></i></a>
-                <a class="btn btn-link text-light smediayt" href="https://www.youtube.com/@Minicows" target="_blank"><i class="fab fa-youtube"></i></a>
-                <a class="btn btn-link text-light smediayt" href="https://www.youtube.com/@Miniaturecows" target="_blank"><i class="fab fa-youtube"></i></a>
-                <a class="btn btn-link text-light smediains" href="https://www.instagram.com/punganurucows/?utm_source=qr" target="_blank"><i class="fab fa-instagram"></i></a>
-                
+                <!--<a class="btn btn-link text-light smediafb" href="https://www.facebook.com/Punganurcowsgoshala" target="_blank"><i class="fab fa-facebook-f"></i></a>-->
+                <!--<a class="btn btn-link text-light smediayt" href="https://www.youtube.com/c/PunganurCowsGoshala" target="_blank"><i class="fab fa-youtube"></i></a>-->
+                <!--<a class="btn btn-link text-light smediayt" href="https://www.youtube.com/channel/UCtpi28I5BpZV2WQdHNxiv5w" target="_blank"><i class="fab fa-youtube"></i></a>-->
+                <!--<a class="btn btn-link text-light smediayt" href="https://www.youtube.com/@Minicows" target="_blank"><i class="fab fa-youtube"></i></a>-->
+                <!--<a class="btn btn-link text-light smediayt" href="https://www.youtube.com/@Miniaturecows" target="_blank"><i class="fab fa-youtube"></i></a>-->
+                <!--<a class="btn btn-link text-light smediains" href="https://www.instagram.com/punganurucows/?utm_source=qr" target="_blank"><i class="fab fa-instagram"></i></a>-->
+                <a href="{{ url('awards-rewards') }}" class="btn appoint">{{__('messages.awards')}}</a>
+                <a href="{{ url('events-info') }}" class="btn appoint">Events</a>
                 {{-- <div class="nav-item dropdown" style="z-index: 9999; margin-left: 10px;">
                     <a href="#" class="nav-link dropdown-toggle bg-primary text-light" data-bs-toggle="dropdown">
                         <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" fill="currentColor" class="bi bi-translate" viewBox="0 0 16 16">

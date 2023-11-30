@@ -32,7 +32,7 @@
                     <a href="{{ url('social-media-info') }}" class="dropdown-item">{{__('messages.social media')}}</a>
                 </div>
             </div>
-            <a href="{{ url('awards-rewards') }}" class="nav-item nav-link">{{__('messages.awards')}}</a>
+            <!--<a href="{{ url('awards-rewards') }}" class="nav-item nav-link">{{__('messages.awards')}}</a>-->
             <div class="nav-item dropdown">
                 <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">{{__('messages.memories')}}</a>
                 <div class="dropdown-menu bg-light m-0">
@@ -40,7 +40,7 @@
                     <a href="{{ url('video-gallery') }}" class="dropdown-item">{{__('messages.video gallery')}}</a>
                 </div>
             </div>
-            <a href="{{ url('events-info') }}" class="nav-item nav-link">Events</a>
+            
             <a href="{{ url('events') }}" class="nav-item nav-link">{{__('messages.blog')}}</a>
             <a href="{{ url('contact') }}" class="nav-item nav-link">{{__('messages.contact')}}</a>
         </div>
