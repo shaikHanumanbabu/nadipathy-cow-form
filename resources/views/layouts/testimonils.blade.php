@@ -11,7 +11,7 @@
                     @foreach ($testimonials as $testimonial)
                         <div class="testimonial-item">
                             <img class="img-fluid mb-3" src="image/{{ $testimonial->image }}" alt="">
-                            <p class="fs-5">{{ $testimonial->description }}</p>
+                            <p class="fs-5">{!! $testimonial->description !!}</p>
                             <h5>{{ $testimonial->customer_name }}</h5>
                             <span class="text-primary">{{ $testimonial->profession }}</span>
                         </div>

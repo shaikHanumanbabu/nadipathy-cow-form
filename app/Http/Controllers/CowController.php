@@ -47,7 +47,7 @@ class CowController extends Controller
 
         // dd($request->file('main_image'));
         if($request->hasFile('main_image')) {
-            $fileName = auth()->id() . '_' . time() . '.'. $request->main_image->extension();  
+            $fileName = auth()->id() . '_' . uniqid() . '.'. $request->main_image->extension();  
     
             $type = $request->main_image->getClientMimeType();
             $size = $request->main_image->getSize();
@@ -59,7 +59,7 @@ class CowController extends Controller
         } 
 
         if($request->hasFile('bg_image')) {
-            $fileName = auth()->id() . '_' . time() . '.'. $request->bg_image->extension();  
+            $fileName = auth()->id() . '_' . uniqid() . '.'. $request->bg_image->extension();  
     
             $type = $request->bg_image->getClientMimeType();
             $size = $request->bg_image->getSize();
@@ -80,7 +80,7 @@ class CowController extends Controller
             {
                 // dd($file);
                 $extension = $file->getClientOriginalExtension();
-                $filename = time().'-'.$key."-".date('his')."-".".".$extension;
+                $filename = uniqid().'-'.$key."-".date('his')."-".".".$extension;
                 $file->move(public_path('image'), $filename);
                 $cow->galleryimage()->create([
                     'image_name' => $filename
