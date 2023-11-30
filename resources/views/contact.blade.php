@@ -7,7 +7,7 @@
         <h1 class="display-3 text-white mb-4 animated slideInDown">Contact us</h1>
         <nav aria-label="breadcrumb animated slideInDown">
             <ol class="breadcrumb justify-content-center mb-0">
-                <li class="breadcrumb-item"><a href="index.html">Home</a></li>
+                <li class="breadcrumb-item"><a href="{{ url('/') }}">Home</a></li>
                 <li class="breadcrumb-item active" aria-current="page">Contact us</li>
             </ol>
         </nav>

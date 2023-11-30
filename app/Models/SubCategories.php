@@ -16,6 +16,13 @@ class SubCategories extends Model
 
     public function cows()
     {
-        return $this->hasMany(Cow::class);
+        return $this->hasMany(Cow::class, 'sub_categorie_id', 'id');
     }
+
+    public function breed()
+    {
+        return $this->belongsTo(Breed::class, 'breed_id', 'id');
+    }
+
+    
 }

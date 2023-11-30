@@ -15,6 +15,7 @@ use App\Models\photoGallery;
 use App\Models\PressNew;
 use App\Models\Product;
 use App\Models\SocialMedia;
+use App\Models\SubCategories;
 use App\Models\Testimonial;
 use App\Models\TvNew;
 use App\Models\VideoGallery;
@@ -199,13 +200,15 @@ class HomeController extends Controller
 
     public function categoryInfo(Request $request)
     {
-        $cows = Cow::where('sub_categorie_id', '=', $request->get('subCategoryId'))->get();
         
         
+        $sub_category = SubCategories::find($request->get('subCategoryId'));
+
+        // dd($sub_category->breed);
         return view('category-info', [
-            'cows' => $cows,
-            'sub_category' => $cows[0]->sub_category,
-            'breed' => $cows[0]->breed,
+            'sub_category' => $sub_category,
+            // 'sub_category' => $cows[0]->sub_category,
+            // 'breed' => $cows[0]->breed,
         ]);
     }
 
@@ -213,6 +216,7 @@ class HomeController extends Controller
     {
         $cow = Cow::where('id', '=', $request->get('cowid'))->get()->first();
         
+        // dd($cow->sub_category);
         
         
         

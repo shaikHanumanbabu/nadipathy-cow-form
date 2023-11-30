@@ -12,7 +12,7 @@
                         <div class="position-relative">
                             <img class="img-fluid" src="img/miniature/ground-surface/mini-ground-thumbnail.jpg" alt="">
                             <div class="product-overlay">
-                                <a class="btn btn-square btn-secondary rounded-circle m-1" href="punganur.html"><i class="bi bi-link"></i></a>
+                                <a class="btn btn-square btn-secondary rounded-circle m-1" href="#"><i class="bi bi-link"></i></a>
                                 <!-- <a class="btn btn-square btn-secondary rounded-circle m-1" href=""><i class="bi bi-cart"></i></a> -->
                             </div>
                         </div>
@@ -27,7 +27,7 @@
                         <div class="position-relative">
                             <img class="img-fluid" src="img/miniaturebreed.jpg" alt="">
                             <div class="product-overlay">
-                                <a class="btn btn-square btn-secondary rounded-circle m-1" href="miniature.html"><i class="bi bi-link"></i></a>
+                                <a class="btn btn-square btn-secondary rounded-circle m-1" href="#"><i class="bi bi-link"></i></a>
                                 <!-- <a class="btn btn-square btn-secondary rounded-circle m-1" href=""><i class="bi bi-cart"></i></a> -->
                             </div>
                         </div>
@@ -42,7 +42,7 @@
                         <div class="position-relative">
                             <img class="img-fluid" src="img/miniaturepair.jpg" alt="">
                             <div class="product-overlay">
-                                <a class="btn btn-square btn-secondary rounded-circle m-1" href="miniature.html"><i class="bi bi-link"></i></a>
+                                <a class="btn btn-square btn-secondary rounded-circle m-1" href="#"><i class="bi bi-link"></i></a>
                                 <!-- <a class="btn btn-square btn-secondary rounded-circle m-1" href=""><i class="bi bi-cart"></i></a> -->
                             </div>
                         </div>
@@ -57,7 +57,7 @@
                         <div class="position-relative">
                             <img class="img-fluid" src="img/punganurbull.jpg" alt="">
                             <div class="product-overlay">
-                                <a class="btn btn-square btn-secondary rounded-circle m-1" href="punganur.html"><i class="bi bi-link"></i></a>
+                                <a class="btn btn-square btn-secondary rounded-circle m-1" href="#"><i class="bi bi-link"></i></a>
                                 <!-- <a class="btn btn-square btn-secondary rounded-circle m-1" href=""><i class="bi bi-cart"></i></a> -->
                             </div>
                         </div>
@@ -68,7 +68,7 @@
                     </div>
                 </div>
                 <div style="display: flex; justify-content: center;">
-                    <a href="miniature.html" class="btn btn-lg btn-secondary rounded-pill py-3 px-5 animated slideInLeft">View More</a>
+                    <a href="#" class="btn btn-lg btn-secondary rounded-pill py-3 px-5 animated slideInLeft">View More</a>
                 </div>
             </div>
         </div>
