@@ -107,7 +107,7 @@
           </a>
         </li>
         <li>
-          <a href="{{ route('appointments.index') }}type=appointment">
+          <a href="{{ route('appointments.index') }}?type=appointment">
             <i class="bi bi-circle"></i><span>Appointlments Info</span>
           </a>
         </li>
