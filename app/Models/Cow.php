@@ -14,6 +14,7 @@ class Cow extends Model
         'sub_categorie_id',
         'name',
         'link',
+        'show_in_explore',
         'main_image',
         'bg_image',
         'short_description',

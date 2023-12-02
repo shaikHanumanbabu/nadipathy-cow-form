@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Mail\MyTestMail;
 use App\Models\About;
 use App\Models\Appointment;
 use App\Models\Award;
@@ -23,6 +24,7 @@ use App\Models\WelcomeOne;
 use App\Models\WelcomeTwo;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\App;
+use Illuminate\Support\Facades\Mail;
 
 class HomeController extends Controller
 {
@@ -34,6 +36,9 @@ class HomeController extends Controller
 
         $locale = App::currentLocale();
 
+        $cows = Cow::where('show_in_explore', '=', 1)->get()->slice(0, 4);
+
+        
 
         return view('home', [
             'carousel' => Carousel::all(),
@@ -42,6 +47,7 @@ class HomeController extends Controller
             'breeds' => Breed::all(),
             'testimonials' => Testimonial::all(),
             'marquee' => Marquee::find(1),
+            'explore_cows' => $cows,
             
         ]);
     }
@@ -104,6 +110,9 @@ class HomeController extends Controller
             'address' => 'required',
             'visiting_datetime' => 'required',
         ]);
+
+        $validated['from'] = 'appointment';
+        Mail::to($validated['email'])->send( new MyTestMail($validated));
 
         $appointment = Appointment::create($validated);
 
@@ -184,7 +193,9 @@ class HomeController extends Controller
                 'address' => 'required',
             ]);
             $validated['from'] = 'contact';
+
             Appointment::create($validated);
+            Mail::to($validated['email'])->send( new MyTestMail($validated));
             return redirect()->back()->with('contact_success', 'Thank you for reaching out! Your message has been successfully received. Our team will get back to you shortly.');
         }
         return view('contact');

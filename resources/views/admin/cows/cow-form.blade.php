@@ -24,7 +24,7 @@
                     <option value="">-- Select Breed --</option>
                     @foreach ($breeds as $breed)
                     
-                    <option value="{{$breed->id}}">{{$breed->title}}</option>
+                    <option value="{{$breed->id}}" {{ isset($cow) && $cow->breed_id == $breed->id ? "selected" : "" }}>{{$breed->title}}</option>
                     @endforeach
                   </select>
             </div>
@@ -33,7 +33,7 @@
                     <option value="">-- Select Sub Category --</option>
                     @foreach ($sub_categories as $sub_categorie)
                     
-                    <option value="{{$sub_categorie->id}}">{{$sub_categorie->subcategory_name}}</option>
+                    <option value="{{$sub_categorie->id}}" {{ isset($cow) && $cow->sub_categorie_id == $sub_categorie->id ? "selected" : "" }}>{{$sub_categorie->subcategory_name}}</option>
                     @endforeach
                   </select>
             </div>
@@ -59,7 +59,7 @@
                 <input type="file" class="form-control" id="main_image" name="main_image" multiple>
 
                 @if (isset($cow->id))
-                    <img src="/image/{{ $cow->main_image }}" alt="{{ $cow->name }}">
+                    <img height="100px" src="/image/{{ $cow->main_image }}" alt="{{ $cow->name }}">
                 @endif
                 <p style="margin-top: 10px; font-size: 14px;"><b>Note:</b> <br>
                     1. Follow the dimensions to upload the image (1920px / 882px). <br>
@@ -73,7 +73,7 @@
                 <input type="file" class="form-control" id="bg_image" name="bg_image" multiple>
 
                 @if (isset($cow->id))
-                    <img src="/image/{{ $cow->bg_image }}" alt="{{ $cow->name }}">
+                    <img height="100px" src="/image/{{ $cow->bg_image }}" alt="{{ $cow->name }}">
                 @endif
                 
             </div>
@@ -83,10 +83,22 @@
                 <input type="file" class="form-control" id="image_name" name="image_name[]" multiple>
 
                 @if (isset($cow->id))
-                    <img src="/image/{{ $cow->main_image }}" alt="{{ $cow->name }}">
+                    @foreach ($cow->galleryimage as $gallery)
+                        <img height="100px" src="/image/{{ $gallery->image_name }}" alt="{{ $cow->name }}">
+                    @endforeach
                 @endif
                 
             </div>
+
+            {{-- <div class="col-md-12 mb-1">
+                <input type="checkbox" class="form-control" id="link" name="link" value="{{ isset($cow->link) ? $cow->link : old('link') }}" placeholder="Enter Youtube link">
+            </div> --}}
+
+            <div class="form-check">
+                {{-- <input class="form-check-input" type="checkbox" id="check1" name="option1" value="something" checked> --}}
+                <input class="form-check-input" type="checkbox" id="show_in_explore" name="show_in_explore">
+                <label class="form-check-label">Make this cow in explore section</label>
+              </div>
             <div class="col-md-12">
                 <button type="submit" class="btn btn-primary">
                     @if (isset($cow))

@@ -101,7 +101,7 @@
     })(window, document);
 
     // $(function() {
-    //     $('#id_0').datetimepicker({
+    //     $('#datee').datetimepicker({
     //             "allowInputToggle": true,
     //             "showClose": true,
     //             "showClear": true,

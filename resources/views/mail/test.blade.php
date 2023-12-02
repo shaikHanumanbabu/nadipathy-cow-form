@@ -21,33 +21,40 @@ tr:nth-child(even) {
 </head>
 <body>
 
-<h2>HTML Table</h2>
+  <p>Thank you for reaching out! Your message has been successfully received. Our team will get back to you shortly.</p>
+
+@if ($details['from'] == 'appointment')
+  <h2>Appointment Info </h2>
+    
+@else
+  <h2>Contact Info</h2>
+@endif
 
 <table>
   <tr>
-    <td>Alfreds Futterkiste</td>
-    <td>Maria Anders</td>
+    <td>Name</td>
+    <td>{{ $details['name'] }}</td>
   </tr>
   <tr>
-    <td>Centro comercial Moctezuma</td>
-    <td>Francisco Chang</td>
+    <td>Phone Number</td>
+    <td>{{ $details['phone_number'] }}</td>
   </tr>
   <tr>
-    <td>Ernst Handel</td>
-    <td>Roland Mendel</td>
+    <td>Email</td>
+    <td>{{ $details['email'] }}</td>
   </tr>
   <tr>
-    <td>Island Trading</td>
-    <td>Helen Bennett</td>
+    <td>Address</td>
+    <td>{{ $details['address'] }}</td>
   </tr>
+
+  @if ($details['from'] == 'appointment')
   <tr>
-    <td>Laughing Bacchus Winecellars</td>
-    <td>Yoshi Tannamuri</td>
+    <td>Visiting date and time</td>
+    <td>{{ $details['visiting_datetime'] }}</td>
   </tr>
-  <tr>
-    <td>Magazzini Alimentari Riuniti</td>
-    <td>Giovanni Rovelli</td>
-  </tr>
+  @endif
+  
 </table>
 
 </body>

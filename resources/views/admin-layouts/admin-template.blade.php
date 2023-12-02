@@ -111,11 +111,11 @@
             <i class="bi bi-circle"></i><span>Appointlments Info</span>
           </a>
         </li>
-        <li>
+        {{-- <li>
           <a href="{{ route('about.edit', ['about' => 1]) }}">
             <i class="bi bi-circle"></i><span>About</span>
           </a>
-        </li>
+        </li> --}}
         
         
         
@@ -124,7 +124,11 @@
       </ul>
     </li>
 
-
+    <li class="nav-item">
+      <a class="nav-link collapsed active" href="{{ route('about.edit', ['about' => 1]) }}">
+        <i class="bi bi-grid"></i><span>About</span>
+      </a>
+    </li>
     {{-- another menu --}}
     <li class="nav-item">
       <a class="nav-link collapsed" data-bs-target="#cows_bulls" data-bs-toggle="collapse" href="#">
@@ -143,6 +147,8 @@
         </li>
       </ul>
     </li>
+
+    
 
     {{--  --}}
 

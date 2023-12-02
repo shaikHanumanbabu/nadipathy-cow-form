@@ -29,6 +29,7 @@ class MyTestMail extends Mailable
      */
     public function build()
     {
-        return $this->view('mail.test', ['details' => $this->details]);
+        return $this->view('mail.test', ['details' => $this->details])
+                    ->subject($this->details['from'] == 'appointment' ? 'Appointment Info' : 'Contact Info');
     }
 }

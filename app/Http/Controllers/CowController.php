@@ -45,7 +45,9 @@ class CowController extends Controller
     {
         $validated = $request->validated();
 
-        // dd($request->file('main_image'));
+        if(isset($validated['show_in_explore']) && $validated['show_in_explore'] == 'on') {
+            $validated['show_in_explore'] = 1;
+        }
         if($request->hasFile('main_image')) {
             $fileName = auth()->id() . '_' . uniqid() . '.'. $request->main_image->extension();  
     
@@ -113,7 +115,7 @@ class CowController extends Controller
      */
     public function edit(Cow $cow)
     {
-        dd($cow->galleryimage);
+        
         return view('admin.cows.cow-form',[
             'breeds' => Breed::all(),
             'sub_categories' => SubCategories::all(),
@@ -128,9 +130,60 @@ class CowController extends Controller
      * @param  \App\Models\Cow  $cow
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Cow $cow)
+    public function update(StoreCowRequest $request, Cow $cow)
     {
-        //
+        $validated = $request->validated();
+
+        if(isset($validated['show_in_explore']) && $validated['show_in_explore'] == 'on') {
+            $validated['show_in_explore'] = 1;
+        }
+        
+        // dd($request->file('main_image'));
+        if($request->hasFile('main_image')) {
+            $fileName = auth()->id() . '_' . uniqid() . '.'. $request->main_image->extension();  
+    
+            $type = $request->main_image->getClientMimeType();
+            $size = $request->main_image->getSize();
+            
+            $request->main_image->move(public_path('image'), $fileName);
+    
+            $validated['main_image'] = $fileName;
+
+        } 
+
+        if($request->hasFile('bg_image')) {
+            $fileName = auth()->id() . '_' . uniqid() . '.'. $request->bg_image->extension();  
+    
+            $type = $request->bg_image->getClientMimeType();
+            $size = $request->bg_image->getSize();
+            
+            $request->bg_image->move(public_path('image'), $fileName);
+    
+            $validated['bg_image'] = $fileName;
+
+        } 
+
+        
+        $cow->update($validated);
+        
+
+        if ($request->hasFile('image_name')) {
+            $files = $request->file('image_name');
+            foreach($files as $key =>  $file)
+            {
+                // dd($file);
+                $extension = $file->getClientOriginalExtension();
+                $filename = uniqid().'-'.$key."-".date('his')."-".".".$extension;
+                $file->move(public_path('image'), $filename);
+                $cow->galleryimage()->create([
+                    'image_name' => $filename
+                ]);
+                
+            }
+
+        }
+
+        return redirect()->route('cows.index')->with('success', 'Cow updated successfully.');
     }
 
     /**

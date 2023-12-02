@@ -29,7 +29,7 @@ class StoreCowRequest extends FormRequest
             'sub_categorie_id' => 'required',
             'name' => 'required',
             'link' => 'required',
-            'image_name' => ['min:1', 'max:3'],
+            'show_in_explore' => 'nullable',
         ];
     }
 }
