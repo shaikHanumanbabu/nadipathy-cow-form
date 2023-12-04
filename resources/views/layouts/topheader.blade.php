@@ -73,7 +73,7 @@
             <input type="text" class="form-control" id="address" name="address" placeholder="Your Place" value="{{ old('address') }}">
             </div>
 
-            {{-- <div class="form-group">
+            <div class="form-group">
                 <label for="id_start_datetime">Select your date of visiting</label>
                 <div class="input-group date" id="id_0">
                     <input type="text" value="{{ $errors->has('visiting_datetime') ? old('visiting_datetime') :  '05/16/2018 12:31:00 AM'}}" name="visiting_datetime" class="form-control" required/>
@@ -86,11 +86,11 @@
                 <p><b>Note:</b> <br>
                     Visiting Days are available on Monday to Thursday and Timings are 3.00 pm to 6.00 pm only 
                     </p>
-            </div> --}}
-            <div class="col-md-12 mb-1">
+            </div>
+            {{-- <div class="col-md-12 mb-1">
             <label for="">Select your date of visiting</label>
             <input type="datetime-local" class="form-control" id="datee" name="visiting_datetime" value="{{ $errors->has('visiting_datetime') ? old('visiting_datetime') :  ''}}" placeholder="Appointment Date">
-            </div>
+            </div> --}}
             
             <div class="col-md-12">
             <button type="submit" class="btn btn-primary">Submit</button>

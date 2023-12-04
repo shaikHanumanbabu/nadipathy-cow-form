@@ -7,6 +7,9 @@ use Illuminate\Http\Request;
 
 class VideoGalleryController extends Controller
 {
+    public function __construct() {
+        $this->middleware('auth');
+    }
     /**
      * Display a listing of the resource.
      *
@@ -38,7 +41,6 @@ class VideoGalleryController extends Controller
     public function store(Request $request)
     {
         $validated = $request->validate([
-            'title' => 'required',
             'link' => 'required',
         ]);
 
@@ -97,7 +99,6 @@ class VideoGalleryController extends Controller
     public function update(Request $request, VideoGallery $videogallery)
     {
         $validated = $request->validate([
-            'title' => 'required',
             'link' => 'required',
         ]);
 

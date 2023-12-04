@@ -41,7 +41,7 @@
           <tbody>
               @forelse ($appointments as $appointment)
               <tr>
-                <td>{{ $appointment->id }}</td>
+                <td>{{ $loop->index + 1 }}</td>
                 <td>{{ $appointment->name }}</td>
                 <td>{{ $appointment->phone_number }}</td>
                 <td>{{ $appointment->email }}</td>

@@ -37,7 +37,7 @@
           <tbody>
               @forelse ($events as $event)
               <tr>
-                <td>{{ $event->id }}</td>
+                <td>{{ $loop->index + 1 }}</td>
                 <td><img src="image/{{ $event->image }}" alt="{{ $event->title }}"></td>
                 <td>{{ $event->title }}</td>
                 <td>

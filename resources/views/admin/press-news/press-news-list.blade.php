@@ -42,11 +42,11 @@
                   <a  class="btn bt-sm" href="{{ route('p-news.edit', ['p_news' =>  $press_new->id ]) }}">
                     <i class="bi bi-pencil"></i>
                   </a>                  
-                  {{-- <form action="{{ route('p-news.destroy', ['p_news' => $press_new->id]) }}" method="post" onsubmit="return confirm('are you sure you want to delete ?')">
+                  <form action="{{ route('p-news.destroy', ['p_news' => $press_new->id]) }}" method="post" onsubmit="return confirm('are you sure you want to delete ?')">
                     @csrf
                     @method('delete')
                     <button type="submit" class="btn bt-sm"><i class="bi bi-trash"></i></button>
-                  </form> --}}
+                  </form>
                 </td>
               </tr>
               @empty

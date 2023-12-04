@@ -67,7 +67,7 @@ return view('mail.test', ['details' => $details]);
 
 Route::get('/breed', [HomeController::class, 'breedsType']);
 Route::get('/breedInfo', [HomeController::class, 'breedInfo'])->name('breed-info');
-Route::get('/about-info', [HomeController::class, 'aboutInfo']);
+Route::get('/about-us', [HomeController::class, 'aboutInfo']);
 Route::get('/press-news-info', [HomeController::class, 'pressNewsInfo']);
 Route::get('/tv-news-info', [HomeController::class, 'tvNewsInfo']);
 Route::get('/events-info', [HomeController::class, 'eventsInfo'])->name("events-info");
@@ -82,7 +82,7 @@ Route::get('/contact', [HomeController::class, 'contactInfo']);
 Route::post('/contact', [HomeController::class, 'contactInfo'])->name('contact.post');
 Route::get('/products-info', [HomeController::class, 'productsInfo']);
 Route::get('/subcategory', [HomeController::class, 'categoryInfo']);
-Route::get('/cow-details', [HomeController::class, 'cowDetailsInfo']);
+Route::get('/cow-details', [HomeController::class, 'cowDetailsInfo'])->name('cow-details');
 
 Route::post('/store-appointment', [HomeController::class, 'store_appointment'])->name('store-appointment');
 Route::get('/admin', [AdminController::class, 'index']);

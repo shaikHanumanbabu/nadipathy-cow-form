@@ -21,7 +21,7 @@
             @if (isset($event))
                 @method('PATCH')
             @endif
-            <h5>Create Photo Gallery</h5>
+            <h5>Create Events</h5>
             
             <div class="col-md-12 mb-1">
                 <input type="text" class="form-control" id="title" name="title" value="{{ isset($event->title) ? $event->title : old('title') }}" placeholder="Enter title">
@@ -33,7 +33,7 @@
             
             
             <div class="col-md-12 mb-1">
-                <label for="image" class="mb-1">Upload Main Photo Gallery</label>
+                <label for="image" class="mb-1">Upload Main Events</label>
                 <input type="file" class="form-control" id="image" name="image">
 
                 @if (isset($event->id))
@@ -41,29 +41,21 @@
                 @endif
 
                
-                {{-- <p style="margin-top: 10px; font-size: 14px;"><b>Note:</b> <br>
-                    1. Follow the dimensions to upload the image (1920px / 882px). <br>
-                    2. Only jpg, jpeg, png formats allowed. <br>
-                    3. File size should be below 1 MB.
-                </p> --}}
-            </div>
-
-
-            <div class="col-md-12 mb-1">
-                <label for="image" class="mb-1">Upload Photo Gallery Images</label>
-                <input type="file" class="form-control" id="image" name="gallery_image[]" multiple>
-
-                @if (isset($event->id))
-                    @foreach ($event->galleryimage as $gallery)
-                        <img src="/image/{{ $gallery->image }}" alt="{{ $event->title }}">
-                    @endforeach
-                @endif
                 <p style="margin-top: 10px; font-size: 14px;"><b>Note:</b> <br>
-                    1. Follow the dimensions to upload the image (1920px / 882px). <br>
+                    1. Follow the dimensions to upload the image (324px / 216px). <br>
                     2. Only jpg, jpeg, png formats allowed. <br>
                     3. File size should be below 1 MB.
                 </p>
             </div>
+
+
+            <div class="col-md-12 mb-1">
+                <label for="">Enter Link</label>
+                <input type="text" class="form-control" id="link" name="link" value="{{ isset($event->link) ? $event->link : old('link') }}" placeholder="Enter link">
+            </div> 
+
+
+            
             <div class="col-md-12">
                 <button type="submit" class="btn btn-primary">
                     @if (isset($event))

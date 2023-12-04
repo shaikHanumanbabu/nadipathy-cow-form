@@ -36,8 +36,8 @@
           <tbody>
               @forelse ($social_medias as $social_media)
               <tr>
-                <td>{{ $social_media->id }}</td>
-                <td>{{ $social_media->title }}</td>
+                <td>{{ $loop->index + 1 }}</td>
+                <td>{{ $social_media->link }}</td>
                 <td>
                   <a  class="btn bt-sm" href="{{ route('social-media.edit', ['social_medium' =>  $social_media->id ]) }}">
                     <i class="bi bi-pencil"></i>

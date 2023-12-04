@@ -21,9 +21,9 @@
             <h5>{{isset($social_media) ? 'Update' : 'Create'}} Social Media</h5>
 
         
-            <div class="col-md-12 mb-1">
+            {{-- <div class="col-md-12 mb-1">
                 <input type="text" class="form-control" id="title" name="title" value="{{ isset($social_media->title) ? $social_media->title : old('title') }}" placeholder="Enter title">
-            </div>
+            </div> --}}
 
             <div class="col-md-12 mb-1">
                 <input type="text" class="form-control" id="link" name="link" value="{{ isset($social_media->link) ? $social_media->link : old('link') }}" placeholder="Enter link">
@@ -31,7 +31,7 @@
             
         
             
-            <div class="col-md-12 mb-1">
+            {{-- <div class="col-md-12 mb-1">
                 <label for="image" class="mb-1">Upload Cow Image</label>
                 <input type="file" class="form-control" id="image" name="image">
 
@@ -43,7 +43,7 @@
                     2. Only jpg, jpeg, png formats allowed. <br>
                     3. File size should be below 1 MB.
                 </p>
-            </div>
+            </div> --}}
             
             
             

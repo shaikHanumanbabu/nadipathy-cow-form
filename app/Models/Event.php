@@ -13,6 +13,7 @@ class Event extends Model
         'title',
         'short_description',
         'image',
+        'link',
     ];
 
     public function galleryimage()

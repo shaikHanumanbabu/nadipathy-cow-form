@@ -26,28 +26,14 @@
     <div class="row">
 
         @forelse ($videoGalleries as $key => $videoGallery)
+
         <div class="col-md-4">
-            <div class="card">
-                <a href="#" data-bs-toggle="modal" data-bs-target="#videoModal_{{$key}}">
-                <img src="{{ URL::asset("/image/$videoGallery->image") }}" class="card-img-top" alt="Video 1">
-                </a>
-                <div class="card-body">
-                <p class="card-text">{{ $videoGallery->title }}</p>
+            <div class="card mb-3">
+                <div class="embed-responsive embed-responsive-16by9">
+                    <iframe width="100%" height="260px" style="padding: 15px;" src="{{ $videoGallery->link }}" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
                 </div>
             </div>
-            </div>
-            <!-- Video Modals -->
-            <div class="modal fade" id="videoModal_{{$key}}" tabindex="-1" aria-labelledby="videoModal1Label" aria-hidden="true">
-                <div class="modal-dialog modal-dialog-centered modal-lg">
-                <div class="modal-content">
-                    <div class="modal-body">
-                    <div class="embed-responsive embed-responsive-4by3">
-                        <iframe class="embed-responsive-item" src="{{ $videoGallery->link }}"></iframe>
-                    </div>
-                    </div>
-                </div>
-                </div>
-            </div>
+        </div>
         @empty
             <h1>No Content</h1>
         @endforelse

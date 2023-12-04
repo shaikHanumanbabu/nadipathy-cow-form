@@ -46,7 +46,7 @@
             <div class="col-lg-6 mb-4 wow fadeInUp offset-lg-3" data-wow-delay="0.3s">
                 <div class="product-item">
                     <div class="position-relative">
-                        <img class="img-fluid" src="{{ URL::asset("image/$cow->bg_image") }}" alt="">
+                        <img class="img-fluid" src="img/video_bg.jpg" alt="">
                         <div class="product-overlay">
                             <iframe width="560" height="315" src="{{ $cow->link }}" data-lightbox="gallery" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
                         </div>

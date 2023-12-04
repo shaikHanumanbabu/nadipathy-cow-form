@@ -12,14 +12,14 @@
                     <div class="col-md-6 col-lg-4 col-xl-3 mb-4 wow fadeInUp" data-wow-delay="0.1s">
                         <div class="product-item">
                             <div class="position-relative">
-                                <img class="img-fluid" src="{{ URL::asset("image/$cow->main_image") }}" alt="">
+                                <img class="img-fluid" src="{{ URL::asset("image/".$cow->breed->image) }}" alt="">
                                 <div class="product-overlay">
-                                    <a class="btn btn-square btn-secondary rounded-circle m-1" href="#"><i class="bi bi-link"></i></a>
+                                    <a class="btn btn-square btn-secondary rounded-circle m-1" href="{{ url("/cow-details?cowid=$cow->id") }}"><i class="bi bi-link"></i></a>
                                     <!-- <a class="btn btn-square btn-secondary rounded-circle m-1" href=""><i class="bi bi-cart"></i></a> -->
                                 </div>
                             </div>
                             <div class="text-center p-4 bg-secondary">
-                                <a class="d-block h5" href="">{{ $cow->breed->title }}</a>
+                                <a class="d-block h5" href="{{ url("/cow-details?cowid=$cow->id") }}">{{ $cow->breed->title }}</a>
                                 <span class="text-primary me-1">{{ $cow->name }}</span>
                             </div>
                         </div>

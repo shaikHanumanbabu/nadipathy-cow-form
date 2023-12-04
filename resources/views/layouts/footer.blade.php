@@ -22,7 +22,7 @@
                 </div>
                 <div class="col-lg-2 col-md-6">
                     <h5 class="text-white mb-4">Quick Links</h5>
-                    <a class="btn btn-link" href="{{ url('about-info') }}">About Us</a>
+                    <a class="btn btn-link" href="{{ url('about-us') }}">About Us</a>
                     <a class="btn btn-link" href="{{ url('contact') }}">Contact Us</a>
                     <a class="btn btn-link" href="{{ url('blog') }}">Blog</a>
                     <a class="btn btn-link" href="{{ url('photo-gallery') }}">Photo Gallery</a>

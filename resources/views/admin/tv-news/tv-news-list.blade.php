@@ -24,7 +24,7 @@
     <div class="card courses_page overflow-auto">
 
       <div class="card-body">
-        <p align="right"><a href="{{ route('tv-news.create') }}">Add Tv News</a></p>
+        <p align="right"><a class="btn btn-primary" href="{{ route('tv-news.create') }}">Add Tv News</a></p>
         <table id="example" class="display" style="width:100%">
           <thead>
               <tr>

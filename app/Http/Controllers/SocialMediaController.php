@@ -7,6 +7,9 @@ use Illuminate\Http\Request;
 
 class SocialMediaController extends Controller
 {
+    public function __construct() {
+        $this->middleware('auth');
+    }
     /**
      * Display a listing of the resource.
      *
@@ -38,22 +41,11 @@ class SocialMediaController extends Controller
     public function store(Request $request)
     {
         $validated = $request->validate([
-            'title' => 'required',
             'link' => 'required',
             
         ]);
 
-        if($request->hasFile('image')) {
-            $fileName = auth()->id() . '_' . time() . '.'. $request->image->extension();  
-    
-            $type = $request->image->getClientMimeType();
-            $size = $request->image->getSize();
-            
-            $request->image->move(public_path('image'), $fileName);
-    
-            $validated['image'] = $fileName;
-
-        }
+        
 
         SocialMedia::create($validated);
         return redirect()->route('social-media.index')->with('success', 'Press News added successfully.');
@@ -96,22 +88,11 @@ class SocialMediaController extends Controller
     public function update(Request $request, SocialMedia $social_medium)
     {
         $validated = $request->validate([
-            'title' => 'required',
             'link' => 'required',
             
         ]);
 
-        if($request->hasFile('image')) {
-            $fileName = auth()->id() . '_' . time() . '.'. $request->image->extension();  
-    
-            $type = $request->image->getClientMimeType();
-            $size = $request->image->getSize();
-            
-            $request->image->move(public_path('image'), $fileName);
-    
-            $validated['image'] = $fileName;
-
-        }
+        
 
         $social_medium->update($validated);
         return redirect()->route('social-media.index')->with('success', 'Press News updated successfully.');

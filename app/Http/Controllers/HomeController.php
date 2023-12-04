@@ -28,6 +28,7 @@ use Illuminate\Support\Facades\Mail;
 
 class HomeController extends Controller
 {
+    
     //
     public function index(Request $request)
     {
@@ -56,6 +57,8 @@ class HomeController extends Controller
     {
         $params = $request->get('breedType');
         $breed = Breed::where('title', $params)->get()->first();
+
+        
         return view('breeds', [
             'breed' => $breed,
             'breeds' => Breed::all()
@@ -69,6 +72,8 @@ class HomeController extends Controller
         $params = $request->get('breedId');
 
         $breed = Breed::where('id', '=',  $params)->get()->first();
+
+        dd($breed);
         // resources/views/breed-info.blade.php
         return view('breed-info', [
             'breed' => $breed,
@@ -112,7 +117,7 @@ class HomeController extends Controller
         ]);
 
         $validated['from'] = 'appointment';
-        Mail::to($validated['email'])->send( new MyTestMail($validated));
+        Mail::to("nadipathygoshala@gmail")->send( new MyTestMail($validated));
 
         $appointment = Appointment::create($validated);
 
@@ -195,7 +200,7 @@ class HomeController extends Controller
             $validated['from'] = 'contact';
 
             Appointment::create($validated);
-            Mail::to($validated['email'])->send( new MyTestMail($validated));
+            Mail::to("nadipathygoshala@gmail")->send( new MyTestMail($validated));
             return redirect()->back()->with('contact_success', 'Thank you for reaching out! Your message has been successfully received. Our team will get back to you shortly.');
         }
         return view('contact');

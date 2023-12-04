@@ -25,28 +25,15 @@
     </div>
     <div class="row">
         @forelse ($socialMedias as $social)
-            <div class="col-md-4">
-                <div class="card">
-                    <a href="#" data-bs-toggle="modal" data-bs-target="#videoModal_{{ $loop->index }}">
-                    <img src="{{ URL::asset("image/$social->image") }}" class="card-img-top" alt="{{ $social->title }}">
-                    </a>
-                    <div class="card-body">
-                    <p class="card-text">{{ $social->title }} </p>
-                    </div>
+        <div class="col-md-4">
+            <div class="card mb-3">
+                <div class="embed-responsive embed-responsive-16by9">
+                    <iframe width="100%" height="260px" style="padding: 15px;" src="{{ $social->link }}" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
                 </div>
             </div>
+        </div>
 
-            <div class="modal fade" id="videoModal_{{ $loop->index }}" tabindex="-1" aria-labelledby="videoModal1Label" aria-hidden="true">
-                <div class="modal-dialog modal-dialog-centered modal-lg">
-                <div class="modal-content">
-                    <div class="modal-body">
-                    <div class="embed-responsive embed-responsive-4by3">
-                        <iframe class="embed-responsive-item" src="{{ $social->link }}"></iframe>
-                    </div>
-                    </div>
-                </div>
-                </div>
-            </div>
+            
         @empty
             <h3>No Content Available</h3>
         @endforelse

@@ -7,6 +7,9 @@ use Illuminate\Http\Request;
 
 class EventController extends Controller
 {
+    public function __construct() {
+        $this->middleware('auth');
+    }
     /**
      * Display a listing of the resource.
      *
@@ -41,6 +44,7 @@ class EventController extends Controller
             'image' => 'required',
             'title' => 'required',
             'short_description' => 'required',
+            'link' => 'required',
         ]);
         if($request->hasFile('image')) {
             $fileName = auth()->id() . '_' . time() . '.'. $request->image->extension();  
@@ -56,21 +60,21 @@ class EventController extends Controller
         $event = Event::create($validated);
 
 
-        if ($request->hasFile('gallery_image')) {
-            $files = $request->file('gallery_image');
-            foreach($files as $key =>  $file)
-            {
-                // dd($file);   
-                $extension = $file->getClientOriginalExtension();
-                $filename = time().'-'.$key."-".date('his')."-".".".$extension;
-                $file->move(public_path('image'), $filename);
-                $event->galleryimage()->create([
-                    'image' => $filename
-                ]);
+        // if ($request->hasFile('gallery_image')) {
+        //     $files = $request->file('gallery_image');
+        //     foreach($files as $key =>  $file)
+        //     {
+        //         // dd($file);   
+        //         $extension = $file->getClientOriginalExtension();
+        //         $filename = time().'-'.$key."-".date('his')."-".".".$extension;
+        //         $file->move(public_path('image'), $filename);
+        //         $event->galleryimage()->create([
+        //             'image' => $filename
+        //         ]);
                 
-            }
+        //     }
 
-        }
+        // }
 
 
         return redirect()->route('events.index')->with('success', 'Event added successfully.');
@@ -113,6 +117,7 @@ class EventController extends Controller
         $validated = $request->validate([
             'title' => 'required',
             'short_description' => 'required',
+            'link' => 'required',
         ]);
         if($request->hasFile('image')) {
             $fileName = auth()->id() . '_' . time() . '.'. $request->image->extension();  
@@ -128,21 +133,21 @@ class EventController extends Controller
         $event->update($validated);
 
 
-        if ($request->hasFile('gallery_image')) {
-            $files = $request->file('gallery_image');
-            foreach($files as $key =>  $file)
-            {
-                // dd($file);   
-                $extension = $file->getClientOriginalExtension();
-                $filename = time().'-'.$key."-".date('his')."-".".".$extension;
-                $file->move(public_path('image'), $filename);
-                $event->galleryimage()->create([
-                    'image' => $filename
-                ]);
+        // if ($request->hasFile('gallery_image')) {
+        //     $files = $request->file('gallery_image');
+        //     foreach($files as $key =>  $file)
+        //     {
+        //         // dd($file);   
+        //         $extension = $file->getClientOriginalExtension();
+        //         $filename = time().'-'.$key."-".date('his')."-".".".$extension;
+        //         $file->move(public_path('image'), $filename);
+        //         $event->galleryimage()->create([
+        //             'image' => $filename
+        //         ]);
                 
-            }
+        //     }
 
-        }
+        // }
 
 
         return redirect()->route('events.index')->with('success', 'Event updated successfully.');

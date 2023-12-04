@@ -8,6 +8,9 @@ use App\Models\Testimonial;
 
 class TestimonialController extends Controller
 {
+    public function __construct() {
+        $this->middleware('auth');
+    }
     /**
      * Display a listing of the resource.
      *

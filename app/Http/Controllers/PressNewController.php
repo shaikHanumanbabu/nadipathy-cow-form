@@ -7,6 +7,9 @@ use Illuminate\Http\Request;
 
 class PressNewController extends Controller
 {
+    public function __construct() {
+        $this->middleware('auth');
+    }
     /**
      * Display a listing of the resource.
      *
@@ -41,18 +44,25 @@ class PressNewController extends Controller
         $validated = $request->validate([
             'image' => 'required',
         ]);
-        if($request->hasFile('image')) {
-            $fileName = auth()->id() . '_' . time() . '.'. $request->image->extension();  
-    
-            $type = $request->image->getClientMimeType();
-            $size = $request->image->getSize();
-            
-            $request->image->move(public_path('press-news'), $fileName);
-    
-            $validated['image'] = $fileName;
+        
+
+
+        if ($request->hasFile('image')) {
+            $files = $request->file('image');
+            foreach($files as $key =>  $file)
+            {
+                // dd($file);
+                $extension = $file->getClientOriginalExtension();
+                $filename = time().'-'.$key."-".date('his')."-".".".$extension;
+                $file->move(public_path('press-news'), $filename);
+                
+
+                PressNew::create(['image' => $filename]);
+                
+            }
+
         }
 
-        PressNew::create($validated);
 
         return redirect()->route('p-news.index')->with('success', 'Press News added successfully.');
 
@@ -116,9 +126,9 @@ class PressNewController extends Controller
      * @param  \App\Models\PressNew  $pressNew
      * @return \Illuminate\Http\Response
      */
-    public function destroy(PressNew $pressNew)
+    public function destroy(PressNew $p_news)
     {
-        $pressNew->delete();
+        $p_news->delete();
         return redirect()->back()->with('success', 'Deleted successfully.');
     }
 }
