@@ -30,6 +30,17 @@
 </head>
 
 <body>
+    <div style="position: fixed; right: 0; top: 150px; z-index: 9999; width: 30px;" class="sm">
+        <div class="h-100">
+            <a class="btn btn-link text-light smediafb" href="https://www.facebook.com/Punganurcowsgoshala" target="_blank"><i class="fab fa-facebook-f"></i></a>
+            <a class="btn btn-link text-light smediayt" href="https://www.youtube.com/c/PunganurCowsGoshala" target="_blank"><i class="fab fa-youtube"></i></a>
+            <a class="btn btn-link text-light smediayt" href="https://www.youtube.com/channel/UCtpi28I5BpZV2WQdHNxiv5w" target="_blank"><i class="fab fa-youtube"></i></a>
+            <a class="btn btn-link text-light smediayt" href="https://www.youtube.com/@Minicows" target="_blank"><i class="fab fa-youtube"></i></a>
+            <a class="btn btn-link text-light smediayt" href="https://www.youtube.com/@Miniaturecows" target="_blank"><i class="fab fa-youtube"></i></a>
+            <a class="btn btn-link text-light smediains" href="https://www.instagram.com/punganurucows/?utm_source=qr" target="_blank"><i class="fab fa-instagram"></i></a>
+        </div>
+    </div>
+    
     <div id="spinner" class="show bg-white position-fixed translate-middle w-100 vh-100 top-50 start-50 d-flex align-items-center justify-content-center">
         <div class="spinner-border text-primary" role="status" style="width: 3rem; height: 3rem;"></div>
     </div>

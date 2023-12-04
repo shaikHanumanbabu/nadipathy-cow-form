@@ -30,7 +30,7 @@
                 <p class="section-title bg-white text-start text-primary pe-3">About Us</p>
                 <h2 class="mb-4">{{ $aboutInfo->title}}</h2>
                 <p style="text-align: justify;">
-                    {{ $aboutInfo->description}}
+                    {!! $aboutInfo->description !!}
                 </p>
                 <a href="{{ $aboutInfo->creator_link }}" target="_blank" class="btn btn-secondary rounded-pill py-2 px-4 animated slideInLeft">About Creator</a>
                 <a href="{{ $aboutInfo->system_link }}" target="_blank" class="btn btn-secondary rounded-pill py-2 px-4 animated slideInLeft">Nadipathy System</a>

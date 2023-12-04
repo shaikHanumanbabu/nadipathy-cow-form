@@ -27,7 +27,7 @@
                     <option>-- Select Breed --</option>
                     @foreach ($breeds as $breed)
                     
-                    <option value="{{$breed->id}}" {{ $subcategorie->breed_id == $breed->id ? "selected" : "" }}>{{$breed->title}}</option>
+                    <option value="{{$breed->id}}" {{ isset($subcategorie) && $subcategorie->breed_id == $breed->id ? "selected" : "" }}>{{$breed->title}}</option>
                     @endforeach
                   </select>
             </div>

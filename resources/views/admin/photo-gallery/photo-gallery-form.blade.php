@@ -33,7 +33,7 @@
                 <input type="file" class="form-control" id="image" name="image">
 
                 @if (isset($photogallery->id))
-                    <img src="/image/{{ $photogallery->image }}" alt="{{ $photogallery->title }}">
+                    <img height="100px" src="/image/{{ $photogallery->image }}" alt="{{ $photogallery->title }}">
                 @endif
 
                
@@ -51,7 +51,7 @@
 
                 @if (isset($photogallery->id))
                     @foreach ($photogallery->galleryimage as $gallery)
-                        <img src="/image/{{ $gallery->image }}" alt="{{ $photogallery->title }}">
+                        <img height="100px" src="/image/{{ $gallery->image }}" alt="{{ $photogallery->title }}">
                     @endforeach
                 @endif
                 <p style="margin-top: 10px; font-size: 14px;"><b>Note:</b> <br>

@@ -92,20 +92,20 @@
                         </div>
                         <div class="col-md-6" style="margin-bottom: 5px;">
                             <div style="margin: 0 3px; padding: 18px; background-color: #EDDD5E; border-radius: 10px;" data-aos="flip-right" data-aos-delay="500" class="aos-init aos-animate">
-                              <iframe width="100%" height="150" src="https://www.youtube.com/embed/G0ueso0Zy18?si=fghS9ORHSwUSEKsk" title="YouTube video player" frameborder="0" allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen=""></iframe>
-                              <button class="btn btn-danger" onclick="window.open('https://www.youtube.com/@PunganurCowsGoshala','_blank')"><i class="bi bi-play-btn-fill"></i> Subscribe</button>
+                              <iframe width="100%" height="150" src="https://www.youtube.com/embed/kfY0vyEBpJI?si=g_HR_jjrIXJpu99Z" title="YouTube video player" frameborder="0" allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen=""></iframe>
+                              <button class="btn btn-danger" onclick="window.open('https://www.youtube.com/channel/UCtpi28I5BpZV2WQdHNxiv5w','_blank')"><i class="bi bi-play-btn-fill"></i> Subscribe</button>
                             </div>
                         </div>
                         <div class="col-md-6" style="margin-bottom: 5px;">
                             <div style="margin: 0 3px; padding: 18px; background-color: #EDDD5E; border-radius: 10px;" data-aos="flip-right" data-aos-delay="500" class="aos-init aos-animate">
-                              <iframe width="100%" height="150" src="https://www.youtube.com/embed/G0ueso0Zy18?si=fghS9ORHSwUSEKsk" title="YouTube video player" frameborder="0" allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen=""></iframe>
-                              <button class="btn btn-danger" onclick="window.open('https://www.youtube.com/@PunganurCowsGoshala','_blank')"><i class="bi bi-play-btn-fill"></i> Subscribe</button>
+                              <iframe width="100%" height="150" src="https://www.youtube.com/embed/UUbZUueTLgc?si=bqWxlp8V8LUJqaro" title="YouTube video player" frameborder="0" allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen=""></iframe>
+                              <button class="btn btn-danger" onclick="window.open('https://www.youtube.com/@Minicows','_blank')"><i class="bi bi-play-btn-fill"></i> Subscribe</button>
                             </div>
                         </div>
                         <div class="col-md-6" style="margin-bottom: 5px;">
                             <div style="margin: 0 3px; padding: 18px; background-color: #5B8C51; border-radius: 10px;" data-aos="flip-right" data-aos-delay="500" class="aos-init aos-animate">
-                              <iframe width="100%" height="150" src="https://www.youtube.com/embed/G0ueso0Zy18?si=fghS9ORHSwUSEKsk" title="YouTube video player" frameborder="0" allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen=""></iframe>
-                              <button class="btn btn-danger" onclick="window.open('https://www.youtube.com/@PunganurCowsGoshala','_blank')"><i class="bi bi-play-btn-fill"></i> Subscribe</button>
+                              <iframe width="100%" height="150" src="https://www.youtube.com/embed/c6OZYNhMoII?si=CAyiPCJ18qHooIDJ" title="YouTube video player" frameborder="0" allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen=""></iframe>
+                              <button class="btn btn-danger" onclick="window.open('https://www.youtube.com/@Miniaturecows','_blank')"><i class="bi bi-play-btn-fill"></i> Subscribe</button>
                             </div>
                         </div>
                         <!-- <div class="col-sm-6 wow fadeIn" data-wow-delay="0.1s">

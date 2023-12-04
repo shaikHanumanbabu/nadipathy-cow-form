@@ -600,6 +600,24 @@ a.smediafb {
     background-color: #EDDD5E;
     box-shadow: inset 0 0 0 0 #EDDD5E;
   }
+  
+  .sm {
+    background-color: #E4405F;
+    box-shadow: inset 0 0 0 0 #fad3da;
+    border-top: 0.5px solid #fff;
+    border-left: 0.5px solid #fff;
+    border-bottom: 0.5px solid #fff;
+    border-radius: 7px 0 0 7px;
+    color: #fff;
+      padding: .1rem;
+      /* margin: 0 .1rem; */
+    transition: color .3s ease-in-out, box-shadow .3s ease-in-out;
+  }
+  a.sm:hover {
+    color: #333 !important;
+    background-color: #EDDD5E;
+    box-shadow: inset 0 0 0 0 #EDDD5E;
+  }
 
 .gallery img{ border: 5px solid #FFFFFF;}
 
