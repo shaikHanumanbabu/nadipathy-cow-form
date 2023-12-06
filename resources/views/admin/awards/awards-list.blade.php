@@ -36,7 +36,7 @@
           <tbody>
               @forelse ($awards as $award)
               <tr>
-                <td>{{ $award->id }}</td>
+                <td>{{ $loop->iteration }}</td>
                 <td><img src="/image/{{ $award->image }}" alt="{{ $award->name }}"></td>
                 <td>
                   <a  class="btn bt-sm" href="{{ route('awards.edit', ['award' =>   $award->id ]) }}">
@@ -67,4 +67,13 @@
 
 
 
+@endsection
+
+@section('js-content')
+<script>
+  $(document).ready(function () {
+    $('#example').DataTable();
+  });
+
+</script>
 @endsection

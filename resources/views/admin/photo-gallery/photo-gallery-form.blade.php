@@ -30,7 +30,7 @@
             
             <div class="col-md-12 mb-1">
                 <label for="image" class="mb-1">Upload Main Photo Gallery</label>
-                <input type="file" class="form-control" id="image" name="image">
+                <input type="file" accept="image/*" class="form-control" id="image" name="image">
 
                 @if (isset($photogallery->id))
                     <img height="100px" src="/image/{{ $photogallery->image }}" alt="{{ $photogallery->title }}">
@@ -47,7 +47,7 @@
 
             <div class="col-md-12 mb-1">
                 <label for="image" class="mb-1">Upload Photo Gallery Images</label>
-                <input type="file" class="form-control" id="image" name="gallery_image[]" multiple>
+                <input type="file" accept="image/*" class="form-control" id="image" name="gallery_image[]" multiple>
 
                 @if (isset($photogallery->id))
                     @foreach ($photogallery->galleryimage as $gallery)
@@ -55,7 +55,7 @@
                     @endforeach
                 @endif
                 <p style="margin-top: 10px; font-size: 14px;"><b>Note:</b> <br>
-                    1. Follow the dimensions to upload the image (1920px / 882px). <br>
+                    1. Follow the dimensions to upload the image (900px / 600px). <br>
                     2. Only jpg, jpeg, png formats allowed. <br>
                     3. File size should be below 1 MB.
                 </p>

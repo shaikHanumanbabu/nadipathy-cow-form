@@ -37,7 +37,7 @@
           <tbody>
               @forelse ($subcategories as $subcategorie)
               <tr>
-                <td>{{ $subcategorie->id }}</td>
+                <td>{{ $loop->iteration }}</td>
                 <td><img src="image/{{ $subcategorie->subcategory_image }}" alt="{{ $subcategorie->subcategory_name }}"></td>
                 <td>{{ $subcategorie->subcategory_name }}</td>
                 <td>
@@ -69,4 +69,17 @@
 
 
 
+@endsection
+
+@section('js-content')
+<script>
+  $(document).ready(function () {
+    $('#example').DataTable({
+      "aoColumnDefs": [
+        { "bSortable": false, "aTargets": [ -1 ] }, 
+    ]
+    });
+  });
+
+</script>
 @endsection

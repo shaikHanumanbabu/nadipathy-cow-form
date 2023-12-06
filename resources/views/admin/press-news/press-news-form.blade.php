@@ -25,7 +25,7 @@
             
             <div class="col-md-12 mb-1">
                 <label for="image" class="mb-1">Upload Press News Image</label>
-                <input type="file" class="form-control" id="image" name="image[]" multiple accept="image/*">
+                <input type="file" accept="image/*" class="form-control" id="image" name="image[]" multiple accept="image/*">
 
                 @if (isset($press_news->id))
                     <img src="{{ URL::asset("/press-news/$press_news->image")}}" alt="{{ $press_news->title }}">

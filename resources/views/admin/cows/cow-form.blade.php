@@ -56,13 +56,13 @@
             
             <div class="col-md-12 mb-1">
                 <label for="image" class="mb-1">Upload Cow Image</label>
-                <input type="file" class="form-control" id="main_image" name="main_image" multiple>
+                <input type="file" accept="image/*" class="form-control" id="main_image" name="main_image" multiple>
 
                 @if (isset($cow->id))
                     <img height="100px" src="/image/{{ $cow->main_image }}" alt="{{ $cow->name }}">
                 @endif
                 <p style="margin-top: 10px; font-size: 14px;"><b>Note:</b> <br>
-                    1. Follow the dimensions to upload the image (1920px / 882px). <br>
+                    1. Follow the dimensions to upload the image (550px / 550px). <br>
                     2. Only jpg, jpeg, png formats allowed. <br>
                     3. File size should be below 1 MB.
                 </p>
@@ -70,7 +70,7 @@
 
             <div class="col-md-12 mb-1">
                 <label for="image" class="mb-1">Upload Background Image</label>
-                <input type="file" class="form-control" id="bg_image" name="bg_image" multiple>
+                <input type="file" accept="image/*" class="form-control" id="bg_image" name="bg_image" multiple>
 
                 @if (isset($cow->id))
                     <img height="100px" src="/image/{{ $cow->bg_image }}" alt="{{ $cow->name }}">
@@ -80,7 +80,7 @@
 
             <div class="col-md-12 mb-1">
                 <label for="image" class="mb-1">Cow Gallery</label>
-                <input type="file" class="form-control" id="image_name" name="image_name[]" multiple>
+                <input type="file" accept="image/*" class="form-control" id="image_name" name="image_name[]" multiple>
 
                 @if (isset($cow->id))
                     @foreach ($cow->galleryimage as $gallery)

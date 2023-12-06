@@ -36,7 +36,7 @@
           <tbody>
               @forelse ($press_news as $press_new)
               <tr>
-                <td>{{ $press_new->id }}</td>
+                <td>{{ $loop->iteration }}</td>
                 <td><img src="press-news/{{ $press_new->image }}" alt="demo.png"></td>
                 <td>
                   <a  class="btn bt-sm" href="{{ route('p-news.edit', ['p_news' =>  $press_new->id ]) }}">
@@ -67,4 +67,17 @@
 
 
 
+@endsection
+
+@section('js-content')
+<script>
+  $(document).ready(function () {
+    $('#example').DataTable({
+      "aoColumnDefs": [
+        { "bSortable": false, "aTargets": [ -1 ] }, 
+    ]
+    });
+  });
+
+</script>
 @endsection

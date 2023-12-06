@@ -37,7 +37,7 @@
           <tbody>
               @forelse ($photoGalleries as $photoGallery)
               <tr>
-                <td>{{ $photoGallery->id }}</td>
+                <td>{{ $loop->iteration }}</td>
                 <td><img src="image/{{ $photoGallery->image }}" alt="{{ $photoGallery->title }}"></td>
                 <td>{{ $photoGallery->title }}</td>
                 <td>
@@ -69,4 +69,17 @@
 
 
 
+@endsection
+
+@section('js-content')
+<script>
+  $(document).ready(function () {
+    $('#example').DataTable({
+      "aoColumnDefs": [
+        { "bSortable": false, "aTargets": [ -1 ] }, 
+    ]
+    });
+  });
+
+</script>
 @endsection

@@ -34,7 +34,7 @@
             
             <div class="col-md-12 mb-1">
                 <label for="image" class="mb-1">Upload Main Events</label>
-                <input type="file" class="form-control" id="image" name="image">
+                <input accept="image/*"  type="file" class="form-control" id="image" name="image">
 
                 @if (isset($event->id))
                     <img src="/image/{{ $event->image }}" alt="{{ $event->title }}">

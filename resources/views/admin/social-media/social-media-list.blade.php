@@ -36,7 +36,7 @@
           <tbody>
               @forelse ($social_medias as $social_media)
               <tr>
-                <td>{{ $loop->index + 1 }}</td>
+                <td>{{ $loop->iteration }}</td>
                 <td>{{ $social_media->link }}</td>
                 <td>
                   <a  class="btn bt-sm" href="{{ route('social-media.edit', ['social_medium' =>  $social_media->id ]) }}">
@@ -67,4 +67,17 @@
 
 
 
+@endsection
+
+@section('js-content')
+<script>
+  $(document).ready(function () {
+    $('#example').DataTable({
+      "aoColumnDefs": [
+        { "bSortable": false, "aTargets": [ -1 ] }, 
+    ]
+    });
+  });
+
+</script>
 @endsection

@@ -49,7 +49,7 @@
             
             <div class="col-md-12 mb-1">
                 <label for="image" class="mb-1">Upload Cow Image 1</label>
-                <input type="file" class="form-control" id="image" name="image_one">
+                <input type="file" accept="image/*" class="form-control" id="image" name="image_one">
 
                 @if (isset($about->id))
                     <img src="/image/{{ $about->image_one }}" alt="{{ $about->name }}">
@@ -58,7 +58,7 @@
             </div>
             <div class="col-md-12 mb-1">
                 <label for="image" class="mb-1">Upload Cow Image 2</label>
-                <input type="file" class="form-control" id="image" name="image_two">
+                <input type="file" accept="image/*" class="form-control" id="image" name="image_two">
 
                 @if (isset($about->id))
                     <img src="/image/{{ $about->image_two }}" alt="{{ $about->name }}">
@@ -67,7 +67,7 @@
             </div>
             <div class="col-md-12 mb-1">
                 <label for="image" class="mb-1">Upload Cow Image 3</label>
-                <input type="file" class="form-control" id="image" name="image_three">
+                <input type="file" accept="image/*" class="form-control" id="image" name="image_three">
 
                 @if (isset($about->id))
                     <img src="/image/{{ $about->image_three }}" alt="{{ $about->name }}">
@@ -76,7 +76,7 @@
             </div>
             <div class="col-md-12 mb-1">
                 <label for="image" class="mb-1">Upload Cow Image 4</label>
-                <input type="file" class="form-control" id="image" name="image_four">
+                <input type="file" accept="image/*" class="form-control" id="image" name="image_four">
 
                 @if (isset($about->id))
                     <img src="/image/{{ $about->image_four }}" alt="{{ $about->name }}">
@@ -85,7 +85,7 @@
             </div>
 
             <p style="margin-top: 10px; font-size: 14px;"><b>Note:</b> <br>
-                1. Follow the dimensions to upload the image (1920px / 882px). <br>
+                {{-- 1. Follow the dimensions to upload the image (1920px / 882px). <br> --}}
                 2. Only jpg, jpeg, png formats allowed. <br>
                 3. File size should be below 1 MB.
             </p>

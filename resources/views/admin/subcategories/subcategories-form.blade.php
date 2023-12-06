@@ -39,13 +39,13 @@
             
             <div class="col-md-12 mb-1">
                 <label for="image" class="mb-1">Upload Subcategories Image</label>
-                <input type="file" class="form-control" id="image" name="image">
+                <input type="file" accept="image/*" class="form-control" id="image" name="image">
 
                 @if (isset($subcategorie->id))
                     <img src="/image/{{ $subcategorie->subcategory_image }}" alt="{{ $subcategorie->subcategory_name }}">
                 @endif
                 <p style="margin-top: 10px; font-size: 14px;"><b>Note:</b> <br>
-                    1. Follow the dimensions to upload the image (1920px / 882px). <br>
+                    1. Follow the dimensions to upload the image (550px / 550px). <br>
                     2. Only jpg, jpeg, png formats allowed. <br>
                     3. File size should be below 1 MB.
                 </p>

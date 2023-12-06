@@ -36,7 +36,7 @@
           <tbody>
               @forelse ($blogs as $blog)
               <tr>
-                <td>{{ $blog->id }}</td>
+                <td>{{ $loop->iteration }}</td>
                 <td>{{ $blog->title }}</td>
                 <td>
                   <a  class="btn bt-sm" href="{{ route('blogs.edit', ['blog' =>  $blog->id ]) }}">
@@ -67,4 +67,17 @@
 
 
 
+@endsection
+
+@section('js-content')
+<script>
+ $(document).ready(function () {
+    $('#example').DataTable({
+      "aoColumnDefs": [
+        { "bSortable": false, "aTargets": [ -1 ] }, 
+    ]
+    });
+  });
+
+</script>
 @endsection

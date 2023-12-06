@@ -41,7 +41,7 @@
           <tbody>
               @forelse ($carousels as $carousel)
               <tr>
-                <td>{{ $carousel->id }}</td>
+                <td>{{ $loop->iteration }}</td>
                 <td><img src="image/{{ $carousel->image }}" alt="{{ $carousel->title }}"></td>
                 <td>{{ $carousel->title }}</td>
                 <td>{{ $carousel->caption }}</td>
@@ -77,7 +77,7 @@
                           </div>
                           <div class="col-md-12 mb-1">
                             <label for="image" class="mb-1">Update Carousel Image</label>
-                            <input type="file" class="form-control" id="carouselimage" name="carouselimage">
+                            <input type="file"  accept="image/*" class="form-control" id="carouselimage" name="carouselimage">
                             <img src="image/{{ $carousel->image }}" alt="{{ $carousel->title }}">
                             <p style="margin-top: 10px; font-size: 14px;"><b>Note:</b> <br>
                               1. Follow the dimensions to upload the image (1920px / 882px). <br>
@@ -136,7 +136,7 @@
         </div>
         <div class="col-md-12 mb-1">
           <label for="image" class="mb-1">Upload Carousel Image</label>
-          <input type="file" class="form-control" id="image" name="image">
+          <input type="file" accept="image/*" class="form-control" id="image" name="image">
           <p style="margin-top: 10px; font-size: 14px;"><b>Note:</b> <br>
             1. Follow the dimensions to upload the image (1920px / 882px). <br>
             2. Only jpg, jpeg, png formats allowed. <br>
@@ -154,4 +154,17 @@
 
 
 
+@endsection
+
+@section('js-content')
+<script>
+  $(document).ready(function () {
+    $('#example').DataTable({
+      "aoColumnDefs": [
+        { "bSortable": false, "aTargets": [ -1 ] }, 
+    ]
+    });
+  });
+
+</script>
 @endsection

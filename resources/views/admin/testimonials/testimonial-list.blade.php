@@ -39,7 +39,7 @@
           <tbody>
               @forelse ($testimonials as $testimonial)
               <tr>
-                <td>{{ $testimonial->id }}</td>
+                <td>{{ $loop->iteration }}</td>
                 <td><img src="image/{{ $testimonial->image }}" alt="{{ $testimonial->customer_name }}"></td>
                 <td>{{ $testimonial->customer_name }}</td>
                 <td>{{ $testimonial->profession }}</td>
@@ -73,4 +73,17 @@
 
 
 
+@endsection
+
+@section('js-content')
+<script>
+  $(document).ready(function () {
+    $('#example').DataTable({
+      "aoColumnDefs": [
+        { "bSortable": false, "aTargets": [ -1 ] }, 
+    ]
+    });
+  });
+
+</script>
 @endsection

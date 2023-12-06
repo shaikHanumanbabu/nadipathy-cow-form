@@ -71,3 +71,12 @@
 
 
 @endsection
+
+@section('js-content')
+<script>
+  $(document).ready(function () {
+    $('#example').DataTable();
+  });
+
+</script>
+@endsection

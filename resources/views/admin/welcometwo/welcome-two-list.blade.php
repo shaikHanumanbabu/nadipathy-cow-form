@@ -36,7 +36,7 @@
           <tbody>
               @forelse ($welcometwos as $welcometwo)
               <tr>
-                <td>{{ $welcometwo->id }}</td>
+                <td>{{ $loop->iteration }}</td>
                 <td>{{ $welcometwo->title }}</td>
                 <td>
                   <a  class="btn bt-sm" href="{{ route('welcome_twos.edit', ['welcome_two' =>  $welcometwo->id ]) }}">
@@ -67,4 +67,17 @@
 
 
 
+@endsection
+
+@section('js-content')
+<script>
+  $(document).ready(function () {
+    $('#example').DataTable({
+      "aoColumnDefs": [
+        { "bSortable": false, "aTargets": [ -1 ] }, 
+    ]
+    });
+  });
+
+</script>
 @endsection

@@ -35,7 +35,7 @@
             
             <div class="col-md-12 mb-1">
                 <label for="image" class="mb-1">Upload Products Image</label>
-                <input type="file" class="form-control" id="image" name="image">
+                <input type="file" accept="image/*" class="form-control" id="image" name="image">
 
                 @if (isset($videogallery->id))
                     <img src="/image/{{ $videogallery->image }}" alt="{{ $videogallery->title }}">

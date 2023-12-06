@@ -37,7 +37,7 @@
           <tbody>
               @forelse ($events as $event)
               <tr>
-                <td>{{ $loop->index + 1 }}</td>
+                <td>{{ $loop->iteration }}</td>
                 <td><img src="image/{{ $event->image }}" alt="{{ $event->title }}"></td>
                 <td>{{ $event->title }}</td>
                 <td>
@@ -69,4 +69,17 @@
 
 
 
+@endsection
+
+@section('js-content')
+<script>
+  $(document).ready(function () {
+    $('#example').DataTable({
+      "aoColumnDefs": [
+        { "bSortable": false, "aTargets": [ -1 ] }, 
+    ]
+    });
+  });
+
+</script>
 @endsection

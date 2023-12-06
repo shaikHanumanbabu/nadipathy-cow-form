@@ -22,6 +22,7 @@
   <link href="{{ URL::asset('assets/quill/quill.bubble.css') }}" rel="stylesheet">
   <link href="{{ URL::asset('assets/remixicon/remixicon.css') }}" rel="stylesheet">
   <link href="{{ URL::asset('assets/simple-datatables/style.css') }}" rel="stylesheet">
+  <link href="{{ URL::asset('assets/css/jquery.dataTables.min.css') }}" rel="stylesheet">
 
   <link href="{{ URL::asset('assets/css/style.css') }} " rel="stylesheet">
 
@@ -244,8 +245,12 @@
   <script src="{{ URL::asset('assets/tinymce/tinymce.min.js') }}"></script>
   <script src="{{ URL::asset('assets/php-email-form/validate.js') }}"></script>
   <script src="{{ URL::asset('assets/js/main.js') }}"></script>
+  <script src="{{ URL::asset('assets/js/jquery-3.5.1.js') }}"></script>
+  <script src="{{ URL::asset('assets/js/jquery.dataTables.min.js') }} "></script>
   
   @yield('js-content')
+
+  {{-- @yield('datatable-section') --}}
 </body>
 
 </html>
