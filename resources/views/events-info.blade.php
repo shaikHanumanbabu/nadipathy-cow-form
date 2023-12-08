@@ -30,7 +30,7 @@
                     <div class="col-lg-8 wow fadeInUp bg-white px-4 py-4 mb-4">
                     <h3>{{ $event->title }}</h3>
                     <p style="text-align: justify;">{!! $event->short_description !!}</p>
-                    <a href="{{ route('events-details') }}?eventId={{$event->id}}" target="_blank" class="btn btn-secondary rounded-pill py-2 px-4 animated slideInLeft">Photo Gallery</a>
+                    <a href="{{ $event->link }}" target="_blank" class="btn btn-secondary rounded-pill py-2 px-4 animated slideInLeft">Photo Gallery</a>
                     </div>
                 </div>
                 
