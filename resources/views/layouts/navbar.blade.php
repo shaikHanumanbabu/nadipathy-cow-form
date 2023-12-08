@@ -41,7 +41,7 @@
                 </div>
             </div>
             
-            <a href="{{ url('events') }}" class="nav-item nav-link">{{__('messages.blog')}}</a>
+            <a href="{{ url('blog') }}" class="nav-item nav-link">{{__('messages.blog')}}</a>
             <a href="{{ url('contact') }}" class="nav-item nav-link">{{__('messages.contact')}}</a>
         </div>
         <!-- <div class="border-start ps-4 d-none d-lg-block">
