@@ -73,7 +73,7 @@ class HomeController extends Controller
 
         $breed = Breed::where('id', '=',  $params)->get()->first();
 
-        dd($breed);
+        //dd($breed);
         // resources/views/breed-info.blade.php
         return view('breed-info', [
             'breed' => $breed,
