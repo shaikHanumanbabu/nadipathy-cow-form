@@ -113,7 +113,7 @@
 
     $(function() {
         $('#id_0').datetimepicker({
-                // "debug": true,
+                "debug": true,
                 "allowInputToggle": true,
                 "showClose": true,
                 "showClear": true,

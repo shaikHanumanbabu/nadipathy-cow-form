@@ -104,10 +104,10 @@ class SocialMediaController extends Controller
      * @param  \App\Models\SocialMedia  $socialMedia
      * @return \Illuminate\Http\Response
      */
-    public function destroy(SocialMedia $socialMedia)
+    public function destroy(SocialMedia $social_medium)
     {
         //
-        $socialMedia->delete();
+        $social_medium->delete();
         return redirect()->back()->with('success', 'Deleted successfully.');
     }
 }

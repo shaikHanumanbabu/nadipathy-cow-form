@@ -84,6 +84,7 @@
 
                 @if (isset($cow->id))
                     @foreach ($cow->galleryimage as $gallery)
+                        <a href="{{route("cowimagedelete", ['cowGalleryImage' => $gallery->id])}}">{{ $loop->iteration }}</a>
                         <img height="100px" src="/image/{{ $gallery->image_name }}" alt="{{ $cow->name }}">
                     @endforeach
                 @endif

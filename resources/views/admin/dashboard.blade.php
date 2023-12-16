@@ -17,7 +17,7 @@
       <div class="row">
         
         <div class="col-lg-12">
-          <div class="row">
+          {{-- <div class="row">
             
             <!-- Card -->
             <div class="col-xxl-3 col-md-3">
@@ -86,12 +86,14 @@
               </div>
             </div><!-- End Card -->
 
-          </div>
+          </div> --}}
+
+          <img src="{{ URL::asset("img/logo2a.png")}}">
         </div>
       
       </div>
 
-      <div class="row">
+      {{-- <div class="row">
         <!-- Left side columns -->
         <div class="col-lg-12">
           <div class="row">
@@ -188,7 +190,7 @@
           </div>
         </div><!-- End Left side columns -->
 
-      </div>
+      </div> --}}
     </section>
 
   </main><!-- End #main -->

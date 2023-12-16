@@ -84,8 +84,11 @@ Route::get('/products-info', [HomeController::class, 'productsInfo']);
 Route::get('/subcategory', [HomeController::class, 'categoryInfo']);
 Route::get('/cow-details', [HomeController::class, 'cowDetailsInfo'])->name('cow-details');
 
+Route::get('/cows-image-gallery/{cowGalleryImage}', [CowController::class, 'cowsGalleryImageDelete'])->name('cowimagedelete');
+
 Route::post('/store-appointment', [HomeController::class, 'store_appointment'])->name('store-appointment');
 Route::get('/admin', [AdminController::class, 'index']);
+Route::get('/admin-logout', [AdminController::class, 'logout'])->name('admin.logout');
 Route::post('/admin', [AdminController::class, 'loginCheck'])->name('admin.logincheck');
 
 Route::get('/dashboard', [DashboardController::class, 'index'])->name('dashboard.index');

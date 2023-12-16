@@ -30,11 +30,11 @@
         </div>
         <div class="col-lg-5 text-end">
             <div class="h-100 bg-secondary d-inline-flex align-items-center text-dark py-2 px-3">
-                <span class="me-2 fw-semi-bold"><i class="fa fa-phone-alt me-2"></i>Call Us:</span>
+                <span class="me-2 fw-semi-bold"><i class="fa fa-phone me-2"></i>Call Us:</span>
                 <span>08885011320</span>
             </div>
             <div class="h-100 bg-secondary d-inline-flex align-items-center text-dark py-2 px-3">
-                <span class="me-2 fw-semi-bold"><i class="fa fa-phone-alt me-2"></i>For Hindi:</span>
+                <span class="me-2 fw-semi-bold"><i class="fa fa-phone me-2"></i>For Hindi:</span>
                 <span>08885011321</span>
             </div>
         </div>
@@ -94,6 +94,9 @@
             
             <div class="col-md-12">
             <button type="submit" class="btn btn-primary">Submit</button>
+
+            <button type="button" class="btn btn-info" data-bs-dismiss="modal">Close</button>
+
             </div>
 
         

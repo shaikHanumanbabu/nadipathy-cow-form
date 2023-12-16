@@ -45,7 +45,8 @@
   <nav class="header-nav ms-auto">
     <ul class="d-flex align-items-center">
       <li class="nav-item dropdown pe-3">
-        <a class="nav-link nav-profile d-flex align-items-center pe-0" href="#" data-bs-toggle="dropdown">
+        <a href="{{ route("admin.logout") }}">Logout</a>  
+        <a class="nav-link nav-profile d-flex align-items-center pe-0" href="{{ route("admin.logout") }}" data-bs-toggle="dropdown">
           <img src="{{ URL::asset('assets/img/user_icon.png') }}" alt="Profile" class="rounded-circle">
           <span class="d-none d-md-block ps-2"> Log Out</span>
         </a>

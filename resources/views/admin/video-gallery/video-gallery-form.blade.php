@@ -21,7 +21,7 @@
             @if (isset($videogallery))
                 @method('PATCH')
             @endif
-            <h5>Create Products</h5>
+            <h5>Create Video Gallery</h5>
             
             <div class="col-md-12 mb-1">
                 <input type="text" class="form-control" id="title" name="title" value="{{ isset($videogallery->title) ? $videogallery->title : old('title') }}" placeholder="Enter title">
@@ -34,7 +34,7 @@
             
             
             <div class="col-md-12 mb-1">
-                <label for="image" class="mb-1">Upload Products Image</label>
+                <label for="image" class="mb-1">Upload Video Gallery Image</label>
                 <input type="file" accept="image/*" class="form-control" id="image" name="image">
 
                 @if (isset($videogallery->id))

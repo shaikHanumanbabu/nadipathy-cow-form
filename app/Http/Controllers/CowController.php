@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Http\Requests\StoreCowRequest;
 use App\Models\Breed;
 use App\Models\Cow;
+use App\Models\CowImages;
 use App\Models\SubCategories;
 use Illuminate\Http\Request;
 
@@ -200,6 +201,14 @@ class CowController extends Controller
         $cow->delete();
         return redirect()->route('cows.index')->with('success', 'Cow deleted successfully.');
 
+
+    }
+
+    public function cowsGalleryImageDelete(CowImages $cowGalleryImage)
+    {
+        $cow = $cowGalleryImage->cow_id;
+        $cowGalleryImage->delete();
+        return redirect()->route('cows.edit', ['cow' => $cow])->with('success', 'Image delete deleted successfully.');
 
     }
 }

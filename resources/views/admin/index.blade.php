@@ -52,23 +52,33 @@
                                     <div class="modal fade" id="forgotpw" tabindex="-1">
                                         <div class="modal-dialog modal-dialog-centered">
                                             <div class="modal-content" style="padding: 30px;">
-                                                <form class="row g-3">
+
+                                                {{-- <div class="modal-header">
+                                                    <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+                                                </div> --}}
+                                                {{-- <button type="button" class="btn-close" data-bs-dismiss="modal"></button> --}}
+                                                
+                                                <form class="row g-3" >
                                                     <h5 class="mb-3">CHANGE PASSWORD</h5>
                                                     <div class="col-md-12 mb-3">
                                                         <input type="email" class="form-control" id="emailid"
                                                             placeholder="Enter Email ID">
                                                     </div>
-                                                    <div class="col-md-12 mb-3">
+                                                    {{-- <div class="col-md-12 mb-3">
                                                         <input type="number" class="form-control"
                                                             id="changepassword" placeholder="Change Password">
                                                     </div>
                                                     <div class="col-md-12">
                                                         <input type="number" class="form-control"
                                                             id="confirmpassword" placeholder="Confirm Password">
-                                                    </div>
+                                                    </div> --}}
                                                     <div class="text-right" style="text-align: right;">
                                                         <button type="submit"
                                                             class="btn btn-primary">Submit</button>
+                                                            
+                                                            <button type="button" class="btn btn-info" data-bs-dismiss="modal">Close</button>
+
+
                                                     </div>
                                                 </form>
                                             </div>
