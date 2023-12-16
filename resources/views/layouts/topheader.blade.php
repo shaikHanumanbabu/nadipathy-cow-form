@@ -43,8 +43,16 @@
 
 <div class="modal fade show" id="appointment" tabindex="-1" aria-modal="true" role="dialog" style="display: {{ session('appointment_success') || $errors->any() ? 'block' : 'none' }};">
     <div class="modal-dialog modal-dialog-centered">
+        
         <div class="modal-content" style="padding: 25px;">
-
+            <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLabel">Submit Your Details</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                  <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            
+            <div class="modal-body">
             @if ($errors->any())
             <div class="alert alert-danger">
                 @foreach ($errors->all() as $error)
@@ -54,7 +62,7 @@
         @endif
         <form class="row g-3" method="POST" action="{{ route('store-appointment') }}">
             @csrf
-            <h5>Submit Your Details</h5>
+            
             @if (session('appointment_success'))
             <div class="alert alert-success">
                 <strong>{{ session('appointment_success') }}</strong>
@@ -98,10 +106,8 @@
             <button type="button" class="btn btn-info" data-bs-dismiss="modal">Close</button>
 
             </div>
-
-        
-            
         </form>
+        </div>
         </div>
     </div>
     </div>
