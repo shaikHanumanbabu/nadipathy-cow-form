@@ -23,7 +23,17 @@
   <div class="col-12 dashboard">
     <div class="card courses_page overflow-auto">
 
+      {{-- <div class="col-md-12 mb-1">
+        
+    </div> --}}
+
       <div class="card-body">
+        <select class="form-control" id="breed_id" name="breed_id">
+          @foreach ($breeds as $breed)
+          
+          <option value="{{$breed->id}}" {{ isset($breedId) && $breedId == $breed->id ? "selected" : "" }}>{{$breed->title}}</option>
+          @endforeach
+        </select>
         <p align="right"><a class="btn btn-primary" href="{{ route('cows.create') }}">Add New Cows</a></p>
         <table id="example" class="display" style="width:100%">
           <thead>
@@ -36,7 +46,9 @@
               </tr>
           </thead>
           <tbody>
-              @forelse ($cows as $cow)
+
+                  
+              @foreach ($cows as $cow)
               <tr>
                 <td>{{ $loop->iteration }}</td>
                 <td><img src="image/{{ $cow->main_image }}" alt="{{ $cow->name }}"></td>
@@ -53,9 +65,10 @@
                   </form>
                 </td>
               </tr>
-              @empty
-                  <tr> <td>No data found</td></tr>
-              @endforelse
+              
+              @endforeach
+
+
               
           </tbody>
         </table>
@@ -82,6 +95,13 @@
     ]
     });
   });
+
+  $('#breed_id').on('change', function() {
+    let breedId = $(this).val()
+    let breedType = $(this).find('option:selected').text();
+    let url = "{{ url('') }}"
+    window.location.href = `?breedType=${breedType}&breedId=${breedId}`
+  })
 
 </script>
 @endsection

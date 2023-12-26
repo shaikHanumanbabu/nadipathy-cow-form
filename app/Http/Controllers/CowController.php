@@ -19,10 +19,14 @@ class CowController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
+    public function index(Request $request)
     {
+        
+        $breedId = $request->get('breedId') ?? 12;
         return view('admin.cows.cow-list', [
-            'cows' => Cow::all()
+            'cows' => Cow::where('breed_id', '=', $breedId)->get(),
+            'breeds' => Breed::all(),
+            'breedId' => $breedId
         ]);
     }
 
