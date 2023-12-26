@@ -26,7 +26,7 @@
 
             @forelse ($events as $event)
                 <div class="row g-0">
-                    <div class="col-lg-4 wow fadeInUp bg-white px-4 py-4 mb-4"><img src="img/photo-gallery/cowhug-therapy-2020/28.jpg" class="img-fluid"></div>
+                    <div class="col-lg-4 wow fadeInUp bg-white px-4 py-4 mb-4"><img src="{{ URL::asset("image/$event->image") }}" class="img-fluid"></div>
                     <div class="col-lg-8 wow fadeInUp bg-white px-4 py-4 mb-4">
                     <h3>{{ $event->title }}</h3>
                     <p style="text-align: justify;">{!! $event->short_description !!}</p>

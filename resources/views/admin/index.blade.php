@@ -47,8 +47,8 @@
                                 </form>
 
                                 <div class="col-6" style="text-align:right">
-                                    <a href="#" data-bs-toggle="modal" data-bs-target="#forgotpw">Forgot
-                                        Password?</a>
+                                    <!--<a href="#" data-bs-toggle="modal" data-bs-target="#forgotpw">Forgot-->
+                                    <!--    Password?</a>-->
                                     <div class="modal fade" id="forgotpw" tabindex="-1">
                                         <div class="modal-dialog modal-dialog-centered">
                                             <div class="modal-content" style="padding: 30px;">

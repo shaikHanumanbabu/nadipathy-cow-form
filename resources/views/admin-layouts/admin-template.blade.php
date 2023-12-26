@@ -45,10 +45,13 @@
   <nav class="header-nav ms-auto">
     <ul class="d-flex align-items-center">
       <li class="nav-item dropdown pe-3">
-        <a href="{{ route("admin.logout") }}">Logout</a>  
-        <a class="nav-link nav-profile d-flex align-items-center pe-0" href="{{ route("admin.logout") }}" data-bs-toggle="dropdown">
-          <img src="{{ URL::asset('assets/img/user_icon.png') }}" alt="Profile" class="rounded-circle">
-          <span class="d-none d-md-block ps-2"> Log Out</span>
+        <a href="{{ route("admin.logout") }}" style="color:#fff">
+            <img width="40px" src="{{ URL::asset('assets/img/user_icon.png') }}" alt="Profile" class="rounded-circle">
+            
+            Logout</a>  
+        <!--<a class="nav-link nav-profile d-flex align-items-center pe-0" href="{{ route("admin.logout") }}" data-bs-toggle="dropdown">-->
+          
+        <!--  <span class="d-none d-md-block ps-2"> Log Out</span>-->
         </a>
       </li>
     </ul>

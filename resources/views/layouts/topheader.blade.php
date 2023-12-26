@@ -47,9 +47,7 @@
         <div class="modal-content" style="padding: 25px;">
             <div class="modal-header">
                 <h5 class="modal-title" id="exampleModalLabel">Submit Your Details</h5>
-                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                  <span aria-hidden="true">&times;</span>
-                </button>
+                
             </div>
             
             <div class="modal-body">
@@ -69,22 +67,22 @@
               </div>
             @endif
             <div class="col-md-12 mb-1">
-            <input type="text" class="form-control" id="name" name="name" placeholder="Your Name" value="{{ old('name') }}">
+            <input type="text" required class="form-control" id="name" name="name" placeholder="Your Name" value="{{ old('name') }}">
             </div>
             <div class="col-md-12 mb-1">
-            <input type="number" class="form-control" id="phone_number" name="phone_number" placeholder="Your Mobile Number"  value="{{ old('phone_number') }}">
+            <input type="number" required class="form-control" id="phone_number" name="phone_number" placeholder="Your Mobile Number"  value="{{ old('phone_number') }}">
             </div>
             <div class="col-md-12 mb-1">
-            <input type="email" class="form-control" id="email" name="email" placeholder="Your Email ID" value="{{ old('email') }}">
+            <input type="email" required class="form-control" id="email" name="email" placeholder="Your Email ID" value="{{ old('email') }}">
             </div>
             <div class="col-md-12 mb-1">
-            <input type="text" class="form-control" id="address" name="address" placeholder="Your Place" value="{{ old('address') }}">
+            <input type="text" required class="form-control" id="address" name="address" placeholder="Your Place" value="{{ old('address') }}">
             </div>
 
             <div class="form-group">
                 <label for="id_start_datetime">Select your date of visiting</label>
                 <div class="input-group date" id="id_0">
-                    <input type="text" value="{{ $errors->has('visiting_datetime') ? old('visiting_datetime') :  '05/16/2018 12:31:00 AM'}}" name="visiting_datetime" class="form-control" required/>
+                    <input type="text" required value="{{ $errors->has('visiting_datetime') ? old('visiting_datetime') :  '05/16/2018 12:31:00 AM'}}" name="visiting_datetime" class="form-control" required/>
                     <div class="input-group-addon input-group-append">
                         <div class="input-group-text">
                             <i class="glyphicon glyphicon-calendar fa fa-calendar"></i>

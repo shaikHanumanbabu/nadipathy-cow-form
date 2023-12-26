@@ -18,7 +18,7 @@
                             </div>
                             <h5 class="mb-3">{{ $breed->title }}</h4>
                             <p class="mb-4 justify">
-                                {{ $breed->short_description }}
+                                {!! $breed->short_description !!}
                             </p>
                             <a class="btn btn-square rounded-circle" href="{{ route("breed-info") }}?breedId={{ $breed->id }}"><i class="bi bi-chevron-double-right"></i></a>
                         </div>

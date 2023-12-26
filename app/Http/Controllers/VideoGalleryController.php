@@ -124,9 +124,9 @@ class VideoGalleryController extends Controller
      * @param  \App\Models\VideoGallery  $videoGallery
      * @return \Illuminate\Http\Response
      */
-    public function destroy(VideoGallery $videoGallery)
+    public function destroy(VideoGallery $videogallery)
     {
-        $videoGallery->delete();
+        $videogallery->delete();
         return redirect()->back()->with('success', 'Deleted successfully.');
     }
 }

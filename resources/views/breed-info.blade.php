@@ -23,12 +23,12 @@
                 <img src="{{ URL::asset("/image/$breed->image")  }}" class="img-fluid" style="border-radius: 10px;">
             </div>
             <div class="col-lg-8 wow fadeIn" data-wow-delay="0.5s">
-                <p class="section-title bg-white text-start text-primary pe-3">Miniature Breed</p>
+                <p class="section-title bg-white text-start text-primary pe-3">{{ $breed->title }} Breed</p>
                 <h1 class="mb-4">What is {{ $breed->title }} Breed?</h1>
                 <p class="mb-4" style="text-align: justify;">
                     {!! $breed->long_description !!}
                 </p>
-                <a class="btn btn-secondary rounded-pill py-3 px-5" href="{{ $breed->link }}">Visit Our {{ $breed->title }} Cows</a>
+                <a class="btn btn-secondary rounded-pill py-3 px-5" href="{{ $breed->link }}">Visit Our {{ $breed->title }}</a>
             </div>
         </div>
     </div>

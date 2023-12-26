@@ -7,7 +7,7 @@
     <div class="pagetitle">
       <div class="row">
         <div class="col-lg-12">
-          <h1>Dashboard</h1>
+          <h1 style="text-align:center">WELCOME</h1>
         </div>
       </div>
     </div>
@@ -87,8 +87,9 @@
             </div><!-- End Card -->
 
           </div> --}}
-
-          <img src="{{ URL::asset("img/logo2a.png")}}">
+<div style="justify-content:center; align-items:center; display:flex; height:520px; background-color:#91b54d">
+    <img src="{{ URL::asset("img/logo2a.png")}}" style="width:500px;">
+</div>
         </div>
       
       </div>

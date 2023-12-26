@@ -29,8 +29,7 @@
           <thead>
               <tr>
                 <th>S.No</th>
-                <th>Video Gallery Image</th>
-                <th>Video Gallery Name</th>
+                <th>Video Gallery Youtube Link</th>
                 <th>Actions</th>
               </tr>
           </thead>
@@ -38,8 +37,8 @@
               @forelse ($videoGalleries as $videoGallery)
               <tr>
                 <td>{{ $loop->iteration }}</td>
-                <td><img src="image/{{ $videoGallery->image }}" alt="{{ $videoGallery->title }}"></td>
-                <td>{{ $videoGallery->title }}</td>
+                
+                <td>{{ $videoGallery->link }}</td>
                 <td>
                   <a  class="btn bt-sm" href="{{ route('videogalleries.edit', ['videogallery' =>   $videoGallery->id ]) }}">
                     <i class="bi bi-pencil"></i>

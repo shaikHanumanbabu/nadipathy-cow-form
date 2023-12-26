@@ -41,7 +41,7 @@
                 <td>{{ $loop->iteration }}</td>
                 <td><img src="image/{{ $breed->image }}" alt="{{ $breed->customer_name }}"></td>
                 <td>{{ $breed->title }}</td>
-                <td>{{ $breed->short_description }}</td>
+                <td>{!! $breed->short_description !!}</td>
                 <td>
                   <a  class="btn bt-sm" href="{{ route('breeds.edit', ['breed' =>  $breed->id ]) }}">
                     <i class="bi bi-pencil"></i>

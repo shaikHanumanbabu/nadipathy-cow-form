@@ -23,8 +23,8 @@
 <div class="container-xxl">
     <div class="container">
         <div class="text-center mx-auto wow fadeInUp" data-wow-delay="0.1s" style="max-width: 500px;">
-            <p class="section-title bg-white text-center text-primary px-3">Miniature Cows</p>
-            <h1 class="mb-5">Ground Surface</h1>
+            <p class="section-title bg-white text-center text-primary px-3">{{ $cow->breed->title }}</p>
+            <h1 class="mb-5">{{ $cow->sub_category->subcategory_name }}</h1>
         </div>
         <div class="row gx-4">
             
@@ -43,16 +43,24 @@
             @endforeach
             
             
-            <div class="col-lg-6 mb-4 wow fadeInUp offset-lg-3" data-wow-delay="0.3s">
-                <div class="product-item">
-                    <div class="position-relative">
-                        <img class="img-fluid" src="img/video_bg.jpg" alt="">
-                        <div class="product-overlay">
-                            <iframe width="560" height="315" src="{{ $cow->link }}" data-lightbox="gallery" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
-                        </div>
-                    </div>
+            <!--<div class="col-lg-6 mb-4 wow fadeInUp offset-lg-3" data-wow-delay="0.3s">-->
+            <!--    <div class="product-item">-->
+            <!--        <div class="position-relative">-->
+            <!--            <img class="img-fluid" src="img/video_bg.jpg" alt="">-->
+            <!--            <div class="product-overlay">-->
+            <!--                <iframe width="560" height="315" src="{{ $cow->link }}" data-lightbox="gallery" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>-->
+            <!--            </div>-->
+            <!--        </div>-->
+            <!--    </div>-->
+            <!--</div>-->
+            
+            <div class="col-md-6 col-md-offset-3">
+            <div class="card mb-3">
+                <div class="embed-responsive embed-responsive-16by9">
+                    <iframe width="100%" height="350px" style="padding: 15px;" src="{{ $cow->link }}" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
                 </div>
             </div>
+        </div>
 
             <!-- <div class="col-md-4">
                 <div class="card">

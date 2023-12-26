@@ -23,29 +23,29 @@
             @endif
             <h5>Create Video Gallery</h5>
             
+            <!--<div class="col-md-12 mb-1">-->
+            <!--    <input type="text" class="form-control" id="title" name="title" value="{{ isset($videogallery->title) ? $videogallery->title : old('title') }}" placeholder="Enter title">-->
+            <!--</div>-->
             <div class="col-md-12 mb-1">
-                <input type="text" class="form-control" id="title" name="title" value="{{ isset($videogallery->title) ? $videogallery->title : old('title') }}" placeholder="Enter title">
-            </div>
-            <div class="col-md-12 mb-1">
-                <input type="text" class="form-control" id="link" name="link" value="{{ isset($videogallery->link) ? $videogallery->link : old('link') }}" placeholder="Enter link">
+                <input type="text" class="form-control" id="link" name="link" value="{{ isset($videogallery->link) ? $videogallery->link : old('link') }}" placeholder="Enter youtube link">
             </div>
             
            
             
             
-            <div class="col-md-12 mb-1">
-                <label for="image" class="mb-1">Upload Video Gallery Image</label>
-                <input type="file" accept="image/*" class="form-control" id="image" name="image">
+            <!--<div class="col-md-12 mb-1">-->
+            <!--    <label for="image" class="mb-1">Upload Video Gallery Image</label>-->
+            <!--    <input type="file" accept="image/*" class="form-control" id="image" name="image">-->
 
-                @if (isset($videogallery->id))
-                    <img src="/image/{{ $videogallery->image }}" alt="{{ $videogallery->title }}">
-                @endif
-                <p style="margin-top: 10px; font-size: 14px;"><b>Note:</b> <br>
-                    1. Follow the dimensions to upload the image (1920px / 882px). <br>
-                    2. Only jpg, jpeg, png formats allowed. <br>
-                    3. File size should be below 1 MB.
-                </p>
-            </div>
+            <!--    @if (isset($videogallery->id))-->
+            <!--        <img src="/image/{{ $videogallery->image }}" alt="{{ $videogallery->title }}">-->
+            <!--    @endif-->
+            <!--    <p style="margin-top: 10px; font-size: 14px;"><b>Note:</b> <br>-->
+            <!--        1. Follow the dimensions to upload the image (1920px / 882px). <br>-->
+            <!--        2. Only jpg, jpeg, png formats allowed. <br>-->
+            <!--        3. File size should be below 1 MB.-->
+            <!--    </p>-->
+            <!--</div>-->
             <div class="col-md-12">
                 <button type="submit" class="btn btn-primary">
                     @if (isset($videogallery))

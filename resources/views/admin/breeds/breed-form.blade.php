@@ -21,10 +21,14 @@
             </div>
         
             <div class="col-md-12 mb-1">
+                <label for="image" class="mb-1">Short Description (Upto 255 characters)</label>
+
                 <textarea type="text" class="form-control" id="short_description" name="short_description" rows="5" cols="10" placeholder="Enter short_description">{{ isset($breed->short_description) ? $breed->short_description :  old('short_description') }}</textarea>
             </div>
 
             <div class="col-md-12 mb-1">
+                <label for="image" class="mb-1">Long Description</label>
+
                 <textarea type="text" class="form-control" id="long_description" name="long_description" rows="5" cols="10" placeholder="Enter long_description">{{ isset($breed->long_description) ? $breed->long_description :  old('long_description') }}</textarea>
             </div>
             
@@ -53,4 +57,20 @@
         </form>
     </div>
 </main>
+@endsection
+
+
+@section('js-content')
+
+<script type="text/javascript">
+    
+    tinymce.init({
+      selector: 'textarea#short_description',
+    });
+    
+    tinymce.init({
+      selector: 'textarea#long_description',
+    });
+  </script>
+    
 @endsection
