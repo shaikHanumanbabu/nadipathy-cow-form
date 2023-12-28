@@ -55,7 +55,10 @@
     @yield('content')
 
     @include('layouts.footer')
+
     </div>
+
+
     <script type="text/javascript">
         function googleTranslateElementInit() {
           new google.translate.TranslateElement({pageLanguage: 'en'}, 'google_translate_element');
@@ -75,6 +78,8 @@
     <script src="{{ URL::asset("/assets/js/moment-with-locales.min.js") }}"></script>
     <script src="{{ URL::asset("/assets/js/bootstrap-datetimepicker.min.js") }}"></script>
     <script type="text/javascript" src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>           
+    @yield('js-content')
+        
 <script type='text/javascript'>
     (function(I, L, T, i, c, k, s) {if(I.iticks) return;I.iticks = {host:c, settings:s, clientId:k, cdn:L, queue:[]};var h = T.head || T.documentElement;var e = T.createElement(i);var l = I.location;e.async = true;e.src = (L||c)+'/client/inject-v2.min.js';h.insertBefore(e, h.firstChild);I.iticks.call = function(a, b) {I.iticks.queue.push([a, b]);};})(window, 'https://cdn-v1.intelliticks.com/prod/common', document, 'script', 'https://app.intelliticks.com', 'LhTnhMXLENXHkCm2t_c', {});
 </script>

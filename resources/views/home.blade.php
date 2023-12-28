@@ -158,3 +158,21 @@
 @include('layouts.testimonils')
 
 @endsection
+
+
+@section('js-content')
+
+<script type="text/javascript">
+    $(document).ready(function(){
+        $("#mdl_close_btn").click(function(){
+            if($('.alert-success').length > 0) {
+                $('#appointment').css("display","none")
+                $('.alert-success').remove()
+            }
+        });
+    });
+</script>
+    
+@endsection
+
+

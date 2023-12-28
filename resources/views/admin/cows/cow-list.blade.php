@@ -41,7 +41,8 @@
                 <th>S.No.</th>
                 <th>Cows Image</th>
                 <th>Cow Name</th>
-                <th>Description</th>
+                <th>Cow Category</th>
+                {{-- <th>Description</th> --}}
                 <th>Actions</th>
               </tr>
           </thead>
@@ -53,7 +54,8 @@
                 <td>{{ $loop->iteration }}</td>
                 <td><img src="image/{{ $cow->main_image }}" alt="{{ $cow->name }}"></td>
                 <td>{{ $cow->name }}</td>
-                <td>{{ $cow->short_description }}</td>
+                <td>{{ $cow->sub_category->subcategory_name }}</td>
+                {{-- <td>{{ $cow->short_description }}</td> --}}
                 <td>
                   <a  class="btn bt-sm" href="{{ route('cows.edit', ['cow' =>  $cow->id ]) }}">
                     <i class="bi bi-pencil"></i>

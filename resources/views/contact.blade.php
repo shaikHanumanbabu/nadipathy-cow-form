@@ -89,7 +89,7 @@
                 <h3 class="mb-4">Contact Details</h3>
                 <div class="d-flex border-bottom pb-3 mb-3">
                     <div class="flex-shrink-0 btn-square bg-secondary rounded-circle">
-                        <i class="fa fa-map-marker-alt text-body"></i>
+                        <i class="fa fa-map-marker text-body"></i>
                     </div>
                     <div class="ms-3">
                         <h6>Our Address</h6>
@@ -99,7 +99,7 @@
                 </div>
                 <div class="d-flex border-bottom pb-3 mb-3">
                     <div class="flex-shrink-0 btn-square bg-secondary rounded-circle">
-                        <i class="fa fa-phone-alt text-body"></i>
+                        <i class="fa fa-phone text-body"></i>
                     </div>
                     <div class="ms-3">
                         <h6>Call Us</h6>

@@ -26,6 +26,12 @@
 
                                 <form action="{{ route('admin.logincheck') }}" method="POST"  class="row g-3 needs-validation" novalidate>
                                     @csrf
+
+                                    @if (session('fail'))
+                                        <div class="alert alert-success">
+                                            <strong>{{ session('fail') }}</strong>
+                                        </div>
+                                    @endif
                                     <div class="col-12">
                                         <div class="input-group has-validation">
                                             <input type="email" name="email" placeholder="Email ID"

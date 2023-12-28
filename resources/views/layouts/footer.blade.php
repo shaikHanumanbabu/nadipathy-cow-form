@@ -5,10 +5,10 @@
             <div class="row g-5">
                 <div class="col-lg-3 col-md-6">
                     <h5 class="text-white mb-4">Reach Us</h5>
-                    <p class="mb-1"><i class="fa fa-map-marker-alt me-3"></i>Nadipathy Goshala. </b><br>
+                    <p class="mb-1"><i class="fa fa-map-marker me-3"></i>Nadipathy Goshala. </b><br>
                         Lingamparthy,  konda thimmapuram Road, Yeleswaram Mandal, Kakinada District, Andhra Pradesh, India-533429</p>
-                    <p class="mb-1">Call: <i class="fa fa-phone-alt "></i> +91 8885011320</p>
-                    <p class="mb-1">For Hindi: <i class="fa fa-phone-alt "></i> +91 8885011321</p>
+                    <p class="mb-1">Call: <i class="fa fa-phone "></i> +91 8885011320</p>
+                    <p class="mb-1">For Hindi: <i class="fa fa-phone "></i> +91 8885011321</p>
                     <p class="mb-0"><i class="fa fa-envelope me-3"></i>punganurcowskkd@gmail.com</p>
                     <div class="d-flex pt-2">
                         <a class="btn btn-square btn-secondary rounded-circle me-2 smediafbfoot" href="https://www.facebook.com/Punganurcowsgoshala" target="_blank"><i class="fab fa-facebook-f"></i></a>

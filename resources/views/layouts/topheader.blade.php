@@ -41,7 +41,7 @@
     </div>
 </div>
 
-<div class="modal fade show" id="appointment" tabindex="-1" aria-modal="true" role="dialog" style="display: {{ session('appointment_success') || $errors->any() ? 'block' : 'none' }};">
+<div class="modal fade show" id="appointment" tabindex="-1" aria-modal="true" role="dialog" style="display: {{ !empty(session('appointment_success'))  ? 'block' : 'none' }};">
     <div class="modal-dialog modal-dialog-centered">
         
         <div class="modal-content" style="padding: 25px;">
@@ -101,7 +101,7 @@
             <div class="col-md-12">
             <button type="submit" class="btn btn-primary">Submit</button>
 
-            <button type="button" class="btn btn-info" data-bs-dismiss="modal">Close</button>
+            <button type="button" id="mdl_close_btn" class="btn btn-info" data-bs-dismiss="modal">Close</button>
 
             </div>
         </form>
