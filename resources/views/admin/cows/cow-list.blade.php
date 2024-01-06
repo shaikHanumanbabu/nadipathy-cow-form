@@ -28,12 +28,28 @@
     </div> --}}
 
       <div class="card-body">
-        <select class="form-control" id="breed_id" name="breed_id">
-          @foreach ($breeds as $breed)
-          
-          <option value="{{$breed->id}}" {{ isset($breedId) && $breedId == $breed->id ? "selected" : "" }}>{{$breed->title}}</option>
-          @endforeach
-        </select>
+        <div class="row">
+          <div class="col-md-6">
+            <select class="form-control" id="breed_id" name="breed_id">
+
+              @foreach ($breeds as $breed)
+              
+              <option value="{{$breed->id}}" {{ isset($breedId) && $breedId == $breed->id ? "selected" : "" }}>{{$breed->title}}</option>
+              @endforeach
+            </select>
+          </div>
+          <div class="col-md-6">
+
+            <select class="form-control" id="category_id" name="category_id">
+              <option value="">All</option>
+              @foreach ($sub_categories->categories as $category)
+              
+              <option value="{{$category->id}}" {{ !empty(request('category_id')) && request('category_id') == $category->id ? "selected" : "" }}>{{$category->subcategory_name}}</option>
+              @endforeach
+            </select>
+          </div>
+        </div>
+        
         <p align="right"><a class="btn btn-primary" href="{{ route('cows.create') }}">Add New Cows</a></p>
         <table id="example" class="display" style="width:100%">
           <thead>
@@ -104,6 +120,17 @@
     let url = "{{ url('') }}"
     window.location.href = `?breedType=${breedType}&breedId=${breedId}`
   })
+
+  $('#category_id').on('change', function() {
+    let breedId = $('#breed_id').val()
+    let breedType = $('#breed_id').find('option:selected').text();
+    let categoryId = $(this).val();
+    // console.log(`?breedType=${breedType}&breedId=${breedId}&category_id=${categoryId}`);
+    // let url = "{{ url('') }}"
+    window.location.href = `?breedType=${breedType}&breedId=${breedId}&category_id=${categoryId}`
+  })
+
+
 
 </script>
 @endsection

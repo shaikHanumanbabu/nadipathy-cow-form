@@ -23,10 +23,29 @@ class CowController extends Controller
     {
                 
         $breedId = $request->get('breedId') ?? 12;
+
+        $query = Cow::query();
+
+        $query->when(request('breedId'), function ($query) use ($breedId) {
+            return $query->where('breed_id', $breedId);
+        })->when(request('category_id'), function ($query) {
+            return $query->where('sub_categorie_id', request('category_id'));
+        });
+
+        $results = $query->get();
+
+        
+
+        // $cows = Cow::with(['sub_category'])->where('breed_id', '=', $breedId)->get();
+        
+        $sub_categories = Breed::with(['categories'])->findOrFail($breedId);
+        // dd($sub_categories);
+        // $sub_categories = SubCategories::where('breed_id', '=', $breedId)->get();
         return view('admin.cows.cow-list', [
-            'cows' => Cow::with('sub_category')->where('breed_id', '=', $breedId)->get(),
+            'cows' => $results,
             'breeds' => Breed::all(),
-            'breedId' => $breedId
+            'breedId' => $breedId,
+            'sub_categories' => $sub_categories,
         ]);
     }
 
