@@ -22,6 +22,7 @@ use App\Http\Controllers\TvNewController;
 use App\Http\Controllers\VideoGalleryController;
 use App\Http\Controllers\WelcomeOneController;
 use App\Http\Controllers\WelcomeTwoController;
+use App\Mail\ForgotPasswordMail;
 use App\Mail\MyTestMail;
 use App\Models\Appointment;
 use App\Models\VideoGallery;
@@ -51,7 +52,27 @@ Route::get('/send-email', function() {
     'body' => 'This is for testing email using smtp'
 ];
 
+
 Mail::to('hanumanbabu@yopmail.com')->send( new MyTestMail($details));
+
+dd("Email is Sent.");
+});
+
+
+Route::get('/test-forgot-email-template', function() {
+  
+  $details = [
+    'user' => 'Krishnam Raju',
+    'company' => 'Nadipathy Goshala',
+    'email' =>  Crypt::encrypt('nadipathygoshala@gmail.com'),
+    'expireIn' =>  Crypt::encrypt(date('Y-m-d H:i:s', strtotime('+30 minute'))),
+];
+
+// dd($details);
+// dd(Crypt::encrypt(json_encode($details)));
+
+
+Mail::to('shaikhanumanbabu453@gmail.com')->send( new ForgotPasswordMail($details));
 
 dd("Email is Sent.");
 });
@@ -90,6 +111,11 @@ Route::post('/store-appointment', [HomeController::class, 'store_appointment'])-
 Route::get('/admin', [AdminController::class, 'index']);
 Route::get('/admin-logout', [AdminController::class, 'logout'])->name('admin.logout');
 Route::post('/admin', [AdminController::class, 'loginCheck'])->name('admin.logincheck');
+Route::get('/forgot-password', [AdminController::class, 'forgotPassword'])->name('admin.forgotpassword');
+Route::post('/forgot-password', [AdminController::class, 'forgotPassword'])->name('admin.forgotpassword');
+
+Route::get('/update-password', [AdminController::class, 'updatePassword'])->name('admin.updatepassword');
+Route::post('/update-password', [AdminController::class, 'updatePassword'])->name('admin.updatepassword');
 
 Route::get('/dashboard', [DashboardController::class, 'index'])->name('dashboard.index');
 

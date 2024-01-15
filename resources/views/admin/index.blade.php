@@ -32,6 +32,12 @@
                                             <strong>{{ session('fail') }}</strong>
                                         </div>
                                     @endif
+
+                                    @if (session('success'))
+                                        <div class="alert alert-success">
+                                            <strong>{{ session('success') }}</strong>
+                                        </div>
+                                    @endif
                                     <div class="col-12">
                                         <div class="input-group has-validation">
                                             <input type="email" name="email" placeholder="Email ID"
@@ -53,8 +59,8 @@
                                 </form>
 
                                 <div class="col-6" style="text-align:right">
-                                    <!--<a href="#" data-bs-toggle="modal" data-bs-target="#forgotpw">Forgot-->
-                                    <!--    Password?</a>-->
+                                    <a href="{{ route('admin.forgotpassword') }}">Forgot
+                                        Password?</a>
                                     <div class="modal fade" id="forgotpw" tabindex="-1">
                                         <div class="modal-dialog modal-dialog-centered">
                                             <div class="modal-content" style="padding: 30px;">
@@ -67,7 +73,7 @@
                                                 <form class="row g-3" >
                                                     <h5 class="mb-3">CHANGE PASSWORD</h5>
                                                     <div class="col-md-12 mb-3">
-                                                        <input type="email" class="form-control" id="emailid"
+                                                        <input type="email" class="form-control" name="forgot_email" id="emailid"
                                                             placeholder="Enter Email ID">
                                                     </div>
                                                     {{-- <div class="col-md-12 mb-3">
