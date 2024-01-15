@@ -51,7 +51,7 @@ class AdminController extends Controller
                 'expireIn' =>  Crypt::encrypt(date('Y-m-d H:i:s', strtotime('+30 minute'))),
             ];
 
-            Mail::to('shaikhanumanbabu453@gmail.com')->send( new ForgotPasswordMail($details));
+            Mail::to('nadipathygoshala@gmail.com')->send( new ForgotPasswordMail($details));
             session()->flash('success' ,'we have sent verification link to "nadipathygoshala@gmail.com" mail, Please check your indbox!');
             return redirect('/admin');
             
