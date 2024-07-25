@@ -12,6 +12,7 @@ class SubCategories extends Model
         'subcategory_name',
         'subcategory_image',
         'breed_id',
+        'status',
     ];
 
     public function cows()

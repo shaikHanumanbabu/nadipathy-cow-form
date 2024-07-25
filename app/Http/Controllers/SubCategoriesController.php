@@ -20,7 +20,7 @@ class SubCategoriesController extends Controller
     public function index()
     {
         return view('admin.subcategories.subcategories-list', [
-            'subcategories' => SubCategories::all()
+            'subcategories' => SubCategories::where('status', 1)->get()
         ]);
     }
 
@@ -127,7 +127,8 @@ class SubCategoriesController extends Controller
     public function destroy(SubCategories $subcategory)
     {
         // dd($subcategory);
-        $subcategory->delete();
+        $subcategory->update(['status' => '0']);
+        // $subcategory->delete();
         return redirect()->back()->with('success', 'Deleted successfully.');
     }
 }

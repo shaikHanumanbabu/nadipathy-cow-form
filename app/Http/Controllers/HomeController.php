@@ -56,7 +56,9 @@ class HomeController extends Controller
     public function breedsType(Request $request)
     {
         $params = $request->get('breedType');
-        $breed = Breed::where('title', $params)->get()->first();
+        $breed = Breed::with(['categories' => function($query) {
+            return $query->where('status', 1);
+        }])->where('title', $params)->get()->first();
 
         
         return view('breeds', [
