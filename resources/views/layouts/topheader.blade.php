@@ -26,6 +26,10 @@
                         <a href="{{ url("?lang=te") }}" class="dropdown-item">తెలుగు</a>
                     </div>
                 </div> --}}
+
+                <div class="nav-item" style="z-index: 9999; margin-left: 10px;">
+                    <div id="google_translate_element" class="gtrans"></div>
+                </div>
             </div>
         </div>
         <div class="col-lg-5 text-end">

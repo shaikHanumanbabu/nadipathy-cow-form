@@ -8,7 +8,7 @@
     <meta content="" name="keywords">
     <meta content="" name="description">
 
-    <!-- <link href="img/favicon.ico" rel="icon"> -->
+    <link href="{{ URL::asset("img/favicon-32x32.png") }} " rel="icon">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Libre+Baskerville:wght@700&family=Open+Sans:wght@400;500;600&display=swap" rel="stylesheet">   
@@ -24,9 +24,17 @@
 
     <link href="{{ URL::asset("/css/style.css") }} " rel="stylesheet">
 
-<style>
+    <style>
+        .gtrans{background-color: #34AD54; border: 3px solid #EDDD5E; border-radius: 5px;}
+        .VIpgJd-ZVi9od-ORHb{position: absolute; z-index: -999 !important;}
+        </style>
 
-</style>
+<script type="text/javascript" src="https://translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
+    <script type="text/javascript">
+        function googleTranslateElementInit() {
+            new google.translate.TranslateElement({ pageLanguage: 'en' }, 'google_translate_element');
+        }
+    </script>
 </head>
 
 <body>
@@ -45,7 +53,7 @@
         <div class="spinner-border text-primary" role="status" style="width: 3rem; height: 3rem;"></div>
     </div>
     <!-- Spinner End -->
-    <div id="google_translate_element">
+    {{-- <div id="google_translate_element"> --}}
     @include('layouts.topheader')
 
     @include('layouts.navbar', [
@@ -59,11 +67,7 @@
     </div>
 
 
-    <script type="text/javascript">
-        function googleTranslateElementInit() {
-          new google.translate.TranslateElement({pageLanguage: 'en'}, 'google_translate_element');
-        }
-        </script>
+    
     <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.bundle.min.js"></script>
     <script src="{{ URL::asset("/lib/wow/wow.min.js") }} "></script>

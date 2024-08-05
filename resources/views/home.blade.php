@@ -81,61 +81,26 @@
                 <a class="btn btn-secondary rounded-pill py-3 px-5 mt-3" href="{{ $welcomeone->link }}">Read More</a>
             </div>
            
-            <div class="col-lg-6">
+            <div class="col-md-3 col-sm-6">
+                <div class="service-block color-bg">
+                    <iframe src="https://www.facebook.com/plugins/page.php?href=https%3A%2F%2Fwww.facebook.com%2FPunganurcowsgoshala&amp;tabs=timeline&amp;width=310&amp;height=470&amp;small_header=true&amp;adapt_container_width=true&amp;hide_cover=false&amp;show_facepile=false&amp;appId" width="310" height="470" style="border:none;overflow:hidden" scrolling="no" frameborder="0" allowfullscreen="true" allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share"></iframe>
+                </div>                 
+            </div>
+            <div class="col-md-3 col-sm-6">
                 <div class="rounded overflow-hidden">
                     <div class="row g-0">
-                        <div class="col-md-6" style="margin-bottom: 5px;">
+                        <div class="col-md-12" style="margin-bottom: 10px;">
                             <div style="margin: 0 3px; padding: 18px; background-color: #5B8C51; border-radius: 10px;" data-aos="flip-right" data-aos-delay="500" class="aos-init aos-animate">
                               <iframe width="100%" height="150" src="https://www.youtube.com/embed/G0ueso0Zy18?si=fghS9ORHSwUSEKsk" title="YouTube video player" frameborder="0" allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen=""></iframe>
                               <button class="btn btn-danger" onclick="window.open('https://www.youtube.com/@PunganurCowsGoshala','_blank')"><i class="bi bi-play-btn-fill"></i> Subscribe</button>
                             </div>
                         </div>
-                        <div class="col-md-6" style="margin-bottom: 5px;">
+                        <div class="col-md-12" style="margin-bottom: 5px;">
                             <div style="margin: 0 3px; padding: 18px; background-color: #EDDD5E; border-radius: 10px;" data-aos="flip-right" data-aos-delay="500" class="aos-init aos-animate">
                               <iframe width="100%" height="150" src="https://www.youtube.com/embed/kfY0vyEBpJI?si=g_HR_jjrIXJpu99Z" title="YouTube video player" frameborder="0" allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen=""></iframe>
                               <button class="btn btn-danger" onclick="window.open('https://www.youtube.com/channel/UCtpi28I5BpZV2WQdHNxiv5w','_blank')"><i class="bi bi-play-btn-fill"></i> Subscribe</button>
                             </div>
-                        </div>
-                        <div class="col-md-6" style="margin-bottom: 5px;">
-                            <div style="margin: 0 3px; padding: 18px; background-color: #EDDD5E; border-radius: 10px;" data-aos="flip-right" data-aos-delay="500" class="aos-init aos-animate">
-                              <iframe width="100%" height="150" src="https://www.youtube.com/embed/UUbZUueTLgc?si=bqWxlp8V8LUJqaro" title="YouTube video player" frameborder="0" allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen=""></iframe>
-                              <button class="btn btn-danger" onclick="window.open('https://www.youtube.com/@Minicows','_blank')"><i class="bi bi-play-btn-fill"></i> Subscribe</button>
-                            </div>
-                        </div>
-                        <div class="col-md-6" style="margin-bottom: 5px;">
-                            <div style="margin: 0 3px; padding: 18px; background-color: #5B8C51; border-radius: 10px;" data-aos="flip-right" data-aos-delay="500" class="aos-init aos-animate">
-                              <iframe width="100%" height="150" src="https://www.youtube.com/embed/c6OZYNhMoII?si=CAyiPCJ18qHooIDJ" title="YouTube video player" frameborder="0" allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen=""></iframe>
-                              <button class="btn btn-danger" onclick="window.open('https://www.youtube.com/@Miniaturecows','_blank')"><i class="bi bi-play-btn-fill"></i> Subscribe</button>
-                            </div>
-                        </div>
-                        <!-- <div class="col-sm-6 wow fadeIn" data-wow-delay="0.1s">
-                            <div class="text-center bg-primary py-5 px-4">
-                                <img class="img-fluid mb-4" src="img/experience.png" alt="">
-                                <h1 class="display-6 text-white" data-toggle="counter-up">16</h1>
-                                <span class="fs-5 fw-semi-bold text-secondary">Years of Experience</span>
-                            </div>
-                        </div>
-                        <div class="col-sm-6 wow fadeIn" data-wow-delay="0.3s">
-                            <div class="text-center bg-secondary py-5 px-4">
-                                <img class="img-fluid mb-4" src="img/award.png" alt="">
-                                <h1 class="display-6" data-toggle="counter-up">10</h1>
-                                <span class="fs-5 fw-semi-bold text-primary">Award Winning</span>
-                            </div>
-                        </div>
-                        <div class="col-sm-6 wow fadeIn" data-wow-delay="0.5s">
-                            <div class="text-center bg-secondary py-5 px-4">
-                                <img class="img-fluid mb-4" src="img/animal.png" alt="">
-                                <h1 class="display-6" data-toggle="counter-up">1032</h1>
-                                <span class="fs-5 fw-semi-bold text-primary">Total Cattle</span>
-                            </div>
-                        </div>
-                        <div class="col-sm-6 wow fadeIn" data-wow-delay="0.7s">
-                            <div class="text-center bg-primary py-5 px-4">
-                                <img class="img-fluid mb-4" src="img/client.png" alt="">
-                                <h1 class="display-6 text-white" data-toggle="counter-up">32</h1>
-                                <span class="fs-5 fw-semi-bold text-secondary">Our Inventions</span>
-                            </div>
-                        </div> -->
+                        </div> 
                     </div>
                 </div>
             </div>

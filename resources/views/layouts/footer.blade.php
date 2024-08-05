@@ -69,7 +69,7 @@
         <div class="container">
             <div class="row">
                 <div class="col-md-7 text-center text-md-start text-white mb-3 mb-md-0">
-                    &copy; Copy Rights Reserved to <a class="fw-semi-bold text-secondary" href="#">Nadipathy Goshala</a>, All Rights Reserved @ 2023. Trademark Registered.
+                    © Copy Rights Reserved to <a class="fw-semi-bold text-secondary" href="#">Nadipathy Goshala</a>, All Rights Reserved @ 2023. Trademark Registered.
                 </div>
                 <div class="col-md-4 text-center text-white text-md-start">
                     Powered By <a class="fw-semi-bold text-secondary" href="https://leo9.in/" target="_blank">Leo9.in</a>
@@ -77,6 +77,8 @@
             </div>
         </div>
     </div>
+
+    
     <!-- Copyright End -->
 
     <a href="#" class="btn btn-lg btn-secondary btn-lg-square rounded-circle back-to-top"><i class="bi bi-arrow-up"></i></a>
