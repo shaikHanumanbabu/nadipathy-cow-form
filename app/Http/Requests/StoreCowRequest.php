@@ -30,6 +30,8 @@ class StoreCowRequest extends FormRequest
             'name' => 'required',
             'link' => 'nullable',
             'show_in_explore' => 'nullable',
+            'youtube_link' => 'nullable',
+            'height' => 'nullable',
         ];
     }
 }

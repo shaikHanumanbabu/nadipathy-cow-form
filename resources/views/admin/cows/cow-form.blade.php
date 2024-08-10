@@ -40,6 +40,12 @@
             <div class="col-md-12 mb-1">
                 <input type="text" class="form-control" id="name" name="name" value="{{ isset($cow->name) ? $cow->name : old('name') }}" placeholder="Enter name">
             </div>
+            <div class="col-md-12 mb-1">
+                <input type="text" class="form-control" id="name" name="youtube_link" value="{{ isset($cow->youtube_link) ? $cow->youtube_link : old('youtube_link') }}" placeholder="Enter youtube_link">
+            </div>
+            <div class="col-md-12 mb-1">
+                <input type="text" class="form-control" id="name" name="height" value="{{ isset($cow->height) ? $cow->height : old('height') }}" placeholder="Enter height">
+            </div>
             
 
             

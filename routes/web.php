@@ -104,6 +104,7 @@ Route::post('/contact', [HomeController::class, 'contactInfo'])->name('contact.p
 Route::get('/products-info', [HomeController::class, 'productsInfo']);
 Route::get('/subcategory', [HomeController::class, 'categoryInfo']);
 Route::get('/cow-details', [HomeController::class, 'cowDetailsInfo'])->name('cow-details');
+Route::get('/cow-details-demo', [HomeController::class, 'cowDetailsDemoInfo'])->name('cow-details');
 
 Route::get('/cows-image-gallery/{cowGalleryImage}', [CowController::class, 'cowsGalleryImageDelete'])->name('cowimagedelete');
 

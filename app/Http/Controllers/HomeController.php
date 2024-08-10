@@ -244,4 +244,18 @@ class HomeController extends Controller
             'breed' => $cow->breed,
         ]);
     }
+
+    public function cowDetailsDemoInfo(Request $request)
+    {
+        $cow = Cow::where('id', '=', $request->get('cowid'))->get()->first();
+        
+        
+        
+        
+        return view('cow-details-demo', [
+            'cow' => $cow,
+            'sub_category' => $cow->sub_category,
+            'breed' => $cow->breed,
+        ]);
+    }
 }

@@ -1,5 +1,11 @@
 @extends('index')
 
+@section('js-content')
+
+<script src="{{ URL::asset("/assets/swiper/swiper-bundle.min.js") }}></script>
+    
+@endsection
+
 @section('content')
 <!-- Page Header Start -->
 <div class="container-fluid page-header py-5 mb-5 wow fadeIn" data-wow-delay="0.1s">
@@ -32,7 +38,7 @@
                         <div class="position-relative">
                             <img class="img-fluid" src="{{ URL::asset("image/$cow->main_image") }}" alt="image">
                             <div class="product-overlay">
-                                <a class="btn btn-square btn-secondary rounded-circle m-1" href="{{ url("/cow-details?cowid=$cow->id") }}"></a>
+                                <a class="btn btn-square btn-secondary rounded-circle m-1" href="{{ url("/cow-details?cowid=$cow->id") }}">View More</a>
                             </div>
                         </div>
                         <div class="text-center p-4">

@@ -19,6 +19,10 @@ class Cow extends Model
         'bg_image',
         'short_description',
         'long_description',
+        'long_description',
+        'long_description',
+        'youtube_link' ,
+        'height' ,
     ];
 
     public function galleryimage()
@@ -35,6 +39,21 @@ class Cow extends Model
     {
         return $this->belongsTo(Breed::class, 'breed_id', 'id');
     }
+
+    public function getYear(): string
+    {
+        // Regular expression to match "X Year" or "X Years"
+        $pattern = '/\d+ Year(s)?/';
+    
+        // Perform the regular expression match
+        if (preg_match($pattern, $this->name, $matches)) {
+            return $matches[0];
+        } else {
+            return ''; // Return null if no match is found
+        }
+    }
+
+
 
 
 }
