@@ -15,6 +15,7 @@
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.0/css/all.min.css" rel="stylesheet">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.4.1/font/bootstrap-icons.css" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    
     <link href="{{ URL::asset("/lib/animate/animate.min.css") }} " rel="stylesheet">
     <link href="{{ URL::asset("/lib/owlcarousel/assets/owl.carousel.min.css") }} " rel="stylesheet">
     <link href="{{ URL::asset("/lib/lightbox/css/lightbox.min.css") }} " rel="stylesheet">
@@ -22,6 +23,7 @@
     <link href="{{ URL::asset("/css/bootstrap-datetimepicker.min.css") }} " rel="stylesheet">
     <link href="{{ URL::asset("/css/bootstrap-datetimepicker.min.css") }} " rel="stylesheet">
     <link href="{{ URL::asset("/assets/swiper/swiper-bundle.min.css") }} " rel="stylesheet">
+
     
 
     <link href="{{ URL::asset("/css/style.css") }} " rel="stylesheet">
@@ -80,9 +82,11 @@
     <script src="{{ URL::asset("/lib/parallax/parallax.min.js") }} "></script>
     <script src="{{ URL::asset("/lib/lightbox/js/lightbox.min.js") }} "></script>
 
-    <script src="{{ URL::asset("/js/main.js") }}"></script>
+    <script src="{{ URL::asset("/js/main.js") }}" defer></script>
     <script src="{{ URL::asset("/assets/js/moment-with-locales.min.js") }}"></script>
     <script src="{{ URL::asset("/assets/js/bootstrap-datetimepicker.min.js") }}"></script>
+    {{-- <script src="{{ URL::asset("/assets/swiper/swiper-bundle.min.js") }}"></script> --}}
+
     <script type="text/javascript" src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>           
     @yield('js-content')
         
