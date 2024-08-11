@@ -21,7 +21,7 @@
     <link href="{{ URL::asset("/css/bootstrap.min.css") }} " rel="stylesheet">
     <link href="{{ URL::asset("/css/bootstrap-datetimepicker.min.css") }} " rel="stylesheet">
     <link href="{{ URL::asset("/css/bootstrap-datetimepicker.min.css") }} " rel="stylesheet">
-    <link href="{{ URL::asset("/assets/swiper/swiper-bundle.min.cs") }} " rel="stylesheet">
+    <link href="{{ URL::asset("/assets/swiper/swiper-bundle.min.css") }} " rel="stylesheet">
     
 
     <link href="{{ URL::asset("/css/style.css") }} " rel="stylesheet">
