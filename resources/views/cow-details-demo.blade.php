@@ -1,10 +1,6 @@
 @extends('index')
 
-@section('js-content')
 
-<script src="{{ URL::asset("/assets/swiper/swiper-bundle.min.js") }}"></script>
-    
-@endsection
 
 @section('content')
 
@@ -43,7 +39,7 @@
             @foreach ($cow->galleryimage as $image)
 
                   <div class="swiper-slide">
-                    <img src="{{ URL::asset("image/$image->image_name") }}" alt="">
+                    <img src="img/miniature/ground-surface/mini-ground1.jpg" alt="">
                   </div>
 
             @endforeach
@@ -102,4 +98,12 @@
 
 
 
+@endsection
+
+@section('js-content')
+
+<script src="{{ URL::asset("/assets/swiper/swiper-bundle.min.js") }}"></script>
+
+
+    
 @endsection
