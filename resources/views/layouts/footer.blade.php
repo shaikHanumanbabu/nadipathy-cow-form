@@ -44,9 +44,9 @@
                     <a class="btn btn-link" href="punganur.html">Punganur Cows</a>
                     <a class="btn btn-link" href="short-varieties.html">Short Varieties</a> --}}
                     <a class="btn btn-link" href="{{ url('products-info') }}">Products</a>
-                    {{-- <a class="btn btn-link" href="miniature-breed.html">What is Miniature</a> --}}
-                    {{-- <a class="btn btn-link" href="punganur-breed.html">What is Punganur</a> --}}
-                    {{-- <a class="btn btn-link" href="short-varieties-breed.html">What is Short Varieties</a> --}}
+                    <a class="btn btn-link" href="{{ url('breedInfo?breedId=12') }}">What is Miniature</a> 
+                    <a class="btn btn-link" href="{{ url('breedInfo?breedId=13') }}">What is Punganur</a>
+                    <a class="btn btn-link" href="{{ url('breedInfo?breedId=14') }}">What is Short Varieties</a>
                 </div>
                 <div class="col-lg-4 col-md-6">
                     <a class="d-block" href="img/Breeding-line.jpg" data-lightbox="gallery">
