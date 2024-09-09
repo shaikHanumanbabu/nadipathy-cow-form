@@ -46,6 +46,7 @@ use Illuminate\Support\Facades\Route;
 
 
 Route::get('/', [HomeController::class, 'index']);
+// Route::get('/{breed}', [HomeController::class, 'breedInfo'])->name('breed-info');
 Route::get('/send-email', function() {
   $details = [
     'title' => 'Mail from ItSolutionStuff.com',
@@ -86,12 +87,12 @@ Route::get('/check-email', function() {
 return view('mail.test', ['details' => $details]);
 });
 
-Route::get('/breed', [HomeController::class, 'breedsType']);
-Route::get('/breedInfo', [HomeController::class, 'breedInfo'])->name('breed-info');
+Route::get('/cows/{breed_name}/{breed_category?}', [HomeController::class, 'breedsType']);
+Route::get('/breed-info/{breed_name}', [HomeController::class, 'breedInfo'])->name('breed-info');
 Route::get('/about-us', [HomeController::class, 'aboutInfo']);
 Route::get('/press-news-info', [HomeController::class, 'pressNewsInfo']);
 Route::get('/tv-news-info', [HomeController::class, 'tvNewsInfo']);
-Route::get('/events-info', [HomeController::class, 'eventsInfo'])->name("events-info");
+Route::get('/events', [HomeController::class, 'eventsInfo'])->name("events");
 Route::get('/events-details', [HomeController::class, 'eventsDetails'])->name('events-details');
 Route::get('/social-media-info', [HomeController::class, 'socialMediaInfo']);
 Route::get('/awards-rewards', [HomeController::class, 'awardsRewardsInfo']);
@@ -101,7 +102,7 @@ Route::get('/video-gallery', [HomeController::class, 'videoGalleryInfo']);
 Route::get('/blog', [HomeController::class, 'blogsInfo']);
 Route::get('/contact', [HomeController::class, 'contactInfo']);
 Route::post('/contact', [HomeController::class, 'contactInfo'])->name('contact.post');
-Route::get('/products-info', [HomeController::class, 'productsInfo']);
+Route::get('/products', [HomeController::class, 'productsInfo']);
 Route::get('/subcategory', [HomeController::class, 'categoryInfo']);
 Route::get('/cow-details', [HomeController::class, 'cowDetailsInfo'])->name('cow-details');
 Route::get('/cow-details-demo', [HomeController::class, 'cowDetailsDemoInfo'])->name('cow-details');
@@ -109,36 +110,40 @@ Route::get('/cow-details-demo', [HomeController::class, 'cowDetailsDemoInfo'])->
 Route::get('/cows-image-gallery/{cowGalleryImage}', [CowController::class, 'cowsGalleryImageDelete'])->name('cowimagedelete');
 
 Route::post('/store-appointment', [HomeController::class, 'store_appointment'])->name('store-appointment');
-Route::get('/admin', [AdminController::class, 'index']);
 Route::get('/admin-logout', [AdminController::class, 'logout'])->name('admin.logout');
-Route::post('/admin', [AdminController::class, 'loginCheck'])->name('admin.logincheck');
 Route::get('/forgot-password', [AdminController::class, 'forgotPassword'])->name('admin.forgotpassword');
 Route::post('/forgot-password', [AdminController::class, 'forgotPassword'])->name('admin.forgotpassword');
 
 Route::get('/update-password', [AdminController::class, 'updatePassword'])->name('admin.updatepassword');
 Route::post('/update-password', [AdminController::class, 'updatePassword'])->name('admin.updatepassword');
 
-Route::get('/dashboard', [DashboardController::class, 'index'])->name('dashboard.index');
 
-Route::resource('/carousel', CarouselController::class);
-Route::resource('/testimonials', TestimonialController::class);
-Route::resource('/breeds', BreedController::class);
-Route::resource('/welcome_ones', WelcomeOneController::class);
-Route::resource('/welcome_twos', WelcomeTwoController::class);
-Route::resource('/marquees', MarqueeController::class);
-Route::resource('/appointments', AppointmentController::class);
-Route::resource('/subcategories', SubCategoriesController::class);
-Route::resource('/cows', CowController::class);
-Route::resource('/p-news', PressNewController::class);
-Route::resource('/tv-news', TvNewController::class);
-Route::resource('/social-media', SocialMediaController::class);
-Route::resource('/about', AboutController::class);
-Route::resource('/awards', AwardController::class);
-Route::resource('/blogs', BlogController::class);
-Route::resource('/products', ProductController::class);
-Route::resource('/videogalleries', VideoGalleryController::class);
-Route::resource('/photogalleries', PhotoGalleryController::class);
-Route::resource('/events', EventController::class);
+Route::prefix('/admin')->group(function() {
+  
+  Route::get('/', [AdminController::class, 'index']);
+  Route::post('/', [AdminController::class, 'loginCheck'])->name('admin.logincheck');
+  Route::get('/dashboard', [DashboardController::class, 'index'])->name('dashboard.index');
+  Route::resource('/carousel', CarouselController::class);
+  Route::resource('/testimonials', TestimonialController::class);
+  Route::resource('/breeds', BreedController::class);
+  Route::resource('/welcome_ones', WelcomeOneController::class);
+  Route::resource('/welcome_twos', WelcomeTwoController::class);
+  Route::resource('/marquees', MarqueeController::class);
+  Route::resource('/appointments', AppointmentController::class);
+  Route::resource('/subcategories', SubCategoriesController::class);
+  Route::resource('/cows', CowController::class);
+  Route::resource('/p-news', PressNewController::class);
+  Route::resource('/tv-news', TvNewController::class);
+  Route::resource('/social-media', SocialMediaController::class);
+  Route::resource('/about', AboutController::class);
+  Route::resource('/awards', AwardController::class);
+  Route::resource('/blogs', BlogController::class);
+  Route::resource('/products', ProductController::class);
+  Route::resource('/videogalleries', VideoGalleryController::class);
+  Route::resource('/photogalleries', PhotoGalleryController::class);
+  Route::resource('/events', EventController::class);
+
+});
 /*
 Route::get('/tasks', function () use($tasks) {
     return view('index', [
