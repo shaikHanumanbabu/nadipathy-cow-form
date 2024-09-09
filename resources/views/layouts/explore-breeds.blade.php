@@ -6,7 +6,7 @@
             <h1 class="mb-5">Explore our Breeds</h1>
         </div>
         <div class="row gy-5 gx-4">
-            @foreach ($breeds as $breed)
+            @foreach ($breeds->slice(0, 3) as $breed)
                 <div class="col-lg-4 col-md-6 pt-5 wow fadeInUp" data-wow-delay="0.1s">
                     <div class="service-item d-flex h-100">
                         <div class="service-img">
@@ -20,7 +20,7 @@
                             <p class="mb-4 justify">
                                 {!! $breed->short_description !!}
                             </p>
-                            <a class="btn btn-square rounded-circle" href="{{ route("breed-info") }}?breedId={{ $breed->id }}"><i class="bi bi-chevron-double-right"></i></a>
+                            <a class="btn btn-square rounded-circle" href="{{ route("breed-info", $breed->slug) }}"><i class="bi bi-chevron-double-right"></i></a>
                         </div>
                     </div>
                 </div>

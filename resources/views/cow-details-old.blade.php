@@ -9,8 +9,8 @@
         <nav aria-label="breadcrumb animated slideInDown">
             <ol class="breadcrumb justify-content-center mb-0">
                 <li class="breadcrumb-item"><a href="{{ url('/') }}">Home</a></li>
-                <li class="breadcrumb-item"><a href="{{ url("/breed?breedType=".$cow->breed->title) }}">{{ $cow->breed->title }}</a></li>
-                <li class="breadcrumb-item"><a href="{{ url("/subcategory?subCategoryId=".$cow->sub_category->id) }}">{{ $cow->sub_category->subcategory_name }}</a></li>
+                <li class="breadcrumb-item"><a href="{{ url('/cows/'.$cow->breed->slug) }}">{{ $cow->breed->title }}</a></li>
+                <li class="breadcrumb-item"><a href="{{ url('/cows/'.$cow->breed->slug. '/'.$cow->sub_category->slug) }}">{{ $cow->sub_category->subcategory_name }}</a></li>
                 <li class="breadcrumb-item active" aria-current="page">Cow Details</li>
             </ol>
         </nav>

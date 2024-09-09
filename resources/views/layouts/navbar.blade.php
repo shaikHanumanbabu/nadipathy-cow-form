@@ -14,8 +14,8 @@
             <div class="nav-item dropdown">
                 <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">{{__('messages.cows and bulls')}}</a>
                 <div class="dropdown-menu bg-light m-0">
-                    @forelse ($breeds as $b)
-                        <a href="{{ url("/breed/?breedType=$b->title") }}" class="dropdown-item">{{ $b->title }}</a>
+                    @forelse ($breeds as $breed)
+                        <a href="{{ url("/cows/". Str::slug($breed->title)) }}" class="dropdown-item">{{ $breed->title }}</a>
                         
                     @empty
                         <a href="#" class="dropdown-item">No Breeds</a>
@@ -23,7 +23,7 @@
                     {{-- <a href="short-varieties.html" class="dropdown-item">Short Varieties</a> --}}
                 </div>
             </div>
-            <a href="{{ url('products-info') }}" class="nav-item nav-link">{{__('messages.products')}}</a>
+            <a href="{{ url('products') }}" class="nav-item nav-link">{{__('messages.products')}}</a>
             <div class="nav-item dropdown">
                 <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">{{__('messages.media')}}</a>
                 <div class="dropdown-menu bg-light m-0">

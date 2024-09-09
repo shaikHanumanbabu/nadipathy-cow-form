@@ -14,7 +14,7 @@
         <nav aria-label="breadcrumb animated slideInDown">
             <ol class="breadcrumb justify-content-center mb-0">
                 <li class="breadcrumb-item"><a href="{{ url('/') }}">Home</a></li>
-                <li class="breadcrumb-item"><a href="{{ url("/breed?breedType=".$sub_category->breed->title) }}">{{ $sub_category->breed->title }}</a></li>
+                <li class="breadcrumb-item"><a href="{{ url('/cows/'. $sub_category->breed->slug) }}">{{ $sub_category->breed->title }}</a></li>
                 <li class="breadcrumb-item active" aria-current="page">{{ $sub_category->subcategory_name }}</li>
             </ol>
         </nav>
@@ -38,7 +38,7 @@
                         <div class="position-relative">
                             <img class="img-fluid" src="{{ URL::asset("image/$cow->main_image") }}" alt="image">
                             <div class="product-overlay">
-                                <a class="btn btn-square btn-secondary rounded-circle m-1" href="{{ url("/cow-details?cowid=$cow->id") }}">View More</a>
+                                <a class="btn btn-square btn-secondary rounded-circle m-1" href="{{ url("/cow-details?cowid=$cow->id") }}"><i class="bi bi-three-dots"></i></a>
                             </div>
                         </div>
                         <div class="text-center p-4">

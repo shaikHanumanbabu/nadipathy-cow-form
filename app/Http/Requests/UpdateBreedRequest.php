@@ -25,9 +25,9 @@ class UpdateBreedRequest extends FormRequest
     {
         return [
             'title' => 'required',
-            'short_description' => 'required',
-            'long_description' => 'required',
-            'link' => 'required',
+            'short_description' => 'nullable',
+            'long_description' => 'nullable',
+            'link' => 'nullable',
         ];
     }
 }

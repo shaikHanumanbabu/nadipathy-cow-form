@@ -134,6 +134,7 @@
                 $('#appointment').css("display","none")
                 $('.alert-success').remove()
             }
+            $('#appointment').css("display","none")
         });
     });
 </script>

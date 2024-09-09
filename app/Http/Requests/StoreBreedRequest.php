@@ -25,10 +25,10 @@ class StoreBreedRequest extends FormRequest
     {
         return [
             'title' => 'required',
-            'short_description' => 'required',
-            'long_description' => 'required',
-            'image' => 'required',
-            'link' => 'required',
+            'short_description' => 'nullable',
+            'long_description' => 'nullable',
+            'image' => 'nullable',
+            'link' => 'nullable',
         ];
     }
 }

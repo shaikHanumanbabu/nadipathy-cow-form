@@ -4,6 +4,13 @@
 @section('content')
 <main id="main" class="main">
     
+    @if ($errors->any())
+        <div class="alert alert-danger">
+            @foreach ($errors->all() as $error)
+                <a href="#" class="alert-link">{{$error}}</a><br>
+            @endforeach
+        </div>
+    @endif
     <div class="container col-12 dashboard">
 
         <form enctype="multipart/form-data" class="row g-3" method="POST" action="{{ isset($breed) ? route('breeds.update', ['breed' => $breed->id ]) :  route('breeds.store') }}">

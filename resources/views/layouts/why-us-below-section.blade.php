@@ -11,7 +11,7 @@
                         <div class="col-sm-8">
                             <h2 class="text-white mb-3">{{ $breed->title }}</h2>
                             <p class="text-white mb-4 justify">{!! $breed->short_description !!}</p>
-                            <a class="btn btn-secondary rounded-pill py-2 px-4" href="{{ url('/breedInfo?breedId='. $breed->id) }}">Read More</a>
+                            <a class="btn btn-secondary rounded-pill py-2 px-4" href="{{ url('/cows/'. $breed->slug) }}">Read More</a>
                         </div>
                     </div>
                 </div>

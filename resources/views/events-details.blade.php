@@ -8,7 +8,7 @@
         <nav aria-label="breadcrumb animated slideInDown">
             <ol class="breadcrumb justify-content-center mb-0">
                 <li class="breadcrumb-item"><a href="{{ url('/') }}">Home</a></li>
-                <li class="breadcrumb-item active" aria-current="page"><a href="{{ route("events-info") }}">Events</a></li> <li class="breadcrumb-item active" aria-current="page">{{ $event->title }}</li>
+                <li class="breadcrumb-item active" aria-current="page"><a href="{{ route("events") }}">Events</a></li> <li class="breadcrumb-item active" aria-current="page">{{ $event->title }}</li>
             </ol>
         </nav>
     </div>

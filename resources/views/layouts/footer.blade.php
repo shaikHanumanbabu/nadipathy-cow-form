@@ -35,7 +35,7 @@
                     <h5 class="text-white mb-4">Cows</h5>
 
                     @forelse ($breeds ?? App\Models\Breed::all() as $b)
-                        <a href="{{ url("/breed/?breedType=$b->title") }}" class="btn btn-link">{{ $b->title }}</a>
+                        <a href="{{ url("/cows/$b->slug") }}" class="btn btn-link">{{ $b->title }}</a>
                         
                     @empty
                         <a href="#" class="dropdown-item">No Breeds</a>
@@ -43,10 +43,10 @@
                     {{-- <a class="btn btn-link" href="miniature.html">Miniature Cows</a>
                     <a class="btn btn-link" href="punganur.html">Punganur Cows</a>
                     <a class="btn btn-link" href="short-varieties.html">Short Varieties</a> --}}
-                    <a class="btn btn-link" href="{{ url('products-info') }}">Products</a>
-                    <a class="btn btn-link" href="{{ url('breedInfo?breedId=12') }}">What is Miniature</a> 
-                    <a class="btn btn-link" href="{{ url('breedInfo?breedId=13') }}">What is Punganur</a>
-                    <a class="btn btn-link" href="{{ url('breedInfo?breedId=14') }}">What is Short Varieties</a>
+                    <a class="btn btn-link" href="{{ url('products') }}">Products</a>
+                    <a class="btn btn-link" href="{{ url('breed-info/miniature-cows') }}">What is Miniature</a> 
+                    <a class="btn btn-link" href="{{ url('breed-info/punganur-cows') }}">What is Punganur</a>
+                    <a class="btn btn-link" href="{{ url('breed-info/short-varieties') }}">What is Short Varieties</a>
                 </div>
                 <div class="col-lg-4 col-md-6">
                     <a class="d-block" href="img/Breeding-line.jpg" data-lightbox="gallery">
@@ -69,10 +69,10 @@
         <div class="container">
             <div class="row">
                 <div class="col-md-7 text-center text-md-start text-white mb-3 mb-md-0">
-                    © Copy Rights Reserved to <a class="fw-semi-bold text-secondary" href="#">Nadipathy Goshala</a>, All Rights Reserved @ 2023. Trademark Registered.
+                    © {{ date('Y')}}. All Rights Reserved to Nadipathy Goshala, Trademark Registered.
                 </div>
                 <div class="col-md-4 text-center text-white text-md-start">
-                    Powered By <a class="fw-semi-bold text-secondary" href="https://leo9.in/" target="_blank">Leo9.in</a>
+                    Powered By <a class="fw-semi-bold text-secondary" href="http://leo9.in/" target="_blank">Leo9.in</a>
                 </div>
             </div>
         </div>

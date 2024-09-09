@@ -53,14 +53,23 @@ class HomeController extends Controller
         ]);
     }
 
-    public function breedsType(Request $request)
+    public function breedsType(Request $request, $breed_name, $breed_category = '')
     {
-        $params = $request->get('breedType');
+
+        if($breed_category) {
+
+            $sub_category = SubCategories::where('slug', $breed_category)->first();
+
+            return view('category-info', [
+                'sub_category' => $sub_category,
+                
+            ]);
+        }
         $breed = Breed::with(['categories' => function($query) {
             return $query->where('status', 1);
-        }])->where('title', $params)->get()->first();
+        }])->where('slug', $breed_name)->get()->first();
 
-        
+        // dd($breed);
         return view('breeds', [
             'breed' => $breed,
             'breeds' => Breed::all()
@@ -69,11 +78,10 @@ class HomeController extends Controller
     } // 
 
 
-    public function breedInfo(Request $request)
+    public function breedInfo(Request $request, $breed_name)
     {
-        $params = $request->get('breedId');
 
-        $breed = Breed::where('id', '=',  $params)->get()->first();
+        $breed = Breed::where('slug', '=',  $breed_name)->get()->first();
 
         //dd($breed);
         // resources/views/breed-info.blade.php
@@ -112,7 +120,7 @@ class HomeController extends Controller
     {
         $validated = $request->validate([
             'name' => 'required',
-            'phone_number' => 'required',
+            'phone_number' => ['required', 'regex:/^([0-9\s\-\+\(\)]*)$/', 'min:10', 'max:15'],
             'email' => 'required',
             'address' => 'required',
             'visiting_datetime' => 'required',
@@ -220,14 +228,7 @@ class HomeController extends Controller
     {
         
         
-        $sub_category = SubCategories::find($request->get('subCategoryId'));
-
-        // dd($sub_category->breed);
-        return view('category-info', [
-            'sub_category' => $sub_category,
-            // 'sub_category' => $cows[0]->sub_category,
-            // 'breed' => $cows[0]->breed,
-        ]);
+        
     }
 
     public function cowDetailsInfo(Request $request)

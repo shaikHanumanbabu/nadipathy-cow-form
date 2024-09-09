@@ -12,7 +12,7 @@
                 <!--<a class="btn btn-link text-light smediayt" href="https://www.youtube.com/@Miniaturecows" target="_blank"><i class="fab fa-youtube"></i></a>-->
                 <!--<a class="btn btn-link text-light smediains" href="https://www.instagram.com/punganurucows/?utm_source=qr" target="_blank"><i class="fab fa-instagram"></i></a>-->
                 <a href="{{ url('awards-rewards') }}" class="btn appoint">{{__('messages.awards')}}</a>
-                <a href="{{ url('events-info') }}" class="btn appoint">Events</a>
+                <a href="{{ url('events') }}" class="btn appoint">Events</a>
                 {{-- <div class="nav-item dropdown" style="z-index: 9999; margin-left: 10px;">
                     <a href="#" class="nav-link dropdown-toggle bg-primary text-light" data-bs-toggle="dropdown">
                         <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" fill="currentColor" class="bi bi-translate" viewBox="0 0 16 16">
@@ -45,7 +45,7 @@
     </div>
 </div>
 
-<div class="modal fade show" id="appointment" tabindex="-1" aria-modal="true" role="dialog" style="display: {{ !empty(session('appointment_success'))  ? 'block' : 'none' }};">
+<div class="modal fade show" id="appointment" tabindex="-1" aria-modal="true" role="dialog" style="display: {{ !empty(session('appointment_success')) || $errors->any()  ? 'block' : 'none' }};">
     <div class="modal-dialog modal-dialog-centered">
         
         <div class="modal-content" style="padding: 25px;">
