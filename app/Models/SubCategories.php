@@ -34,13 +34,13 @@ class SubCategories extends Model
         // Example: Hooking into the 'creating' event
         static::creating(function ($sub_category) {
             // Logic to execute before a post is created
-            $sub_category->slug = Str::slug($sub_category->title);
+            $sub_category->slug = Str::slug($sub_category->subcategory_name);
         });
 
         // Example: Hooking into the 'updating' event
         static::updating(function ($sub_category) {
             // Logic to execute before a post is updated
-            $sub_category->slug = Str::slug($sub_category->title);
+            $sub_category->slug = Str::slug($sub_category->subcategory_name);
 
         });
     }
