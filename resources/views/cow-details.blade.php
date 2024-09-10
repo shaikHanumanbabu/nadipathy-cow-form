@@ -39,7 +39,7 @@
             @foreach ($cow->galleryimage as $image)
 
                   <div class="swiper-slide">
-                    <img src="https://minicows.co.in/image/657cf4dd8462e-0-125245-.jpg" alt="">
+                    <img src="{{ URL::asset("image/$image->image_name") }}" alt="">
                   </div>
 
             @endforeach
