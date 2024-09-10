@@ -60,6 +60,9 @@ class HomeController extends Controller
 
             $sub_category = SubCategories::where('slug', $breed_category)->first();
 
+            if(!$sub_category){
+                return abort(404);
+            }
             return view('category-info', [
                 'sub_category' => $sub_category,
                 
@@ -69,7 +72,9 @@ class HomeController extends Controller
             return $query->where('status', 1);
         }])->where('slug', $breed_name)->get()->first();
 
-        // dd($breed);
+        if(!$breed){
+            return abort(404);
+        }
         return view('breeds', [
             'breed' => $breed,
             'breeds' => Breed::all()
