@@ -118,7 +118,7 @@
 @include('layouts.need-cow-at-home')
 
 
-@include('layouts.explore')
+{{-- @include('layouts.explore') --}}
 
 @include('layouts.testimonils')
 
