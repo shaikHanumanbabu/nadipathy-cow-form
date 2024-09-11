@@ -77,7 +77,6 @@ class HomeController extends Controller
         }
         return view('breeds', [
             'breed' => $breed,
-            'breeds' => Breed::all()
         ]);
 
     } // 
