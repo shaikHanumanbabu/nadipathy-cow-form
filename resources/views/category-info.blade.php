@@ -2,7 +2,6 @@
 
 @section('js-content')
 
-<script src="{{ URL::asset("/assets/swiper/swiper-bundle.min.js") }}></script>
     
 @endsection
 

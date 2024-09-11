@@ -52,7 +52,7 @@
                 </div>
                 <div class="col-lg-4 col-md-6">
                     <a class="d-block" href="img/Breeding-line.jpg" data-lightbox="gallery">
-                        <img class="img-fluid" src="img/Breeding-line.jpg" alt="">
+			<img class="img-fluid" src="{{ URL::asset('img/Breeding-line.jpg') }}" alt="">
                     </a>
                     <!-- <h5 class="text-white mb-4">Important Links</h5>
                     <a class="btn btn-link" href="terms&conditions.html">Terms & Conditions</a>

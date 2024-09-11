@@ -73,6 +73,7 @@
     <script src="{{ URL::asset("/lib/counterup/counterup.min.js") }} "></script>
     <script src="{{ URL::asset("/lib/parallax/parallax.min.js") }} "></script>
     <script src="{{ URL::asset("/lib/lightbox/js/lightbox.min.js") }} "></script>
+    <script src="{{ URL::asset("/assets/swiper/swiper-bundle.min.js") }}"></script>
 
     <script src="{{ URL::asset("/js/main.js") }}" defer></script>
     <script src="{{ URL::asset("/assets/js/moment-with-locales.min.js") }}"></script>
