@@ -45,7 +45,7 @@ class HomeController extends Controller
             'carousel' => Carousel::all(),
             'welcomeone' => WelcomeOne::find(1),
             'welcometwo' => WelcomeTwo::find(1),
-            'breeds' => Breed::all(),
+            'breeds' => Breed::orderBy('sort_value', 'asc')->get(),
             'testimonials' => Testimonial::all(),
             'marquee' => Marquee::find(1),
             'explore_cows' => $cows,
