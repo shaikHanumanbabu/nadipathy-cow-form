@@ -53,7 +53,7 @@
     @include('layouts.topheader')
 
     @include('layouts.navbar', [
-        'breeds' => $breeds ??  App\Models\Breed::all()
+        'breeds' => $breeds ??  App\Models\Breed::orderBy('sort_value', 'asc')->get()
     ])
     
     @yield('content')
