@@ -24,25 +24,16 @@
     <link href="{{ URL::asset("/css/bootstrap-datetimepicker.min.css") }} " rel="stylesheet">
     <link href="{{ URL::asset("/assets/swiper/swiper-bundle.min.css") }} " rel="stylesheet">
 
-    
-
     <link href="{{ URL::asset("/css/style.css") }} " rel="stylesheet">
 
     <style>
         .gtrans{background-color: #34AD54; border: 3px solid #EDDD5E; border-radius: 5px;}
-        .VIpgJd-ZVi9od-ORHb{position: absolute; z-index: -999 !important;}
-        </style>
-
-<script type="text/javascript" src="https://translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
-    <script type="text/javascript">
-        function googleTranslateElementInit() {
-            new google.translate.TranslateElement({ pageLanguage: 'en' }, 'google_translate_element');
-        }
-    </script>
+    </style>
 </head>
 
 <body>
-    <div style="position: fixed; right: 0; top: 150px; z-index: 9999; width: 30px;" class="sm">
+    <!-- Social media -->
+    <div style="position: fixed; right: 0; top: 180px; z-index: 9999; width: 30px;" class="sm">
         <div class="h-100">
             <a class="btn btn-link text-light smediafb" href="https://www.facebook.com/Punganurcowsgoshala" target="_blank"><i class="fab fa-facebook-f"></i></a>
             <a class="btn btn-link text-light smediayt" href="https://www.youtube.com/c/PunganurCowsGoshala" target="_blank"><i class="fab fa-youtube"></i></a>
@@ -53,10 +44,11 @@
         </div>
     </div>
     
-    <div id="spinner" class="show bg-white position-fixed translate-middle w-100 vh-100 top-50 start-50 d-flex align-items-center justify-content-center">
-        <div class="spinner-border text-primary" role="status" style="width: 3rem; height: 3rem;"></div>
+    <!-- Language widget -->
+    <div style="position: fixed; right: -5px; top: 360px; z-index: 9999;">
+        <div id="google_translate_element" class="gtrans"></div>
     </div>
-    <!-- Spinner End -->
+    
     {{-- <div id="google_translate_element"> --}}
     @include('layouts.topheader')
 
@@ -87,7 +79,6 @@
     <script src="{{ URL::asset("/assets/js/bootstrap-datetimepicker.min.js") }}"></script>
     {{-- <script src="{{ URL::asset("/assets/swiper/swiper-bundle.min.js") }}"></script> --}}
 
-    <script type="text/javascript" src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>           
     @yield('js-content')
         
 <script type='text/javascript'>
@@ -140,6 +131,13 @@
 
     })
 // </script>
+
+<script type="text/javascript" src="https://translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
+<script type="text/javascript">
+    function googleTranslateElementInit() {
+        new google.translate.TranslateElement({ pageLanguage: 'en' }, 'google_translate_element');
+    }
+</script>
 </body>
 
 </html>

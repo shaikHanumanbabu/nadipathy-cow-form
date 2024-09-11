@@ -23,7 +23,7 @@
                     {{-- <a href="short-varieties.html" class="dropdown-item">Short Varieties</a> --}}
                 </div>
             </div>
-            <a href="{{ url('products') }}" class="nav-item nav-link">{{__('messages.products')}}</a>
+            <!--<a href="{{ url('products') }}" class="nav-item nav-link">{{__('messages.products')}}</a>-->
             <div class="nav-item dropdown">
                 <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">{{__('messages.media')}}</a>
                 <div class="dropdown-menu bg-light m-0">
@@ -41,7 +41,9 @@
                 </div>
             </div>
             
-            <a href="{{ url('blog') }}" class="nav-item nav-link">{{__('messages.blog')}}</a>
+            <!--<a href="{{ url('blog') }}" class="nav-item nav-link">{{__('messages.blog')}}</a>-->
+            <a href="{{ url('events') }}" class="nav-item nav-link">Events</a>
+            <a href="{{ url('awards-rewards') }}" class="nav-item nav-link">{{__('messages.awards')}}</a>
             <a href="{{ url('contact') }}" class="nav-item nav-link">{{__('messages.contact')}}</a>
         </div>
         <!-- <div class="border-start ps-4 d-none d-lg-block">

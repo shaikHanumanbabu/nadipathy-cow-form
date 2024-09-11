@@ -24,9 +24,11 @@
                     <h5 class="text-white mb-4">Quick Links</h5>
                     <a class="btn btn-link" href="{{ url('about-us') }}">About Us</a>
                     <a class="btn btn-link" href="{{ url('contact') }}">Contact Us</a>
-                    <a class="btn btn-link" href="{{ url('blog') }}">Blog</a>
-                    <a class="btn btn-link" href="{{ url('photo-gallery') }}">Photo Gallery</a>
-                    <a class="btn btn-link" href="{{ url('video-gallery') }}">Video Gallery</a>
+                    <a class="btn btn-link" href="{{ url('awards-rewards') }}">Awards</a>
+                    <a class="btn btn-link" href="{{ url('events') }}">Events</a>
+                    <!--<a class="btn btn-link" href="{{ url('blog') }}">Blog</a>-->
+                    <!--<a class="btn btn-link" href="{{ url('photo-gallery') }}">Photo Gallery</a>-->
+                    <!--<a class="btn btn-link" href="{{ url('video-gallery') }}">Video Gallery</a>-->
                     <a class="btn btn-link" href="{{ url('tv-news-info') }}">TV News</a>
                     <a class="btn btn-link" href="{{ url('press-news-info') }}">Press News</a>
                     <a class="btn btn-link" href="{{ url('social-media-info') }}">Social Media</a>
@@ -43,7 +45,7 @@
                     {{-- <a class="btn btn-link" href="miniature.html">Miniature Cows</a>
                     <a class="btn btn-link" href="punganur.html">Punganur Cows</a>
                     <a class="btn btn-link" href="short-varieties.html">Short Varieties</a> --}}
-                    <a class="btn btn-link" href="{{ url('products') }}">Products</a>
+                    <!--<a class="btn btn-link" href="{{ url('products') }}">Products</a>-->
                     <a class="btn btn-link" href="{{ url('breed-info/miniature-cows') }}">What is Miniature</a> 
                     <a class="btn btn-link" href="{{ url('breed-info/punganur-cows') }}">What is Punganur</a>
                     <a class="btn btn-link" href="{{ url('breed-info/short-varieties') }}">What is Short Varieties</a>
