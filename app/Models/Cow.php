@@ -43,7 +43,7 @@ class Cow extends Model
     public function getYear(): string
     {
         // Regular expression to match "X Year" or "X Years"
-        $pattern = '/\d+ Year(s)?/';
+        $pattern = '/\d+(\.\d+)?\s+years?/';
     
         // Perform the regular expression match
         if (preg_match($pattern, $this->name, $matches)) {

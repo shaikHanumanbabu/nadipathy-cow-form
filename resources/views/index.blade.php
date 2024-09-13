@@ -88,6 +88,15 @@
                 
 
 <script>
+
+function limitInputLength(input) {
+    if (input.value.length > 10) {
+        input.value = input.value.slice(0, 10);
+        document.getElementById("phone_validation_error").innerText = "Maximum 10 digits allowed.";
+    } else {
+        document.getElementById("phone_validation_error").innerText = "";
+    }
+}
     (function (Q, R) {
         if(Q.qr) return;
         var u = 'https://webview.quickreply.ai/whatsapp/script.min.js';

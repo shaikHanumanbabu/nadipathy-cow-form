@@ -36,6 +36,9 @@
               <div class="portfolio-details-slider swiper mt-3">
                 <div class="swiper-wrapper align-items-center">
   
+                  <div class="swiper-slide">
+                    <img src="{{ URL::asset("image/$cow->main_image") }}" alt="">
+                  </div>
             @foreach ($cow->galleryimage as $image)
 
                   <div class="swiper-slide">
@@ -74,10 +77,12 @@
                   <hr>
                 </ul>
               </div>
-
+              @if ($cow->youtube_link)
               <div class="portfolio-info mt-3">
                 <iframe width="100%" height="100%" src="{{ $cow->youtube_link }}" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
               </div>
+                  
+              @endif
               
               <div class="portfolio-info mt-1 mb-3" style="text-align: center;">
                 <a class="btn btn-success text-white smediains mt-2" href="https://chat.whatsapp.com/ENOG6QfzbLF0xtdnx7GL4q" target="_blank"><i class="fab fa-whatsapp px-1 py-1"></i> Join our Whatsapp Group</a>

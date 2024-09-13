@@ -58,7 +58,7 @@ class HomeController extends Controller
 
         if($breed_category) {
 
-            $sub_category = SubCategories::where('slug', $breed_category)->first();
+            $sub_category = SubCategories::where('slug', $breed_category)->orderBy('updated_at', 'desc')->first();
 
             if(!$sub_category){
                 return abort(404);
@@ -68,9 +68,13 @@ class HomeController extends Controller
                 
             ]);
         }
+
+
         $breed = Breed::with(['categories' => function($query) {
-            return $query->where('status', 1);
-        }])->where('slug', $breed_name)->get()->first();
+            return $query->where('status', 1)->orderBy('updated_at', 'desc');
+        }])->where('slug', $breed_name)
+            ->orderBy('updated_at', 'desc') 
+            ->get()->first();
 
         if(!$breed){
             return abort(404);

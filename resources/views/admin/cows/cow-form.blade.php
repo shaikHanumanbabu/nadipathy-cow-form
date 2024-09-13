@@ -82,10 +82,10 @@
                 
             <!--</div>-->
 
-            <div class="col-md-12 mb-1">
+            {{-- <div class="col-md-12 mb-1">
                 <label for="image" class="mb-1">Youtube Link (Optional)</label>
                 <input type="text" class="form-control" id="link" name="link" value="{{ isset($cow->link) ? $cow->link : old('link') }}" placeholder="Enter Youtube link">
-            </div>
+            </div> --}}
             <div class="col-md-12 mb-1">
                 <label for="image" class="mb-1">Cow Gallery (Optional)</label>
                 <input type="file" accept="image/*" class="form-control" id="image_name" name="image_name[]" multiple>
