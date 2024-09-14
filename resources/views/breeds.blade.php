@@ -19,6 +19,10 @@
             <p class="section-title bg-white text-center text-primary px-3">Our Farm</p>
             <h1 class="mb-5">{{ $breed->title }}</h1>
         </div>
+
+        <div class="row"> 
+            <p>{!! $breed->sub_categories_page_intro !!}</p>
+        </div>
         <div class="row gx-4">
             @forelse ($breed->categories as $categorie)
                 <div class="col-md-6 col-lg-4 col-xl-3 mb-4 wow fadeInUp" data-wow-delay="0.1s" style="visibility: visible; animation-delay: 0.1s; animation-name: fadeInUp;">
@@ -35,6 +39,10 @@
                 <h2>No Categories</h2>
             @endforelse
           
+        </div>
+        <div style="display: flex; justify-content: center;">
+            <a class="btn btn-secondary rounded-pill py-3 px-5" href="{{ url('breed-info/'.$breed->slug) }}">Read More</a>
+
         </div>
     </div>
 </div>

@@ -15,6 +15,7 @@ class Breed extends Model
         'long_description',
         'image',
         'link',
+        'sub_categories_page_intro',
     ];
 
     public function categories()

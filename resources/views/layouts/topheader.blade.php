@@ -51,6 +51,7 @@
                 @endforeach
             </div>
         @endif
+
         <form class="row g-3" method="POST" action="{{ route('store-appointment') }}">
             @csrf
             
@@ -63,7 +64,8 @@
             <input type="text" required class="form-control" id="name" name="name" placeholder="Your Name" value="{{ old('name') }}">
             </div>
             <div class="col-md-12 mb-1">
-            <input type="number" required class="form-control" id="phone_number" name="phone_number" placeholder="Your Mobile Number"  value="{{ old('phone_number') }}">
+            <span class="label label-danger" id="phone_validation_error"></span>
+            <input type="number" required class="form-control" oninput="limitInputLength(this)" id="phone_number" name="phone_number" placeholder="Your Mobile Number"  value="{{ old('phone_number') }}">
             </div>
             <div class="col-md-12 mb-1">
             <input type="email" required class="form-control" id="email" name="email" placeholder="Your Email ID" value="{{ old('email') }}">

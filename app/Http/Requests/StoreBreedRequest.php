@@ -29,6 +29,7 @@ class StoreBreedRequest extends FormRequest
             'long_description' => 'nullable',
             'image' => 'nullable',
             'link' => 'nullable',
+            'sub_categories_page_intro' => 'nullable',
         ];
     }
 }

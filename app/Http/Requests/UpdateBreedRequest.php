@@ -28,6 +28,7 @@ class UpdateBreedRequest extends FormRequest
             'short_description' => 'nullable',
             'long_description' => 'nullable',
             'link' => 'nullable',
+            'sub_categories_page_intro' => 'nullable',
         ];
     }
 }
