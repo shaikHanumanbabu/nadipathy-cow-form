@@ -121,3 +121,12 @@
     </div>
 </main>
 @endsection
+
+@section('js-content')
+    <script>
+        $(document).ready(function() {
+            $('#sub_categorie_id').select2();
+        });
+
+    </script>
+@endsection

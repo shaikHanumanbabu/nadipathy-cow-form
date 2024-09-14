@@ -34,6 +34,12 @@
             </div>
 
             <div class="col-md-12 mb-1">
+                <label for="image" class="mb-1">Sub Categories page Introduction (Upto 255 characters)</label>
+
+                <textarea type="text" class="form-control" id="sub_categories_page_intro" name="sub_categories_page_intro" rows="5" cols="10" placeholder="Enter sub_categories_page_intro ">{{ isset($breed->sub_categories_page_intro) ? $breed->sub_categories_page_intro :  old('sub_categories_page_intro') }}</textarea>
+            </div>
+
+            <div class="col-md-12 mb-1">
                 <label for="image" class="mb-1">Long Description</label>
 
                 <textarea type="text" class="form-control" id="long_description" name="long_description" rows="5" cols="10" placeholder="Enter long_description">{{ isset($breed->long_description) ? $breed->long_description :  old('long_description') }}</textarea>
@@ -77,6 +83,9 @@
     
     tinymce.init({
       selector: 'textarea#long_description',
+    });
+    tinymce.init({
+      selector: 'textarea#sub_categories_page_intro',
     });
   </script>
     
