@@ -29,7 +29,7 @@
             
             
             <div class="col-md-12 mb-1">
-                <label for="image" class="mb-1">Upload Main Photo Gallery</label>
+                <label for="image" class="mb-1">Upload Thumbanail Photo</label>
                 <input type="file" accept="image/*" class="form-control" id="image" name="image">
 
                 @if (isset($photogallery->id))

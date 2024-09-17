@@ -46,6 +46,10 @@
             <div class="col-md-12 mb-1">
                 <input type="text" class="form-control" id="name" name="height" value="{{ isset($cow->height) ? $cow->height : old('height') }}" placeholder="Enter height">
             </div>
+
+            <div class="col-md-12 mb-1">
+                <input type="text" class="form-control" id="name" name="age" value="{{ isset($cow->age) ? $cow->age : old('age') }}" placeholder="Enter age number only">
+            </div>
             
 
             
@@ -103,11 +107,11 @@
                 <input type="checkbox" class="form-control" id="link" name="link" value="{{ isset($cow->link) ? $cow->link : old('link') }}" placeholder="Enter Youtube link">
             </div> --}}
 
-            <div class="form-check">
+            {{-- <div class="form-check"> --}}
                 {{-- <input class="form-check-input" type="checkbox" id="check1" name="option1" value="something" checked> --}}
-                <input class="form-check-input" type="checkbox" id="show_in_explore" name="show_in_explore">
-                <label class="form-check-label">Make this cow in explore section</label>
-              </div>
+                {{-- <input class="form-check-input" type="checkbox" id="show_in_explore" name="show_in_explore"> --}}
+                {{-- <label class="form-check-label">Make this cow in explore section</label> --}}
+              {{-- </div> --}}
             <div class="col-md-12">
                 <button type="submit" class="btn btn-primary">
                     @if (isset($cow))

@@ -40,6 +40,7 @@
         <div class="modal-content" style="padding: 25px;">
             <div class="modal-header">
                 <h5 class="modal-title" id="exampleModalLabel">Submit Your Details</h5>
+                <button type="button" id="mdl_close_btn" class="btn btn-info" data-bs-dismiss="modal">Close</button>
                 
             </div>
             

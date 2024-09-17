@@ -31,9 +31,9 @@
                     <img src="{{ URL::asset("/press-news/$press_news->image")}}" alt="{{ $press_news->title }}">
                 @endif
                 <p style="margin-top: 10px; font-size: 14px;"><b>Note:</b> <br>
-                    1. Follow the dimensions to upload the image (550px /550px). <br>
-                    2. Only jpg, jpeg, png formats allowed. <br>
-                    3. File size should be below 1 MB.
+                    {{-- 1. Follow the dimensions to upload the image (550px /550px). <br> --}}
+                    1. Only jpg, jpeg, png formats allowed. <br>
+                    2. File size should be below 1 MB.
                 </p>
             </div>
             <div class="col-md-12">
