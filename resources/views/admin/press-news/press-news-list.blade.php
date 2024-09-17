@@ -37,7 +37,7 @@
               @forelse ($press_news as $press_new)
               <tr>
                 <td>{{ $loop->iteration }}</td>
-                <td><img src="press-news/{{ $press_new->image }}" alt="demo.png"></td>
+                <td><img src="{{ URL::asset("press-news/$press_new->image") }}" alt="demo.png"></td>
                 <td>
                   <a  class="btn bt-sm" href="{{ route('p-news.edit', ['p_news' =>  $press_new->id ]) }}">
                     <i class="bi bi-pencil"></i>

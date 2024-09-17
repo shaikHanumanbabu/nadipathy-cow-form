@@ -68,7 +68,7 @@
               @foreach ($cows as $cow)
               <tr>
                 <td>{{ $loop->iteration }}</td>
-                <td><img src="image/{{ $cow->main_image }}" alt="{{ $cow->name }}"></td>
+                <td><img src="{{ URL::asset("image/".$cow->main_image) }}" alt="{{ $cow->name }}"></td>
                 <td>{{ $cow->name }}</td>
                 <td>{{ $cow->sub_category->subcategory_name }}</td>
                 {{-- <td>{{ $cow->short_description }}</td> --}}

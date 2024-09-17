@@ -38,7 +38,7 @@
               @forelse ($photoGalleries as $photoGallery)
               <tr>
                 <td>{{ $loop->iteration }}</td>
-                <td><img src="image/{{ $photoGallery->image }}" alt="{{ $photoGallery->title }}"></td>
+                <td><img src="{{URL::asset("image/". $photoGallery->image)}}" alt="{{ $photoGallery->title }}"></td>
                 <td>{{ $photoGallery->title }}</td>
                 <td>
                   <a  class="btn bt-sm" href="{{ route('photogalleries.edit', ['photogallery' =>   $photoGallery->id ]) }}">

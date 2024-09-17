@@ -42,7 +42,7 @@
               @forelse ($carousels as $carousel)
               <tr>
                 <td>{{ $loop->iteration }}</td>
-                <td><img src="image/{{ $carousel->image }}" alt="{{ $carousel->title }}"></td>
+                <td><img src="{{ URL::asset("image/$carousel->image") }}" alt="{{ $carousel->title }}"></td>
                 <td>{{ $carousel->title }}</td>
                 <td>{{ $carousel->caption }}</td>
                 <td>{{ $carousel->btntext }}</td>
