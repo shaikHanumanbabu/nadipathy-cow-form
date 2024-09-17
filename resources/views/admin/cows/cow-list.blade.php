@@ -57,6 +57,7 @@
                 <th>S.No.</th>
                 <th>Cows Image</th>
                 <th>Cow Name</th>
+                <th>Age</th>
                 <th>Cow Category</th>
                 {{-- <th>Description</th> --}}
                 <th>Actions</th>
@@ -66,10 +67,13 @@
 
                   
               @foreach ($cows as $cow)
+
+              {{-- {{$cow->getYear()}} --}}
               <tr>
                 <td>{{ $loop->iteration }}</td>
                 <td><img src="{{ URL::asset("image/".$cow->main_image) }}" alt="{{ $cow->name }}"></td>
                 <td>{{ $cow->name }}</td>
+                <td>{{ $cow->age ? $cow->age . "Years" : "" }}</td>
                 <td>{{ $cow->sub_category->subcategory_name }}</td>
                 {{-- <td>{{ $cow->short_description }}</td> --}}
                 <td>

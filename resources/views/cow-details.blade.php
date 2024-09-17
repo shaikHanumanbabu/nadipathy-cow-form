@@ -71,7 +71,7 @@
                   <hr>
                   <li><strong>Breed</strong>: {{ $cow->breed->title }}</li>
                   <hr>
-                  <li><strong>Age</strong>: {{ $cow->getYear() }}</li>
+                  <li><strong>Age</strong>: {{ $cow->age ? $cow->age. " Years": "" }}</li>
                   <hr>
                   <li><strong>Height</strong>: {{ $cow->height  }}</li>
                   <hr>
