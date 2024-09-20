@@ -18,7 +18,7 @@
                         <a class="btn btn-square btn-secondary rounded-circle me-2 smediaytfoot" href="https://www.youtube.com/@Miniaturecows" target="_blank"><i class="fab fa-youtube"></i></a>
                         <a class="btn btn-square btn-secondary rounded-circle me-2 smediainsfoot" href="https://www.instagram.com/punganurucows/?utm_source=qr" target="_blank"><i class="fab fa-instagram"></i></a>
                     </div>
-                    <p><a class="btn text-light smediains mt-2" href="https://chat.whatsapp.com/ENOG6QfzbLF0xtdnx7GL4q" target="_blank"><i class="fab fa-whatsapp bg-primary px-1 py-1"></i> Join our Whatsapp Group</a></p>
+                    <p><a class="btn text-light smediains mt-2" href="{{ $whatsapp->link }}" target="_blank"><i class="fab fa-whatsapp bg-primary px-1 py-1"></i> Join our Whatsapp Group</a></p>
                 </div>
                 <div class="col-lg-2 col-md-6">
                     <h5 class="text-white mb-4">Quick Links</h5>

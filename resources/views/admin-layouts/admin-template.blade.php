@@ -233,6 +233,11 @@
         <i class="bi bi-grid"></i><span>Contacts</span>
       </a>
     </li>
+    <li class="nav-item">
+      <a class="nav-link collapsed active" href="{{ route('whatsapp.edit', ['whatsapp' => 1]) }}">
+        <i class="bi bi-whatsapp"></i><span>Whats Group Link</span>
+      </a>
+    </li>
 
     
     

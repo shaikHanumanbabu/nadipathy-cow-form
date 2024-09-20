@@ -85,7 +85,7 @@
               @endif
               
               <div class="portfolio-info mt-1 mb-3" style="text-align: center;">
-                <a class="btn btn-success text-white smediains mt-2" href="https://chat.whatsapp.com/ENOG6QfzbLF0xtdnx7GL4q" target="_blank"><i class="fab fa-whatsapp px-1 py-1"></i> Join our Whatsapp Group</a>
+                <a class="btn btn-success text-white smediains mt-2" href="{{ App\Models\Whatsapplink::find(1)->link }}" target="_blank"><i class="fab fa-whatsapp px-1 py-1"></i> Join our Whatsapp Group</a>
               </div>
             </div>
   

@@ -56,10 +56,12 @@
     @include('layouts.navbar', [
         'breeds' => $breeds ??  App\Models\Breed::orderBy('sort_value', 'asc')->get()
     ])
+   
+
     
     @yield('content')
 
-    @include('layouts.footer')
+    @include('layouts.footer', [ 'whatsapp' => App\Models\Whatsapplink::find(1) ])
 
     </div>
 

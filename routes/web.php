@@ -22,6 +22,7 @@ use App\Http\Controllers\TvNewController;
 use App\Http\Controllers\VideoGalleryController;
 use App\Http\Controllers\WelcomeOneController;
 use App\Http\Controllers\WelcomeTwoController;
+use App\Http\Controllers\WhatsappController;
 use App\Mail\ForgotPasswordMail;
 use App\Mail\MyTestMail;
 use App\Models\Appointment;
@@ -136,6 +137,7 @@ Route::prefix('/admin')->group(function() {
   Route::resource('/tv-news', TvNewController::class);
   Route::resource('/social-media', SocialMediaController::class);
   Route::resource('/about', AboutController::class);
+  Route::resource('/whatsapp', WhatsappController::class);
   Route::resource('/awards', AwardController::class);
   Route::resource('/blogs', BlogController::class);
   Route::resource('/products', ProductController::class);
