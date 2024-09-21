@@ -37,12 +37,12 @@
                 <div class="swiper-wrapper align-items-center">
   
                   <div class="swiper-slide">
-                    <img src="{{ URL::asset("image/$cow->main_image") }}" alt="">
+                    <img class="img-fluid" src="{{ URL::asset("image/$cow->main_image") }}" alt="">
                   </div>
             @foreach ($cow->galleryimage as $image)
 
                   <div class="swiper-slide">
-                    <img src="{{ URL::asset("image/$image->image_name") }}" alt="">
+                    <img class="img-fluid" src="{{ URL::asset("image/$image->image_name") }}" alt="">
                   </div>
 
             @endforeach
