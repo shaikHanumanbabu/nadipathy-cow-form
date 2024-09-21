@@ -127,6 +127,7 @@ Route::prefix('/admin')->group(function() {
   Route::resource('/carousel', CarouselController::class);
   Route::resource('/testimonials', TestimonialController::class);
   Route::resource('/breeds', BreedController::class);
+  Route::get('/breeds/get_subcategories/{breed}', [BreedController::class, 'getSubCategories'])->name('get-subcategories');
   Route::resource('/welcome_ones', WelcomeOneController::class);
   Route::resource('/welcome_twos', WelcomeTwoController::class);
   Route::resource('/marquees', MarqueeController::class);

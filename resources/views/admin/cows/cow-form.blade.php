@@ -23,19 +23,16 @@
                 <select class="form-control" id="breed_id" name="breed_id">
                     <option value="">-- Select Breed --</option>
                     @foreach ($breeds as $breed)
-                    
-                    <option value="{{$breed->id}}" {{ isset($cow) && $cow->breed_id == $breed->id ? "selected" : "" }}>{{$breed->title}}</option>
+                        <option value="{{$breed->id}}" {{ isset($cow) && $cow->breed_id == $breed->id ? "selected" : "" }}>{{$breed->title}}</option>
                     @endforeach
                   </select>
             </div>
+
+            <input type="hidden" name="sub_category" id="sub_category" value="{{ isset($cow) ? $cow->sub_categorie_id : '' }}">
             <div class="col-md-12 mb-1">
                 <select class="form-control" id="sub_categorie_id" name="sub_categorie_id">
-                    <option value="">-- Select Sub Category --</option>
-                    @foreach ($sub_categories as $sub_categorie)
-                    
-                    <option value="{{$sub_categorie->id}}" {{ isset($cow) && $cow->sub_categorie_id == $sub_categorie->id ? "selected" : "" }}>{{$sub_categorie->subcategory_name}}</option>
-                    @endforeach
-                  </select>
+                
+                </select>
             </div>
             <div class="col-md-12 mb-1">
                 <input type="text" class="form-control" id="name" name="name" value="{{ isset($cow->name) ? $cow->name : old('name') }}" placeholder="Enter name">
@@ -129,7 +126,52 @@
 @section('js-content')
     <script>
         $(document).ready(function() {
-            $('#sub_categorie_id').select2();
+            let end_point = '{{url("/admin/breeds/get_subcategories/")}}';
+            loadSubcategories($('#breed_id').val())
+
+            $('#breed_id').change(function() {
+                let breed_id = $(this).val();
+                loadSubcategories(breed_id)
+                
+
+                
+                
+            });
+
+
+            function loadSubcategories(breed_id)
+            {
+                let sub_category_id = $('#sub_category').val();
+
+                console.log(sub_category_id);
+                if (breed_id) {
+                    $.ajax({
+                        url: end_point + '/'+ breed_id,
+                        type: 'GET',
+                        success: function(response) {
+                            
+                            // Clear the product dropdown
+                            $('#sub_categorie_id').empty();
+
+                            // Append a default option
+                            $('#sub_categorie_id').append('<option value="">Select Sub category</option>');
+
+                            // Append the products from the response
+                            $.each(response, function(key, sub_category) {
+                                let selected_value = sub_category.id == $('#sub_category').val() ? "selected" : "";
+                                $('#sub_categorie_id').append('<option value="' + sub_category.id + '" '+selected_value+'>' + sub_category.subcategory_name + '</option>');
+                            });
+                        },
+                        error: function() {
+                            alert('Error retrieving products!');
+                        }
+                    });
+                } else {
+                    // If no category selected, clear the product dropdown
+                    $('#sub_categorie_id').empty();
+                    $('#sub_categorie_id').append('<option value="">Select Product</option>');
+                }
+            }
         });
 
     </script>

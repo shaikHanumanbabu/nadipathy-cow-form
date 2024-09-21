@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Http\Requests\StoreBreedRequest;
 use App\Http\Requests\UpdateBreedRequest;
 use App\Models\Breed;
+use GuzzleHttp\Psr7\Request;
 
 class BreedController extends Controller
 {
@@ -123,5 +124,10 @@ class BreedController extends Controller
         $breed->delete();
         return redirect()->back()->with('success', 'Deleted successfully.');
 
+    }
+
+    public function getSubCategories(Breed $breed) 
+    {
+        return response()->json( $breed->categories()->where('status', 1)->get());
     }
 }
