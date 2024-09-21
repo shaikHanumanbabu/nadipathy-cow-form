@@ -39,7 +39,7 @@
               @forelse ($breeds as $breed)
               <tr>
                 <td>{{ $loop->iteration }}</td>
-                <td><img src="image/{{ $breed->image }}" alt="{{ $breed->customer_name }}"></td>
+                <td><img src=" {{ URL::asset("image/$breed->image") }}" alt="{{ $breed->customer_name }}"></td>
                 <td>{{ $breed->title }}</td>
                 <td>{!! $breed->short_description !!}</td>
                 <td>

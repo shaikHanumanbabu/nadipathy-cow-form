@@ -23,6 +23,7 @@ class Cow extends Model
         'long_description',
         'youtube_link' ,
         'height' ,
+        'age' ,
     ];
 
     public function galleryimage()
@@ -51,6 +52,10 @@ class Cow extends Model
         } else {
             return ''; // Return null if no match is found
         }
+    }
+
+    public function getName() {
+        return $this->name . ' / '. $this->age . ' / '. $this->height;
     }
 
 

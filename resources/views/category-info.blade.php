@@ -41,9 +41,9 @@
                             </div>
                         </div>
                         <div class="text-center p-4">
-                            <span>{{ "Name: ".$cow->name }}</span>
-                            <span>{{ $cow->age ?  "/Age: ".$cow->age : "Years" }}</span>
-                            <span>{{ $cow->height ? " /Height: ".$cow->height : "" }}</span>
+                            <span>{{ $cow->getName() }}</span>
+                            {{-- <span>{{ $cow->age ?  "/Age: ".$cow->age : "Years" }}</span>
+                            <span>{{ $cow->height ? " /Height: ".$cow->height : "" }}</span> --}}
                             <br>
                         </div>
                     </div>

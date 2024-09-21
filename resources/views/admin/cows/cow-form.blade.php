@@ -48,7 +48,7 @@
             </div>
 
             <div class="col-md-12 mb-1">
-                <input type="text" class="form-control" id="name" name="age" value="{{ isset($cow->age) ? $cow->age : old('age') }}" placeholder="Enter age number only">
+                <input type="text" class="form-control" id="name" name="age" value="{{ isset($cow->age) ? $cow->age : old('age') }}" placeholder="Enter age">
             </div>
             
 
