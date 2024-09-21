@@ -40,7 +40,7 @@
               @forelse ($testimonials as $testimonial)
               <tr>
                 <td>{{ $loop->iteration }}</td>
-                <td><img src="image/{{ $testimonial->image }}" alt="{{ $testimonial->customer_name }}"></td>
+                <td><img src="{{ URL::asset("image/$testimonial->image") }}" alt="{{ $testimonial->customer_name }}"></td>
                 <td>{{ $testimonial->customer_name }}</td>
                 <td>{{ $testimonial->profession }}</td>
                 <td>{{ $testimonial->description }}</td>

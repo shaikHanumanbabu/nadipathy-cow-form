@@ -38,7 +38,7 @@
               @forelse ($subcategories as $subcategorie)
               <tr>
                 <td>{{ $loop->iteration }}</td>
-                <td><img src="image/{{ $subcategorie->subcategory_image }}" alt="{{ $subcategorie->subcategory_name }}"></td>
+                <td><img src="{{ URL::asset("image/$subcategorie->subcategory_image") }}" alt="{{ $subcategorie->subcategory_name }}"></td>
                 <td>{{ $subcategorie->subcategory_name }}</td>
                 <td>
                   <a  class="btn bt-sm" href="{{ route('subcategories.edit', ['subcategory' =>  $subcategorie->id ]) }}">

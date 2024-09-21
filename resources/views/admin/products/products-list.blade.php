@@ -38,7 +38,7 @@
               @forelse ($products as $product)
               <tr>
                 <td>{{ $loop->iteration }}</td>
-                <td><img src="image/{{ $product->image }}" alt="{{ $product->title }}"></td>
+                <td><img src="{{ URL::asset("image/$product->image") }}" alt="{{ $product->title }}"></td>
                 <td>{{ $product->title }}</td>
                 <td>
                   <a  class="btn bt-sm" href="{{ route('products.edit', ['product' =>   $product->id ]) }}">

@@ -38,7 +38,7 @@
               @forelse ($events as $event)
               <tr>
                 <td>{{ $loop->iteration }}</td>
-                <td><img src="image/{{ $event->image }}" alt="{{ $event->title }}"></td>
+                <td><img src="{{ URL::asset("image/$event->image") }}" alt="{{ $event->title }}"></td>
                 <td>{{ $event->title }}</td>
                 <td>
                   <a  class="btn bt-sm" href="{{ route('events.edit', ['event' =>   $event->id ]) }}">
