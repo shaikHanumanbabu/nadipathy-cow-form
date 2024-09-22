@@ -4,7 +4,7 @@
             <div class="h-100 d-inline-flex align-items-center text-light">
                 <!-- <span>Follow Us:</span> -->
                 <a class="btn appoint" href="#" data-bs-toggle="modal" data-bs-target="#appointment">Get an Appointment</a>
-                <a class="btn btn-link text-light whatsapp" href="https://chat.whatsapp.com/ENOG6QfzbLF0xtdnx7GL4q" target="_blank"><i class="fab fa-whatsapp  px-1 py-1"></i> Join our Whatsapp Group</a>
+                <a class="btn btn-link text-light whatsapp" href="{{ $whatsapp->link }}" target="_blank"><i class="fab fa-whatsapp  px-1 py-1"></i> Join our Whatsapp Group</a>
                 <a class="btn btn-link appoint" href="awards-rewards">Awards</a>
                 {{-- <div class="nav-item dropdown" style="z-index: 9999; margin-left: 10px;">
                     <a href="#" class="nav-link dropdown-toggle bg-primary text-light" data-bs-toggle="dropdown">

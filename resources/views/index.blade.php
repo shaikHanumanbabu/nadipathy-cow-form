@@ -51,7 +51,11 @@
     </div>
     
     {{-- <div id="google_translate_element"> --}}
-    @include('layouts.topheader')
+
+    @php
+        $data = [ 'whatsapp' => App\Models\Whatsapplink::find(1) ];
+    @endphp
+    @include('layouts.topheader', $data)
 
     @include('layouts.navbar', [
         'breeds' => $breeds ??  App\Models\Breed::orderBy('sort_value', 'asc')->get()
@@ -61,7 +65,7 @@
     
     @yield('content')
 
-    @include('layouts.footer', [ 'whatsapp' => App\Models\Whatsapplink::find(1) ])
+    @include('layouts.footer', $data)
 
     </div>
 
