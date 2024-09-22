@@ -62,7 +62,8 @@
                         </div>
                         <div class="col-md-6">
                             <div class="form-floating">
-                                <input type="number" class="form-control {{ $errors->has('phone_number') ? 'is-invalid' : '' }}" name="phone_number" placeholder="Your Mobile Number">
+                                <span class="label label-danger" id="phone_validation_error"></span>
+                                <input type="number" oninput="limitInputLength(this)" class="form-control {{ $errors->has('phone_number') ? 'is-invalid' : '' }}" name="phone_number" placeholder="Your Mobile Number">
                                 <label for="phone_number">Your Mobile</label>
                             </div>
                             @error('phone_number')

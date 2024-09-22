@@ -32,7 +32,7 @@ class CowController extends Controller
             return $query->where('sub_categorie_id', request('category_id'));
         });
 
-        $results = $query->get();
+        $results = $query->orderBy('id', 'desc')->get();
 
         
 

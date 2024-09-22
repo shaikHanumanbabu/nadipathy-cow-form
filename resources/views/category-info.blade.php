@@ -31,7 +31,7 @@
         </div>
         <div class="row gx-4">
 
-            @forelse ($sub_category->cows as $cow)
+            @forelse ($sub_category->cows()->orderBy('id', 'desc')->get() as $cow)
                 <div class="col-md-6 col-lg-4 col-xl-4 mb-4 wow fadeInUp" data-wow-delay="0.1s">
                     <div class="product-item">
                         <div class="position-relative">
