@@ -38,13 +38,25 @@ class HomeController extends Controller
         $locale = App::currentLocale();
 
         $cows = Cow::where('show_in_explore', '=', 1)->get()->slice(0, 4);
+        $cow_at_home = WelcomeTwo::find(1);
 
+        // Split the text by <p> and </p> tags
+        $paragraphs = preg_split('/<\/?p>/', $cow_at_home->description, -1, PREG_SPLIT_NO_EMPTY);
+
+        // Get the first two paragraphs
+        $firstTwoParagraphs = array_slice($paragraphs, 0, 2);
+
+        // Join the paragraphs back with <p> tags
+        $cow_at_home_desc =  '<p>' . implode('</p><p>', $firstTwoParagraphs) . '</p>';
+
+        
         
 
         return view('home', [
             'carousel' => Carousel::orderBy('priority', 'asc')->get(),
             'welcomeone' => WelcomeOne::find(1),
             'cow_at_home' => WelcomeTwo::find(1),
+            'cow_at_home_desc' => $cow_at_home_desc,
             'breeds' => Breed::orderBy('sort_value', 'asc')->get(),
             'testimonials' => Testimonial::all(),
             'marquee' => Marquee::find(1),

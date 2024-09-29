@@ -8,7 +8,7 @@
             <div class="col-lg-12 col-md-6 wow fadeInUp" data-wow-delay="0.1s">
                 <p style="text-align: justify; color: #fff;">
                     {{-- {!! $cow_at_home->description !!} --}}
-                    {!! html_entity_decode($cow_at_home->description) !!}
+                    {!! html_entity_decode($cow_at_home_desc) !!}
                 </p>
             </div>
             <div style="display: flex; justify-content: center;">
