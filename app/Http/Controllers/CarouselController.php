@@ -47,7 +47,6 @@ class CarouselController extends Controller
         
         $validated = $request->validated();
 
-        dd($validated);
         if($request->hasFile('image')) {
             $fileName = auth()->id() . '_' . time() . '.'. $request->image->extension();  
     
