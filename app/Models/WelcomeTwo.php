@@ -12,6 +12,9 @@ class WelcomeTwo extends Model
     protected $fillable = [
         'title',
         'description',
-        'link',
+        'image_one',
+        'image_two',
+        'image_three',
+        'image_four',
     ];
 }

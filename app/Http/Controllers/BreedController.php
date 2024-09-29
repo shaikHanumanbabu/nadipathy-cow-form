@@ -21,7 +21,7 @@ class BreedController extends Controller
     public function index()
     {
         return view('admin.breeds.breed-list', [
-            'breeds' => Breed::all()
+            'breeds' => Breed::orderBy('id', 'desc')->get()
         ]);
     }
 

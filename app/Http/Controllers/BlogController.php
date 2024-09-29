@@ -17,7 +17,7 @@ class BlogController extends Controller
      */
     public function index()
     {
-        return view('admin.blogs.blogs-list', ['blogs' => Blog::all()]);
+        return view('admin.blogs.blogs-list', ['blogs' => Blog::orderBy('id', 'desc')->get()]);
     }
 
     /**

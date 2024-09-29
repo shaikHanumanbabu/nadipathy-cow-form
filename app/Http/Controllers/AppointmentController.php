@@ -17,7 +17,7 @@ class AppointmentController extends Controller
      */
     public function index(Request $request)
     {
-        $appointment = Appointment::where('from', '=', $request->get('type') ?? null)->get();
+        $appointment = Appointment::where('from', '=', $request->get('type') ?? null)->orderBy('id', 'desc')->get();
 
         // dd($appointment);
         return view('admin.appointments.appointment-list', [

@@ -19,7 +19,7 @@ class PressNewController extends Controller
     {
         // dd('kkksss');
         return view('admin.press-news.press-news-list', [
-            'press_news' => PressNew::all() 
+            'press_news' => PressNew::orderBy('id', 'desc')->get() 
         ]);
     }
 

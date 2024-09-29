@@ -18,7 +18,7 @@ class SocialMediaController extends Controller
     public function index()
     {
         return view('admin.social-media.social-media-list',[
-            'social_medias' => SocialMedia::all()
+            'social_medias' => SocialMedia::orderBy('id', 'desc')->get()
         ]);
     }
 

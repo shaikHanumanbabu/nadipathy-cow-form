@@ -26,7 +26,6 @@ class UpdateWelcomeTwoRequest extends FormRequest
         return [
             'title' => 'required',
             'description' => 'required',
-            'link' => 'required',
         ];
     }
 }

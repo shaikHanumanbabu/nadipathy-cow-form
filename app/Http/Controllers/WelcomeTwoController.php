@@ -49,10 +49,10 @@ class WelcomeTwoController extends Controller
     /**
      * Display the specified resource.
      *
-     * @param  \App\Models\WelcomeTwo  $welcomeTwo
+     * @param  \App\Models\WelcomeTwo  $cow_at_home
      * @return \Illuminate\Http\Response
      */
-    public function show(WelcomeTwo $welcomeTwo)
+    public function show(WelcomeTwo $cow_at_home)
     {
         //
     }
@@ -60,14 +60,15 @@ class WelcomeTwoController extends Controller
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  \App\Models\WelcomeTwo  $welcomeTwo
+     * @param  \App\Models\WelcomeTwo  $cow_at_home
      * @return \Illuminate\Http\Response
      */
-    public function edit(WelcomeTwo $welcomeTwo)
+    public function edit(WelcomeTwo $cow_at_home)
     {
+        // dd($cow_at_home);
         //
         return view('admin.welcometwo.welcome-two-form', 
-        ['welcomeTwo' => $welcomeTwo]
+        ['cow_at_home' => $cow_at_home]
         );
     }
 
@@ -75,17 +76,61 @@ class WelcomeTwoController extends Controller
      * Update the specified resource in storage.
      *
      * @param  \App\Http\Requests\UpdateWelcomeTwoRequest  $request
-     * @param  \App\Models\WelcomeTwo  $welcomeTwo
+     * @param  \App\Models\WelcomeTwo  $cow_at_home
      * @return \Illuminate\Http\Response
      */
-    public function update(UpdateWelcomeTwoRequest $request, WelcomeTwo $welcomeTwo)
+    public function update(UpdateWelcomeTwoRequest $request, WelcomeTwo $cow_at_home)
     {
         $validated = $request->validated();
 
-        $validated['description'] = htmlentities($validated['description']);
+        $validated['description'] = $validated['description'];
 
-        // dd($validated);
-        $welcomeTwo->update($validated);
+
+        if($request->hasFile('image_one')) {
+            $fileName = auth()->id() . '_' . time() . '.'. $request->image_one->extension();  
+    
+            $type = $request->image_one->getClientMimeType();
+            $size = $request->image_one->getSize();
+            
+            $request->image_one->move(public_path('image'), $fileName);
+    
+            $validated['image_one'] = $fileName;
+
+        } 
+        if($request->hasFile('image_two')) {
+            $fileName = auth()->id() . '_' . time() . '.'. $request->image_two->extension();  
+    
+            $type = $request->image_two->getClientMimeType();
+            $size = $request->image_two->getSize();
+            
+            $request->image_two->move(public_path('image'), $fileName);
+    
+            $validated['image_two'] = $fileName;
+
+        } 
+        if($request->hasFile('image_three')) {
+            $fileName = auth()->id() . '_' . time() . '.'. $request->image_three->extension();  
+    
+            $type = $request->image_three->getClientMimeType();
+            $size = $request->image_three->getSize();
+            
+            $request->image_three->move(public_path('image'), $fileName);
+    
+            $validated['image_three'] = $fileName;
+
+        } 
+        if($request->hasFile('image_four')) {
+            $fileName = auth()->id() . '_' . time() . '.'. $request->image_four->extension();  
+    
+            $type = $request->image_four->getClientMimeType();
+            $size = $request->image_four->getSize();
+            
+            $request->image_four->move(public_path('image'), $fileName);
+    
+            $validated['image_four'] = $fileName;
+
+        } 
+        $cow_at_home->update($validated);
 
         return redirect()->route('welcome_twos.edit', ['welcome_two' => 1])->with('success', 'Successfully updated!.');
     }
@@ -93,10 +138,10 @@ class WelcomeTwoController extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @param  \App\Models\WelcomeTwo  $welcomeTwo
+     * @param  \App\Models\WelcomeTwo  $cow_at_home
      * @return \Illuminate\Http\Response
      */
-    public function destroy(WelcomeTwo $welcomeTwo)
+    public function destroy(WelcomeTwo $cow_at_home)
     {
         //
     }
