@@ -87,7 +87,7 @@ class WelcomeTwoController extends Controller
 
 
         if($request->hasFile('image_one')) {
-            $fileName = auth()->id() . '_' . time() . '.'. $request->image_one->extension();  
+            $fileName = auth()->id() . '_' . uniqid() . '.'. $request->image_one->extension();  
     
             $type = $request->image_one->getClientMimeType();
             $size = $request->image_one->getSize();
@@ -98,7 +98,7 @@ class WelcomeTwoController extends Controller
 
         } 
         if($request->hasFile('image_two')) {
-            $fileName = auth()->id() . '_' . time() . '.'. $request->image_two->extension();  
+            $fileName = auth()->id() . '_' . uniqid() . '.'. $request->image_two->extension();  
     
             $type = $request->image_two->getClientMimeType();
             $size = $request->image_two->getSize();
@@ -109,7 +109,7 @@ class WelcomeTwoController extends Controller
 
         } 
         if($request->hasFile('image_three')) {
-            $fileName = auth()->id() . '_' . time() . '.'. $request->image_three->extension();  
+            $fileName = auth()->id() . '_' . uniqid() . '.'. $request->image_three->extension();  
     
             $type = $request->image_three->getClientMimeType();
             $size = $request->image_three->getSize();
@@ -120,7 +120,7 @@ class WelcomeTwoController extends Controller
 
         } 
         if($request->hasFile('image_four')) {
-            $fileName = auth()->id() . '_' . time() . '.'. $request->image_four->extension();  
+            $fileName = auth()->id() . '_' . uniqid() . '.'. $request->image_four->extension();  
     
             $type = $request->image_four->getClientMimeType();
             $size = $request->image_four->getSize();
