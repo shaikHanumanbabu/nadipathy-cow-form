@@ -132,7 +132,7 @@ class WelcomeTwoController extends Controller
         } 
         $cow_at_home->update($validated);
 
-        return redirect()->route('welcome_twos.edit', ['welcome_two' => 1])->with('success', 'Successfully updated!.');
+        return redirect()->route('cow-at-home.edit', ['cow_at_home' => 1])->with('success', 'Successfully updated!.');
     }
 
     /**
