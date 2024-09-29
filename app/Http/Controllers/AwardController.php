@@ -18,7 +18,7 @@ class AwardController extends Controller
     public function index()
     {
         return view('admin.awards.awards-list', [
-            'awards' => Award::all()
+            'awards' => Award::orderBy('id', 'desc')->get()
         ]);
     }
 

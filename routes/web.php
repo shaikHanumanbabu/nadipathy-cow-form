@@ -106,6 +106,7 @@ Route::post('/contact', [HomeController::class, 'contactInfo'])->name('contact.p
 Route::get('/products', [HomeController::class, 'productsInfo']);
 Route::get('/subcategory', [HomeController::class, 'categoryInfo']);
 Route::get('/cow-details', [HomeController::class, 'cowDetailsInfo'])->name('cow-details');
+Route::get('/cow-at-home', [HomeController::class, 'cowAtHome'])->name('cow-at-home');
 Route::get('/cow-details-demo', [HomeController::class, 'cowDetailsDemoInfo'])->name('cow-details');
 
 Route::get('/cows-image-gallery/{cowGalleryImage}', [CowController::class, 'cowsGalleryImageDelete'])->name('cowimagedelete');
@@ -129,7 +130,7 @@ Route::prefix('/admin')->group(function() {
   Route::resource('/breeds', BreedController::class);
   Route::get('/breeds/get_subcategories/{breed}', [BreedController::class, 'getSubCategories'])->name('get-subcategories');
   Route::resource('/welcome_ones', WelcomeOneController::class);
-  Route::resource('/welcome_twos', WelcomeTwoController::class);
+  Route::resource('/cow-at-home', WelcomeTwoController::class);
   Route::resource('/marquees', MarqueeController::class);
   Route::resource('/appointments', AppointmentController::class);
   Route::resource('/subcategories', SubCategoriesController::class);

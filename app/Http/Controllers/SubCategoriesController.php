@@ -20,7 +20,7 @@ class SubCategoriesController extends Controller
     public function index()
     {
         return view('admin.subcategories.subcategories-list', [
-            'subcategories' => SubCategories::where('status', 1)->get()
+            'subcategories' => SubCategories::where('status', 1)->orderBy('id', 'desc')->get()
         ]);
     }
 

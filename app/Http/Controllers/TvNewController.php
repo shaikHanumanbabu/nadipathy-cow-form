@@ -18,7 +18,7 @@ class TvNewController extends Controller
     public function index()
     {
         return view('admin.tv-news.tv-news-list',[
-            'tv_news' => TvNew::all()
+            'tv_news' => TvNew::orderBy('id', 'desc')->get()
         ]);
     }
 

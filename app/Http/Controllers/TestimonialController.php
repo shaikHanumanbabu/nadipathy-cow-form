@@ -18,7 +18,7 @@ class TestimonialController extends Controller
      */
     public function index()
     {
-        $testimonials = Testimonial::all();  
+        $testimonials = Testimonial::orderBy('id', 'desc')->get();  
         return view('admin.testimonials.testimonial-list', 
         ['testimonials' => $testimonials]
         );

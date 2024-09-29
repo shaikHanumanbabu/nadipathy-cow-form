@@ -43,7 +43,7 @@
                 <td><img src="{{ URL::asset("image/$testimonial->image") }}" alt="{{ $testimonial->customer_name }}"></td>
                 <td>{{ $testimonial->customer_name }}</td>
                 <td>{{ $testimonial->profession }}</td>
-                <td>{{ $testimonial->description }}</td>
+                <td>{!! $testimonial->description !!}</td>
                 <td>
                   <a  class="btn bt-sm" href="{{ route('testimonials.edit', ['testimonial' =>  $testimonial->id ]) }}">
                     <i class="bi bi-pencil"></i>

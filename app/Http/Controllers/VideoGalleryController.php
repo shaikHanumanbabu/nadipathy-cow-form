@@ -18,7 +18,7 @@ class VideoGalleryController extends Controller
     public function index()
     {
         return view('admin.video-gallery.video-gallery-list', [
-            'videoGalleries' => VideoGallery::all()
+            'videoGalleries' => VideoGallery::orderBy('id', 'desc')->get()
         ]);
     }
 

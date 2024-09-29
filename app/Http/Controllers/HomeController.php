@@ -42,9 +42,9 @@ class HomeController extends Controller
         
 
         return view('home', [
-            'carousel' => Carousel::all(),
+            'carousel' => Carousel::orderBy('priority', 'desc')->get(),
             'welcomeone' => WelcomeOne::find(1),
-            'welcometwo' => WelcomeTwo::find(1),
+            'cow_at_home' => WelcomeTwo::find(1),
             'breeds' => Breed::orderBy('sort_value', 'asc')->get(),
             'testimonials' => Testimonial::all(),
             'marquee' => Marquee::find(1),
@@ -104,7 +104,7 @@ class HomeController extends Controller
 
         // resources/views/breed-info.blade.php
         return view('events-info', [
-            'events' => Event::all(),
+            'events' => Event::orderBy('id', 'desc')->get(),
         ]);
 
     } // eventsInfo
@@ -148,49 +148,62 @@ class HomeController extends Controller
             'aboutInfo' => About::all()->first()
         ]);
     }
+
+    public function cowAtHome(Request $request)
+    {
+        // $cow = Cow::where('id', '=', $request->get('cowid'))->get()->first();
+        
+        // dd($cow->sub_category);
+        
+        
+        
+        return view('need-cow-at-home', [
+            'cow_at_home' => WelcomeTwo::all()->first(),
+        ]);
+    }
     public function pressNewsInfo()
     {
         return view('press-news-info', [
-            'pressNews' => PressNew::all()
+            'pressNews' => PressNew::orderBy('id', 'desc')->get()
         ]);
     }
     public function tvNewsInfo()
     {
         return view('tv-news-info', [
-            'tvNews' => TvNew::all()
+            'tvNews' => TvNew::orderBy('id', 'desc')->get()
         ]);
     }
     public function socialMediaInfo()
     {
         return view('social-media-info', [
-            'socialMedias' => SocialMedia::all()
+            'socialMedias' => SocialMedia::orderBy('id', 'desc')->get()
         ]);
     }
 
     public function awardsRewardsInfo()
     {
         return view('awards-rewards-info', [
-            'awards' => Award::all()
+            'awards' => Award::orderBy('id', 'desc')->get()
         ]);
     }
 
     public function blogsInfo()
     {
         return view('blog', [
-            'blogs' => Blog::all()
+            'blogs' => Blog::orderBy('id', 'desc')->get()
         ]);
     }
 
     public function photoGalleryInfo()
     {
         return view('photo-gallery', [
-            'photoGalleries' => photoGallery::with('galleryimage')->get()
+            'photoGalleries' => photoGallery::with('galleryimage')->orderBy('id', 'desc')->get()
         ]);
     }
 
     public function photoGalleryDetailedInfo(Request $request)
     {
-        $photoGalleryInfo = photoGallery::with('galleryimage')->where('title', '=', $request->get('title'))->get()->first();
+        $photoGalleryInfo = photoGallery::with('galleryimage')->where('title', '=', $request->get('title'))->orderBy('id', 'desc')->get()->first();
         if(!$request->get('title') || empty($photoGalleryInfo)) {
             abort(404, 'Page Not Found');
         }
@@ -202,7 +215,7 @@ class HomeController extends Controller
     public function videoGalleryInfo()
     {
         return view('video-gallery', [
-            'videoGalleries' => VideoGallery::all()
+            'videoGalleries' => VideoGallery::orderBy('id', 'desc')->get()
         ]);
     }
 
@@ -227,7 +240,7 @@ class HomeController extends Controller
     public function productsInfo()
     {
         return view('products-info', [
-            'products' => Product::all()
+            'products' => Product::orderBy('id', 'desc')->get()
         ]);
     }
     
@@ -241,7 +254,7 @@ class HomeController extends Controller
 
     public function cowDetailsInfo(Request $request)
     {
-        $cow = Cow::where('id', '=', $request->get('cowid'))->get()->first();
+        $cow = Cow::where('id', '=', $request->get('cowid'))->orderBy('id', 'desc')->get()->first();
         
         // dd($cow->sub_category);
         
@@ -253,6 +266,8 @@ class HomeController extends Controller
             'breed' => $cow->breed,
         ]);
     }
+
+    
 
     public function cowDetailsDemoInfo(Request $request)
     {

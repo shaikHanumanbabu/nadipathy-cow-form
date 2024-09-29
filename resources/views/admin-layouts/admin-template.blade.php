@@ -98,11 +98,7 @@
           </a>
         </li>
         
-        <li>
-          <a href="{{ route('welcome_twos.edit', ['welcome_two' => 1]) }}">
-            <i class="bi bi-circle"></i><span>Welcome Text2</span>
-          </a>
-        </li>
+        
         <li>
           <a href="{{ route('testimonials.index') }}">
             <i class="bi bi-circle"></i><span>Testimonials</span>
@@ -134,6 +130,18 @@
     <li class="nav-item">
       <a class="nav-link collapsed active" href="{{ route('about.edit', ['about' => 1]) }}">
         <i class="bi bi-grid"></i><span>About</span>
+      </a>
+    </li>
+
+    {{-- <li class="nav-item">
+      <a class="nav-link collapsed active" href="{{ route('about.edit', ['about' => 1]) }}">
+        <i class="bi bi-grid"></i><span>Cow at home</span>
+      </a>
+    </li> --}}
+
+    <li class="nav-item">
+      <a class="nav-link collapsed active" href="{{ route('cow-at-home.edit', ['cow_at_home' => 1]) }}">
+        <i class="bi bi-grid"></i><span>Cow at home</span>
       </a>
     </li>
     {{-- another menu --}}

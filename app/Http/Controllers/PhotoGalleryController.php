@@ -20,7 +20,7 @@ class PhotoGalleryController extends Controller
     {
         // $photoGallery = photoGallery::with('galleryimage')->get();
         return view('admin.photo-gallery.photo-gallery-list', [
-            'photoGalleries' => photoGallery::all(),
+            'photoGalleries' => photoGallery::orderBy('id', 'desc')->get(),
         ]);
 
     }
