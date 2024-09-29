@@ -42,7 +42,7 @@ class HomeController extends Controller
         
 
         return view('home', [
-            'carousel' => Carousel::orderBy('priority', 'desc')->get(),
+            'carousel' => Carousel::orderBy('priority', 'asc')->get(),
             'welcomeone' => WelcomeOne::find(1),
             'cow_at_home' => WelcomeTwo::find(1),
             'breeds' => Breed::orderBy('sort_value', 'asc')->get(),
