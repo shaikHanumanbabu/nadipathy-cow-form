@@ -5,7 +5,7 @@
                 <!-- <span>Follow Us:</span> -->
                 <a class="btn appoint" href="#" data-bs-toggle="modal" data-bs-target="#appointment">Get an Appointment</a>
                 <a class="btn btn-link text-light whatsapp" href="{{ $whatsapp->link }}" target="_blank"><i class="fab fa-whatsapp  px-1 py-1"></i> Join our Whatsapp Group</a>
-                <a class="btn btn-link appoint" href="awards-rewards">Awards</a>
+                <a class="btn btn-link appoint" href="{{ route("awards-rewards") }}">Awards</a>
                 {{-- <div class="nav-item dropdown" style="z-index: 9999; margin-left: 10px;">
                     <a href="#" class="nav-link dropdown-toggle bg-primary text-light" data-bs-toggle="dropdown">
                         <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" fill="currentColor" class="bi bi-translate" viewBox="0 0 16 16">

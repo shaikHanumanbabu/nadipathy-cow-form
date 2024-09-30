@@ -96,7 +96,7 @@ Route::get('/tv-news-info', [HomeController::class, 'tvNewsInfo']);
 Route::get('/events', [HomeController::class, 'eventsInfo'])->name("events");
 Route::get('/events-details', [HomeController::class, 'eventsDetails'])->name('events-details');
 Route::get('/social-media-info', [HomeController::class, 'socialMediaInfo']);
-Route::get('/awards-rewards', [HomeController::class, 'awardsRewardsInfo']);
+Route::get('/awards-rewards', [HomeController::class, 'awardsRewardsInfo'])->name('awards-rewards');
 Route::get('/photo-gallery', [HomeController::class, 'photoGalleryInfo']);
 Route::get('/photo-gallery-info', [HomeController::class, 'photoGalleryDetailedInfo']);
 Route::get('/video-gallery', [HomeController::class, 'videoGalleryInfo']);
