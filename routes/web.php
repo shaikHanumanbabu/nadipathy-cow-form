@@ -13,6 +13,7 @@ use App\Http\Controllers\EventController;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\MarqueeController;
 use App\Http\Controllers\PhotoGalleryController;
+use App\Http\Controllers\PhotoGalleryImageController;
 use App\Http\Controllers\PressNewController;
 use App\Http\Controllers\ProductController;
 use App\Http\Controllers\SocialMediaController;
@@ -145,6 +146,7 @@ Route::prefix('/admin')->group(function() {
   Route::resource('/products', ProductController::class);
   Route::resource('/videogalleries', VideoGalleryController::class);
   Route::resource('/photogalleries', PhotoGalleryController::class);
+  Route::get('/photogalleriesImage/{photogalleriesImage}', [PhotoGalleryImageController::class, 'destroyImage'])->name('photogalleries-image-delete');
   Route::resource('/events', EventController::class);
 
 });

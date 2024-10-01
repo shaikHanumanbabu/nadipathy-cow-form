@@ -51,7 +51,13 @@
 
                 @if (isset($photogallery->id))
                     @foreach ($photogallery->galleryimage as $gallery)
-                        <img height="100px" src="/image/{{ $gallery->image }}" alt="{{ $photogallery->title }}">
+
+                    
+
+                        <a href="{{route('photogalleries-image-delete', ['photogalleriesImage' => $gallery->id])}}" onclick="return confirm('are you sure you want to delete ?')"><i class="bi bi-trash"></i></a>
+                        <img height="100px" src="/image/{{ $gallery->image }}" alt="{{ $photogallery->title }}" />
+
+                        
                     @endforeach
                 @endif
                 <p style="margin-top: 10px; font-size: 14px;"><b>Note:</b> <br>

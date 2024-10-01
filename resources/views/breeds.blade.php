@@ -29,6 +29,10 @@
                     <div class="product-item">
                         <div class="position-relative">
                         <a href="{{ url("/cows/".Str::slug($breed->slug). "/" .Str::slug($categorie->slug)) }}"> <img class="img-fluid" src="{{ URL::asset("/image/$categorie->subcategory_image") }}" alt="{{ $categorie->subcategory_name }}"> </a>
+
+                        <div class="product-overlay">
+                            <a class="btn btn-square btn-secondary rounded-circle m-1" href="{{ url("/cows/".Str::slug($breed->slug). "/" .Str::slug($categorie->slug)) }}"><i class="bi bi-three-dots"></i></a>
+                        </div>
                         </div>
                         <div class="text-center p-4">
                             <a class="d-block h5" href="{{ url("/cows/".Str::slug($breed->slug). "/" .Str::slug($categorie->slug)) }}">{{ $categorie->subcategory_name }}</a>
