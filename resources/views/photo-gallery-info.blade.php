@@ -31,7 +31,7 @@
                     <div class="row g-0">
                         <div class="col-12 px-1 py-1">
                             <a class="d-block" href="{{ URL::asset("image/$gallery->image") }}" data-lightbox="gallery">
-                                <img class="img-fluid" src="{{ URL::asset("image/$gallery->image") }}" alt="">
+                                <img class="img-fluid" src="{{ URL::asset("image/$gallery->image") }}" alt="image">
                             </a>
                         </div>
                     </div>
