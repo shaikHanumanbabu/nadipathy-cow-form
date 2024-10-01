@@ -30,7 +30,7 @@
                     <div class="card">
                         <a href="{{ url("photo-gallery-info?title=$photoGallery->title")  }}"><img src="{{ URL::asset("image/$photoGallery->image") }}" class="card-img-top" alt="Image 1"></a>
                         <div class="card-body">
-                            <a href="{{ $photoGallery->title }}"><h5 class="card-title">{{ $photoGallery->title }}</h5></a>
+                            <a href="{{ url("photo-gallery-info?title=$photoGallery->title")  }}"><h5 class="card-title">{{ \App\Http\Controllers\HelperController::slugToNormal($photoGallery->title) }}</h5></a>
                         </div>
                     </div>
                 </div> 
