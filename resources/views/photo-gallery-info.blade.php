@@ -21,7 +21,7 @@
 <div class="container-xxl py-5">
     <div class="container">
         <div class="text-center mx-auto wow fadeInUp" data-wow-delay="0.1s" style="max-width: 650px;">
-            <p class="section-title bg-white text-center text-primary px-3">Our Events</p>
+            <p class="section-title bg-white text-center text-primary px-3">PHOTO GALLERY</p>
             <h1 class="mb-5">{{ ucwords(str_replace('-',  ' ', $photoGalleryInfo->title)) }}</h1>
         </div>
         <div class="row g-0">
