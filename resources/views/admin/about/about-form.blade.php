@@ -52,7 +52,7 @@
                 <input type="file" accept="image/*" class="form-control" id="image" name="image_one">
 
                 @if (isset($about->id))
-                    <img src="/image/{{ $about->image_one }}" alt="{{ $about->name }}">
+                    <img src="/image/{{ $about->image_one }}" alt="{{ $about->name }}" height="200px" class="mt-1">
                 @endif
                
             </div>
@@ -61,7 +61,7 @@
                 <input type="file" accept="image/*" class="form-control" id="image" name="image_two">
 
                 @if (isset($about->id))
-                    <img src="/image/{{ $about->image_two }}" alt="{{ $about->name }}">
+                    <img src="/image/{{ $about->image_two }}" alt="{{ $about->name }}" height="200px" class="mt-1">
                 @endif
                
             </div>
@@ -70,7 +70,7 @@
                 <input type="file" accept="image/*" class="form-control" id="image" name="image_three">
 
                 @if (isset($about->id))
-                    <img src="/image/{{ $about->image_three }}" alt="{{ $about->name }}">
+                    <img src="/image/{{ $about->image_three }}" alt="{{ $about->name }}" height="200px" class="mt-1">
                 @endif
                
             </div>
@@ -79,7 +79,7 @@
                 <input type="file" accept="image/*" class="form-control" id="image" name="image_four">
 
                 @if (isset($about->id))
-                    <img src="/image/{{ $about->image_four }}" alt="{{ $about->name }}">
+                    <img src="/image/{{ $about->image_four }}" alt="{{ $about->name }}" height="200px" class="mt-1">
                 @endif
                
             </div>

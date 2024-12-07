@@ -91,10 +91,12 @@
   
           </div>
 
-        <div class="row mt-3 mb-4">
-            <div class="col-lg-12">
-                <h2 align="center">Please Contact for More Details <span class="text-primary"> +91 8885011320 </span></h2>
-            </div>
+        <div class="row mt-5 mb-5">
+            <h2 align="center" class="mb-4">Contact for More Details</h2>
+            <div class="col-lg-3" style="text-align:center;"><h4 class="bg-primary" style="color:#fff; padding:15px; font-weight:bod; font-size:18px;">+91 8885011320<h4></div>
+            <div class="col-lg-3" style="text-align:center;"><h4 class="bg-warning" style="color:#fff; padding:15px; font-weight:bod; font-size:18px;">+91 8885011321<h4></div>
+            <div class="col-lg-3" style="text-align:center;"><h4 class="bg-danger" style="color:#fff; padding:15px; font-weight:bod; font-size:18px;">+91 8885011322<h4></div>
+            <div class="col-lg-3" style="text-align:center;"><h4 class="bg-success" style="color:#fff; padding:15px; font-weight:bod; font-size:18px;">+91 8885011323<h4></div>
         </div>
     </div>
 </div>

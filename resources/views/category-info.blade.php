@@ -37,7 +37,7 @@
                         <div class="position-relative">
                             <img class="img-fluid" src="{{ URL::asset("image/$cow->main_image") }}" alt="image">
                             <div class="product-overlay">
-                                <a class="btn btn-square btn-secondary rounded-circle m-1" href="{{ url("/cow-details?cowid=$cow->id") }}"><i class="bi bi-three-dots"></i></a>
+                                <a class="btn btn-square btn-secondary rounded-circle m-1" href="{{ url("/cow-details?cowid=$cow->id") }}"><i class="bi bi-link"></i></a>
                             </div>
                         </div>
                         <div class="text-center p-4">
@@ -49,7 +49,7 @@
                     </div>
                 </div>
             @empty
-                <h2>No Content</h2>
+               <div class="col-lg-12 bg-warning pt-2"><h4 style="text-align:center">No Data. Content will be updated soon...</h4></div>
             @endforelse
             
             
@@ -57,9 +57,11 @@
         </div>
 
         <div class="row mt-5">
-            <div class="col-lg-12">
-                <h2 align="center">Please Contact for More Details <span class="text-primary"> +91 8885011320 </span></h2>
-            </div>
+            <h2 align="center" class="mb-4">Contact for More Details</h2>
+            <div class="col-lg-3" style="text-align:center;"><h4 class="bg-primary" style="color:#fff; padding:15px; font-weight:bod; font-size:18px;">+91 8885011320<h4></div>
+            <div class="col-lg-3" style="text-align:center;"><h4 class="bg-warning" style="color:#fff; padding:15px; font-weight:bod; font-size:18px;">+91 8885011321<h4></div>
+            <div class="col-lg-3" style="text-align:center;"><h4 class="bg-danger" style="color:#fff; padding:15px; font-weight:bod; font-size:18px;">+91 8885011322<h4></div>
+            <div class="col-lg-3" style="text-align:center;"><h4 class="bg-success" style="color:#fff; padding:15px; font-weight:bod; font-size:18px;">+91 8885011323<h4></div>
         </div>
     </div>
 </div>

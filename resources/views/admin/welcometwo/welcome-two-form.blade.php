@@ -36,7 +36,7 @@
                 <input type="file" accept="image/*" class="form-control" id="image" name="image_one">
 
                 @if (isset($cow_at_home->id))
-                    <img src="/image/{{ $cow_at_home->image_one }}" alt="{{ $cow_at_home->name }}">
+                    <img src="/image/{{ $cow_at_home->image_one }}" alt="{{ $cow_at_home->name }}" width="300px" class="mt-1">
                 @endif
                
             </div>
@@ -46,7 +46,7 @@
                 <input type="file" accept="image/*" class="form-control" id="image" name="image_two">
 
                 @if (isset($cow_at_home->id))
-                    <img src="/image/{{ $cow_at_home->image_two }}" alt="{{ $cow_at_home->name }}">
+                    <img src="/image/{{ $cow_at_home->image_two }}" alt="{{ $cow_at_home->name }}" width="300px" class="mt-1">
                 @endif
                
             </div>
@@ -55,7 +55,7 @@
                 <input type="file" accept="image/*" class="form-control" id="image" name="image_three">
 
                 @if (isset($cow_at_home->id))
-                    <img src="/image/{{ $cow_at_home->image_three }}" alt="{{ $cow_at_home->name }}">
+                    <img src="/image/{{ $cow_at_home->image_three }}" alt="{{ $cow_at_home->name }}" width="300px" class="mt-1">
                 @endif
                
             </div>
@@ -64,7 +64,7 @@
                 <input type="file" accept="image/*" class="form-control" id="image" name="image_four">
 
                 @if (isset($cow_at_home->id))
-                    <img src="/image/{{ $cow_at_home->image_four }}" alt="{{ $cow_at_home->name }}">
+                    <img src="/image/{{ $cow_at_home->image_four }}" alt="{{ $cow_at_home->name }}" width="300px" class="mt-1">
                 @endif
                
             </div>

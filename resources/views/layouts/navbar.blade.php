@@ -5,7 +5,7 @@
         <img src="{{ URL::asset("img/logo2a.png")}}">
     </a>
     <button type="button" class="navbar-toggler me-0" data-bs-toggle="collapse" data-bs-target="#navbarCollapse">
-        <span class="navbar-toggler-icon"></span>
+        <span style="font-size:14px; font-weight:bold; color:#5b8c51;">MENU</span><!--<span class="navbar-toggler-icon"></span>-->
     </button>
     <div class="collapse navbar-collapse" id="navbarCollapse">
         <div class="navbar-nav ms-auto p-4 p-lg-0">

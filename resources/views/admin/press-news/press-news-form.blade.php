@@ -28,7 +28,7 @@
                 <input type="file" accept="image/*" class="form-control" id="image" name="image[]" multiple accept="image/*">
 
                 @if (isset($press_news->id))
-                    <img src="{{ URL::asset("/press-news/$press_news->image")}}" alt="{{ $press_news->title }}">
+                    <img src="{{ URL::asset("/press-news/$press_news->image")}}" alt="{{ $press_news->title }}" width="300px" class="mt-1">
                 @endif
                 <p style="margin-top: 10px; font-size: 14px;"><b>Note:</b> <br>
                     {{-- 1. Follow the dimensions to upload the image (550px /550px). <br> --}}

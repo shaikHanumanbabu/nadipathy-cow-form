@@ -13,19 +13,19 @@
                             <div class="row justify-content-start">
                                 <div class="col-lg-8 text-start">
                                     @if (App::currentLocale() == 'en')
-                                        <p class="fs-4 text-white">{{ $c->title }}</p>
+                                        <p class="fs-5 text-white">{{ $c->title }}</p>
                                     @else
                                         <p class="fs-4 text-white">{{ $c->telugu_title ?? $c->title  }}</p>
                                     @endif
 
                                     @if (App::currentLocale() == 'en')
-                                        <h1 class="display-3 text-white mb-5 animated slideInRight" style="text-shadow: 3px 3px 45px rgba(0, 0, 0, 1);">{{ $c->caption }}</h1>
+                                        <h3 class="text-white mb-2 animated slideInRight">{{ $c->caption }}</h3>
                                     @else
-                                        <h1 class="display-3 text-white mb-5 animated slideInRight" style="text-shadow: 3px 3px 45px rgba(0, 0, 0, 1);">{{ $c->telugu_caption ?? $c->caption }}</h1>
+                                        <h1 class="display-3 text-white mb-5 animated slideInRight">{{ $c->telugu_caption ?? $c->caption }}</h1>
                                     @endif
 
                                     @if (App::currentLocale() == 'en')
-                                        <a href="{{ $c->link }}" class="btn btn-secondary rounded-pill py-3 px-5 animated slideInRight">{{ $c->btntext }}</a>
+                                        <a href="{{ $c->link }}" class="btn btn-secondary rounded-pill py-2 px-4 animated slideInRight">{{ $c->btntext }}</a>
                                     @else
                                         <a href="{{ $c->link }}" class="btn btn-secondary rounded-pill py-3 px-5 animated slideInRight">{{ $c->telugu_btntext ?? $c->btntext }}</a>
                                     @endif

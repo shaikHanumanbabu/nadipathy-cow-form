@@ -61,7 +61,7 @@
                     
 
                         <a href="{{route('photogalleries-image-delete', ['photogalleriesImage' => $gallery->id])}}" onclick="return confirm('are you sure you want to delete ?')"><i class="bi bi-trash"></i></a>
-                        <img height="100px" src="/image/{{ $gallery->image }}" alt="{{ $photogallery->title }}" />
+                        <img height="100px" src="/image/{{ $gallery->image }}" alt="{{ $photogallery->title }}" style="margin-right:20px; margin-top:10px " />
 
                         
                     @endforeach

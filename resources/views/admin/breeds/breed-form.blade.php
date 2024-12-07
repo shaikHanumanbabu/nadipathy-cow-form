@@ -50,7 +50,7 @@
                 <input type="file" accept="image/*" class="form-control" id="image" name="image">
 
                 @if (isset($breed->id))
-                    <img src="/image/{{ $breed->image }}" alt="{{ $breed->title }}">
+                    <img src="/image/{{ $breed->image }}" alt="{{ $breed->title }}" width="300px" class="mt-1">
                 @endif
                 <p style="margin-top: 10px; font-size: 14px;"><b>Note:</b> <br>
                     1. Follow the dimensions to upload the image (550px / 550px). <br>

@@ -49,7 +49,7 @@
                 <input type="file" accept="image/*" class="form-control" id="image" name="image">
 
                 @if (isset($carousel->id))
-                    <img src="/image/{{ $carousel->image }}" alt="{{ $carousel->title }}">
+                    <img src="/image/{{ $carousel->image }}" alt="{{ $carousel->title }}" height="200px" class="mt-1">
                 @endif
                 <p style="margin-top: 10px; font-size: 14px;"><b>Note:</b> <br>
                     1. Follow the dimensions to upload the image (1920px / 882px). <br>

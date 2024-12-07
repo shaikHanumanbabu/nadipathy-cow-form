@@ -30,7 +30,7 @@
                 <input type="file" accept="image/*" class="form-control" id="image" name="image">
 
                 @if (isset($award->id))
-                    <img src="/image/{{ $award->image }}" alt="{{ $award->name }}">
+                    <img src="/image/{{ $award->image }}" alt="{{ $award->name }}" width="200px" class="mt-1">
                 @endif
                 <p style="margin-top: 10px; font-size: 14px;"><b>Note:</b> <br>
                     1. Follow the dimensions to upload the image (831px / 1208px). <br>

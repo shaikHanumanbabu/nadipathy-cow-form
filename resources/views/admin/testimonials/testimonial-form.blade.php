@@ -28,7 +28,7 @@
                 <input type="file" accept="image/*" class="form-control" id="image" name="image">
 
                 @if (isset($testimonial->id))
-                    <img src="/image/{{ $testimonial->image }}" alt="{{ $testimonial->title }}">
+                    <img src="/image/{{ $testimonial->image }}" alt="{{ $testimonial->title }}" width="300px" class="mt-1">
                 @endif
                 <p style="margin-top: 10px; font-size: 14px;"><b>Note:</b> <br>
                     {{-- 1. Follow the dimensions to upload the image (1920px / 882px). <br> --}}

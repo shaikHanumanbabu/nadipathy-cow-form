@@ -50,7 +50,7 @@
           </div>
         </div>
         
-        <p align="right"><a class="btn btn-primary" href="{{ route('cows.create') }}">Add New Cows</a></p>
+        <p align="right" class="mt-1"><a class="btn btn-primary" href="{{ route('cows.create') }}">Add New Cow</a></p>
         <table id="example" class="display" style="width:100%">
           <thead>
               <tr>

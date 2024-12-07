@@ -16,6 +16,7 @@
 <!-- Page Header End -->
 
 <!-- press news Start -->
+
 <section class="bg-light">
 <div class="container-xxl py-5 px-0 gallery">
     <div class="text-center mx-auto wow fadeInUp" data-wow-delay="0.1s" style="max-width: 500px;">
@@ -24,10 +25,14 @@
     </div>
     <div class="row g-0">
         @forelse ($pressNews as $news)
-            <div class="col-lg-3 col-md-6 wow fadeInUp px-1 py-1">
-                <a class="d-block" href="{{ URL::asset("press-news/$news->image") }}" data-lightbox="gallery">
-                    <img class="img-fluid" src="{{ URL::asset("press-news/$news->image") }}" alt="">
-                </a>
+            <div class="col-lg-3 col-md-6 wow fadeInUp">
+                <div class="row g-0">
+                    <div class="col-12">
+                        <a class="d-block" href="{{ URL::asset("press-news/$news->image") }}" data-lightbox="gallery">
+                            <img class="img-fluid" src="{{ URL::asset("press-news/$news->image") }}" alt="">
+                        </a>
+                    </div>
+                </div>
             </div>
         @empty
             <h1>No Content</h1>
@@ -35,5 +40,6 @@
     </div>
 </div>
 </section>
+
 <!-- press news End -->
 @endsection

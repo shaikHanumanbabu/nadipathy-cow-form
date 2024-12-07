@@ -21,7 +21,7 @@
             @if (isset($videogallery))
                 @method('PATCH')
             @endif
-            <h5>Create Video Gallery</h5>
+            <h5>Video Gallery</h5>
             
             <!--<div class="col-md-12 mb-1">-->
             <!--    <input type="text" class="form-control" id="title" name="title" value="{{ isset($videogallery->title) ? $videogallery->title : old('title') }}" placeholder="Enter title">-->

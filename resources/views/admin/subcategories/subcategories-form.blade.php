@@ -42,7 +42,7 @@
                 <input type="file" accept="image/*" class="form-control" id="image" name="image">
 
                 @if (isset($subcategorie->id))
-                    <img src="/image/{{ $subcategorie->subcategory_image }}" alt="{{ $subcategorie->subcategory_name }}">
+                    <img src="/image/{{ $subcategorie->subcategory_image }}" alt="{{ $subcategorie->subcategory_name }}" width="300px" class="mt-1">
                 @endif
                 <p style="margin-top: 10px; font-size: 14px;"><b>Note:</b> <br>
                     1. Follow the dimensions to upload the image (550px / 550px). <br>
