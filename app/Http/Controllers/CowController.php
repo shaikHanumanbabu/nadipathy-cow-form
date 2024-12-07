@@ -121,7 +121,7 @@ class CowController extends Controller
 
         }
 
-        return redirect()->route('cows.index')->with('success', 'Cow added successfully.');
+        return redirect()->back()->with('success', 'Cow added successfully.');
         
     }
 
@@ -212,7 +212,7 @@ class CowController extends Controller
 
         }
 
-        return redirect()->route('cows.index')->with('success', 'Cow updated successfully.');
+        return redirect()->back()->with('success', 'Cow updated successfully.');
     }
 
     /**
@@ -224,7 +224,7 @@ class CowController extends Controller
     public function destroy(Cow $cow)
     {
         $cow->delete();
-        return redirect()->route('cows.index')->with('success', 'Cow deleted successfully.');
+        return redirect()->back()->with('success', 'Cow deleted successfully.');
 
 
     }
